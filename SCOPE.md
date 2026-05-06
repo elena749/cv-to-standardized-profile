@@ -9,17 +9,50 @@
 
 ## 1. Customer-Problem
 
-Recruiting-Teams im Mittelstand verbringen 10–30 Minuten pro CV mit der manuellen Übertragung in standardisierte Unternehmensprofile. Bei einem Volumen von ~1.000 CVs/Monat sind das 250–500 Stunden manuelle Arbeit pro Monat — Arbeit, die in 1–2 Minuten pro CV automatisiert werden kann, ohne Datenqualität zu opfern.
-
-**Zielgruppe:** Mittelständische Konzerne mit zentralisiertem Recruiting (>500 Mitarbeitende), strukturiertem Bewerber-Workflow und einem ATS als System of Record.
+Recruiting-Teams im Mittelstand und Konzern verbringen 10–30 Minuten pro CV mit der manuellen Übertragung in standardisierte Unternehmensprofile. Bei einem Volumen von mehreren tausend CVs/Monat sind das hunderte Stunden manuelle Arbeit pro Monat — Arbeit, die in 1–2 Minuten pro CV automatisiert werden kann, ohne Datenqualität zu opfern.
 
 ---
 
-## 2. Warum dieser Build relevant ist
+## 2. Customer-Persona
+
+### Unternehmen
+- **Branche:** Management-/Strategieberatung
+- **Größe:** ~3.000 Mitarbeitende
+- **Region:** DACH-Hauptsitz, internationale Präsenz
+- **Recruiting-Modell:** Inhouse-Team. Lead-Hires (8+ Jahre Erfahrung) laufen über Executive Search.
+
+### Recruiting-Team
+- **Größe:** ~25–40 Recruiter
+- **Aufteilung:** Campus Recruiting (Entry-Level) + Experienced Hire Recruiting (Mid- bis Senior-Level)
+- **Tech-Affinität:** mittel — ATS-vertraut, kein Programmier-Know-how
+
+### Bewerber-Profil
+- **Career-Level:** Entry (Hochschulabsolvent), Mid (2-4 Jahre), Senior (5-8 Jahre)
+- **Out-of-Scope-Rollen:** Lead-Level (8+ Jahre, Executive Search), Support-Funktionen
+- **Sprache der CVs:** ~70% Deutsch, ~30% Englisch
+- **Typisches CV-Profil:** akademisch (oft Promotion oder MBA), Industrie-Erfahrung in mehreren Sektoren, Methoden-Toolkit (Strategie, Operations, Digital, M&A, Performance Improvement)
+
+### Volumen — Begründung
+- ~3.000 MA × ~12% Fluktuation/Wachstum = ~400 Hires/Jahr
+- × ~100 CVs/Hire (Branchen-Benchmark für Top-Strategieberatungen) = ~40.000 CVs/Jahr
+- **CVs pro Monat:** ~3.500 im Schnitt, ~6.000–8.000 in Saison-Spitzen (Campus-Recruiting Herbst/Frühjahr)
+- **Manuelle Bearbeitungszeit:** 10–15 Min (erfahrene Recruiter), bis zu 30 Min (Junior). Mittelwert ~15–20 Min.
+- **Aktueller Engpass:** Inkonsistenz im Profil-Format zwischen Recruitern + Verzögerung in Saison-Spitzen
+
+### ATS / System of Record
+- **System:** ATS mit API-Zugang (typische Beispiele: SAP SuccessFactors, Workday, Greenhouse, oder Eigenbau-Lösung)
+- **In v1:** Google Sheet als Stand-in. Spalten entsprechen einem typischen ATS-Profil-Schema. Migration zur ATS-API ist mechanisch — der letzte Pipeline-Schritt ist austauschbar.
+
+### Use-Case in einem Satz
+*"Sourcing-Recruiter in Strategieberatungen verarbeiten 3.500–8.000 CVs/Monat für Consultant-Rollen (Entry bis Senior) und brauchen standardisierte Profile in ihrem ATS, damit Hiring Manager über Standorte und Practice-Bereiche hinweg vergleichbar reviewen können."*
+
+---
+
+## 3. Warum dieser Build relevant ist
 
 Drei Eigenschaften machen diesen Build für Enterprise-Kontexte relevant:
 
-1. **API-zugängliches Zielsystem.** Output schreibt in ein ATS (in v1: Google Sheet als Stand-in für Personio, SAP SuccessFactors, Workday). Ohne API-zugängliches HR-System gibt es keine echte Wertschöpfung — daher zentral.
+1. **API-zugängliches Zielsystem.** Output schreibt in ein ATS. Ohne API-zugängliches HR-System gibt es keine echte Wertschöpfung — daher zentral.
 
 2. **Data Governance im Build.** Schema-Enforcement, kontrolliertes Vokabular für Skills, und Logik-Validation sorgen dafür, dass nur saubere, konsistente Daten ins Zielsystem geschrieben werden. Validation passiert at write-time, nicht at read-time — keine technische Schuld für nachgelagerte Systeme.
 
@@ -27,7 +60,25 @@ Drei Eigenschaften machen diesen Build für Enterprise-Kontexte relevant:
 
 ---
 
-## 3. Was v1 macht (Happy Path)
+## 4. ROI-Mathematik
+
+```
+3.500 CVs/Monat × 18 Min/CV     = 63.000 Min/Monat
+63.000 Min ÷ 60                  = 1.050 Std/Monat
+1.050 Std × 70 €/h (loaded cost) ≈ 73.500 €/Monat
+× 12                             ≈ 880.000 €/Jahr
+```
+
+**Annahmen (verteidigbar):**
+- 18 Min/CV: Mittelwert zwischen 10–15 (erfahren) und 30 (Junior)
+- 70 €/h: Loaded Cost (Brutto-Gehalt + Lohnnebenkosten + Overhead) für Mid-Level-Recruiter in Deutschland
+- 3.500 CVs/Monat: Branchen-Benchmark für Strategieberatung mit ~3.000 MA
+
+**Saison-Spitzen-Effekt:** Bei 6.000–8.000 CVs/Monat in Campus-Saison verdoppeln sich die Einsparungen — und der Engpass wird kritisch (Bearbeitungszeit verzögert sich, Kandidaten warten zu lange, Top-Profile gehen an Konkurrenz).
+
+---
+
+## 5. Was v1 macht (Happy Path)
 
 ```
 Input  →  Parsing   →  Extraction  →  Validation  →  Output
@@ -45,14 +96,16 @@ Input  →  Parsing   →  Extraction  →  Validation  →  Output
   - `name`
   - `current_role`
   - `total_years_experience`
+  - `career_level` (Entry / Mid / Senior)
   - `employment_history` (array: employer, role, start, end, responsibilities)
   - `education` (array)
-  - `skills` (array, gemappt auf Taxonomie)
+  - `industries` (array, gemappt auf Taxonomie)
+  - `functional_expertise` (array, gemappt auf Taxonomie)
+  - `methods_and_tools` (array, gemappt auf Taxonomie)
   - `languages` (array mit proficiency)
-  - `certifications`
 - **Validation:** Code-basiert.
   - Schema-Check (alle Pflichtfelder vorhanden, Typen korrekt)
-  - Taxonomie-Mapping für Skills (mappen oder als `unmapped` markieren)
+  - Taxonomie-Mapping (mappen oder als `unmapped` markieren)
   - Logik-Checks (Datum-Plausibilität, Employment-History ohne unmögliche Überlappungen, Total-Years vs. Summe der Stationen)
 - **Output:** JSON in Google Sheet, Stand-in für ATS-API.
 
@@ -60,27 +113,28 @@ Input  →  Parsing   →  Extraction  →  Validation  →  Output
 
 ---
 
-## 4. Out-of-Scope für v1
+## 6. Out-of-Scope für v1
 
 Scope-Disziplin ist Teil des Builds. Folgende Aspekte sind bewusst ausgelassen und in der v2-Roadmap dokumentiert:
 
 - **Multi-Page-PDF-Layout-Parsing.** Tabellen, Spalten, eingebettete Bilder werden ignoriert. Exotische Layouts → Parsing-Failure → Eintrag im Failure-Log.
-- **Skills-Inferenz aus Job-Descriptions.** *"Senior Backend Engineer"* triggert nicht *"Python, Java, AWS"*. Nur explizit genannte Skills werden extrahiert.
+- **Skills-/Expertise-Inferenz aus Job-Descriptions.** *"Senior Strategy Consultant in Pharma"* triggert nicht automatisch *"Pharma-Industrie + Strategie-Methode"* — nur explizit genannte Industries und Methods werden extrahiert.
 - **Photo-/Bewerbungs-Bild-Extraktion.** CV-Foto wird ignoriert.
 - **OCR auf gescannten PDFs.** Gescannter CV → Parsing-Failure.
 - **Multi-Sprach-Mischung in einem CV.** Eine Sprache pro CV in v1.
+- **Lead-Level-Profile (8+ Jahre).** Werden über Executive Search abgewickelt, nicht über diesen Workflow.
 - **Kein UI.** Input via n8n-Trigger-Folder oder Webhook. Output via Sheet-Zeile.
-- **Keine Anonymisierung / GDPR-Pseudonymisierung.** Synthetische CVs in der Eval-Phase. Reale Daten erst in v2 mit entsprechendem DSGVO-Setup.
+- **Keine Anonymisierung / DSGVO-Pseudonymisierung.** Synthetische CVs in der Eval-Phase. Reale Daten erst in v2 mit entsprechendem Setup.
 
 ---
 
-## 5. Definition of Done für v1
+## 7. Definition of Done für v1
 
 Ein Build 2 v1 ist fertig, wenn alle 7 Häkchen gesetzt sind:
 
 1. ☐ Eine CV-Datei (PDF, DOCX, Text, DE oder EN) wird in <2 Min in eine validierte Sheet-Zeile transformiert.
 2. ☐ Schema ist hart spezifiziert (JSON-Schema committed im Repo).
-3. ☐ Skills-Taxonomie existiert (~150–200 Einträge in YAML, committed).
+3. ☐ Taxonomie existiert (Industries, Functional Expertise, Methods/Tools, Languages — committed in YAML).
 4. ☐ Eval-Set existiert: 20 hand-gelabelte CVs, ground-truth Profile als JSON, committed.
 5. ☐ Eval-Script läuft und produziert eine Zahl (Field-Level F1 oder Exact-Match-Rate pro Feld-Kategorie).
 6. ☐ **Baseline-Zahl gemessen:** zero-shot LLM ohne Schema-Enforcement, ohne Taxonomie. Im README.
@@ -88,7 +142,7 @@ Ein Build 2 v1 ist fertig, wenn alle 7 Häkchen gesetzt sind:
 
 ---
 
-## 6. Qualitäts-Marker
+## 8. Qualitäts-Marker
 
 Drei Standards, die der Build erfüllen muss, bevor er als "fertig" gilt:
 
@@ -106,7 +160,7 @@ Konkrete Mathematik mit nachvollziehbaren Annahmen — nicht *"spart Zeit"*, son
 
 ---
 
-## 7. Per-Build-Disziplin
+## 9. Per-Build-Disziplin
 
 1. ✅ **SCOPE** — dieses Dokument
 2. ☐ **BUILD v1** — Hygiene only: Input-Validation, Schema-Enforcement, basic Retries. Happy Path zuerst.
@@ -117,7 +171,7 @@ Konkrete Mathematik mit nachvollziehbaren Annahmen — nicht *"spart Zeit"*, son
    - Leere/malformed Files, Unicode, gemischte Sprachen
    - Prompt-Injection im CV-Text
    - API-Failures (Timeouts, Rate Limits)
-   - Confidently-wrong Outputs (erfundene Skills)
+   - Confidently-wrong Outputs (erfundene Industries/Expertise)
 5. ☐ **EVAL** — Score-Output gegen Ground Truth.
 6. ☐ **v2 + MITIGATIONS** — Per Break: Fix, Mitigate, oder Accept-and-Document.
 7. ☐ **COST & LATENCY** — Cost per 1.000 Runs, p50/p95 Latency.
@@ -126,20 +180,18 @@ Konkrete Mathematik mit nachvollziehbaren Annahmen — nicht *"spart Zeit"*, son
 
 ---
 
-## 8. Konkrete nächste Aktion
+## 10. Konkrete nächste Aktion
 
-**Skills-Taxonomie erstellen.** YAML-Datei, ~150–200 Einträge, gegliedert in Kategorien:
+**Taxonomie erstellen.** YAML-Datei, gegliedert in Kategorien, die zur Beratungs-Persona passen:
 
-- `programming_languages`
-- `cloud_platforms`
-- `frameworks`
-- `databases`
-- `soft_skills`
-- `languages`
-- `certifications`
-- `domain_expertise`
+- `industries` (FinServ, Pharma, FMCG, Energy, Public Sector, Telco, Automotive, Retail, etc.)
+- `functional_expertise` (Strategy, Operations, M&A, Digital Transformation, Performance Improvement, Org Design, etc.)
+- `methods` (Lean Six Sigma, Design Thinking, Agile, Change Management, etc.)
+- `tools` (Excel, PowerPoint, Tableau, Power BI, Alteryx, etc.)
+- `languages` (mit Proficiency-Levels)
+- `education_credentials` (MBA, PhD, etc.)
 
-Committen als `taxonomy/skills.yaml`. ~30–60 Min Arbeit.
+Committen als `taxonomy/taxonomy.yaml`. ~30–60 Min Arbeit.
 
 **Reihenfolge danach:**
 
