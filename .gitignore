@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.local
+*.key
+credentials.json
+
+# Node
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build artifacts
+dist/
+build/
+
+# Real CV data — only synthetic data goes in repo
+data/real/
+*.real.pdf
+*.real.docx
