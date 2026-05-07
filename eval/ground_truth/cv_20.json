@@ -1,0 +1,123 @@
+{
+  "name": "Dr. Patricia Wells",
+  "email": "patricia.wells@example.com",
+  "phone": "+49 89 7766554",
+  "location": "Munich, Germany",
+  "current_role": "Senior Manager",
+  "total_years_experience": 12,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "McKinsey & Company",
+      "role": "Senior Manager",
+      "start_date": "2021-03",
+      "end_date": null,
+      "responsibilities": "Lead consulting engagements with revenue responsibility of EUR 4-6M per project. Manage teams of 8-12 consultants across two parallel engagements. Co-lead the German Healthcare Practice. Pharma strategy refresh, banking digital transformation, healthcare PMI, insurance market entry."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Associate",
+      "start_date": "2018-09",
+      "end_date": "2021-02",
+      "responsibilities": "Strategy and M&A engagements primarily in financial services and pharmaceuticals. Banking M&A diligence, pharma strategy refresh, asset management distribution strategy, insurance operating model redesign."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Senior Associate",
+      "start_date": "2016-09",
+      "end_date": "2018-08",
+      "responsibilities": "Engagements primarily in financial services and private equity. PE diligence projects, banking performance improvement, insurance digital transformation."
+    },
+    {
+      "employer": "Boston Consulting Group",
+      "role": "Associate",
+      "start_date": "2014-08",
+      "end_date": "2016-08",
+      "responsibilities": "Strategy and operations engagements primarily in consumer goods and retail. FMCG growth strategy, retail pricing strategy."
+    },
+    {
+      "employer": "London School of Economics",
+      "role": "Research Assistant",
+      "start_date": "2010-09",
+      "end_date": "2014-06",
+      "responsibilities": "PhD research on banking regulation and systemic risk. Co-authored three peer-reviewed publications."
+    }
+  ],
+  "education": [
+    {
+      "institution": "London School of Economics",
+      "credential": "PhD",
+      "field_of_study": "Economics, dissertation on Systemic Risk and Banking Regulation in the Post-Crisis Era",
+      "start_date": "2010",
+      "end_date": "2014"
+    },
+    {
+      "institution": "London School of Economics",
+      "credential": "Master of Science",
+      "field_of_study": "Economics (Distinction)",
+      "start_date": "2009",
+      "end_date": "2010"
+    },
+    {
+      "institution": "University of Cambridge",
+      "credential": "Bachelor of Arts",
+      "field_of_study": "Economics (First Class Honours, Adam Smith Prize)",
+      "start_date": "2006",
+      "end_date": "2009"
+    }
+  ],
+  "industries": [
+    "Pharmaceuticals",
+    "Banking",
+    "Healthcare",
+    "Insurance",
+    "Financial Services",
+    "Asset Management",
+    "Private Equity",
+    "Consumer Goods",
+    "Retail"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Mergers and Acquisitions",
+    "Digital Transformation",
+    "Post-Merger Integration",
+    "Performance Improvement",
+    "Organization Design",
+    "Growth Strategy",
+    "Pricing"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "Agile",
+    "OKR",
+    "Theory of Constraints",
+    "Total Quality Management"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "Power BI",
+    "SQL",
+    "Python",
+    "R",
+    "SAP",
+    "Salesforce"
+  ],
+  "languages": [
+    "English (Native)",
+    "German (C2)",
+    "French (C1)",
+    "Italian (B2)",
+    "Spanish (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt",
+    "Scrum Master PSM II",
+    "CFA Level III"
+  ]
+}

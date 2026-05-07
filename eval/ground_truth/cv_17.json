@@ -1,0 +1,111 @@
+{
+  "name": "Alexandre Dubois",
+  "email": "alexandre.dubois@example.com",
+  "phone": "+49 30 4488992",
+  "location": "Berlin, Germany",
+  "current_role": "Senior Consultant",
+  "total_years_experience": 9,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Strategy&",
+      "role": "Senior Consultant",
+      "start_date": "2022-04",
+      "end_date": null,
+      "responsibilities": "Multi-sector strategy and operations engagements. Banking digital transformation, pharmaceuticals market entry, industrial goods performance improvement, energy investment thesis, public sector digital service design, telecom pricing optimization."
+    },
+    {
+      "employer": "Strategy&",
+      "role": "Consultant",
+      "start_date": "2019-09",
+      "end_date": "2022-03",
+      "responsibilities": "Worked across multiple sectors. Insurance claims redesign, asset management distribution, automotive aftermarket strategy, logistics network optimization, defense procurement strategy."
+    },
+    {
+      "employer": "BNP Paribas Investment Banking",
+      "role": "Analyst",
+      "start_date": "2017-09",
+      "end_date": "2019-08",
+      "responsibilities": "M&A advisory primarily for industrial goods and consumer goods clients in France and Benelux."
+    }
+  ],
+  "education": [
+    {
+      "institution": "INSEAD, Fontainebleau",
+      "credential": "MBA",
+      "field_of_study": "Strategy",
+      "start_date": "2016",
+      "end_date": "2017"
+    },
+    {
+      "institution": "École Polytechnique",
+      "credential": "Master of Science",
+      "field_of_study": "Engineering Management",
+      "start_date": "2013",
+      "end_date": "2016"
+    },
+    {
+      "institution": "École Polytechnique",
+      "credential": "Master of Engineering",
+      "field_of_study": "Engineering",
+      "start_date": "2010",
+      "end_date": "2013"
+    }
+  ],
+  "industries": [
+    "Banking",
+    "Pharmaceuticals",
+    "Industrial Goods",
+    "Chemicals",
+    "Energy",
+    "Public Sector",
+    "Telecommunications",
+    "Insurance",
+    "Asset Management",
+    "Automotive",
+    "Logistics and Transportation",
+    "Defense",
+    "Consumer Goods"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Operations",
+    "Digital Transformation",
+    "Performance Improvement",
+    "Mergers and Acquisitions",
+    "Pricing",
+    "Procurement",
+    "Organization Design",
+    "Growth Strategy"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "Agile",
+    "Total Quality Management"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "SAP",
+    "Salesforce",
+    "Python",
+    "R",
+    "SQL"
+  ],
+  "languages": [
+    "French (Native)",
+    "English (C2)",
+    "German (C1)",
+    "Spanish (C1)",
+    "Italian (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt",
+    "Scrum Master PSM I",
+    "CFA Level II"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "name": "Tobias Engel",
+  "email": "tobias.engel@example.com",
+  "phone": "+49 711 2244668",
+  "location": "Stuttgart, Deutschland",
+  "current_role": "Senior Consultant",
+  "total_years_experience": 8,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Strategy&",
+      "role": "Senior Consultant",
+      "start_date": "2022-03",
+      "end_date": null,
+      "responsibilities": "Leitung von Senior-Workstreams in M&A-, Performance-Improvement- und Digital-Transformation-Projekten."
+    },
+    {
+      "employer": "Strategy&",
+      "role": "Consultant",
+      "start_date": "2019-09",
+      "end_date": "2022-02",
+      "responsibilities": null
+    },
+    {
+      "employer": "KPMG Strategy",
+      "role": "Junior Consultant",
+      "start_date": "2018-04",
+      "end_date": "2019-08",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "RWTH Aachen",
+      "credential": "Master of Science",
+      "field_of_study": "Industrial Engineering",
+      "start_date": "2016",
+      "end_date": "2018"
+    },
+    {
+      "institution": "RWTH Aachen",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Industrial Engineering",
+      "start_date": "2013",
+      "end_date": "2016"
+    }
+  ],
+  "industries": [
+    "Automotive",
+    "Telecommunications",
+    "Industrial Goods",
+    "Consumer Goods"
+  ],
+  "functional_expertise": [
+    "Mergers and Acquisitions",
+    "Performance Improvement",
+    "Digital Transformation",
+    "Strategy"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "Agile",
+    "Scrum"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "SQL"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "French (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Green Belt",
+    "Scrum Master (PSM I)"
+  ]
+}

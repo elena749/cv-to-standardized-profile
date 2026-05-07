@@ -1,0 +1,82 @@
+{
+  "name": "Marcus Bennett",
+  "email": "marcus.bennett@example.com",
+  "phone": "+49 69 444 5566",
+  "location": "Frankfurt, Germany",
+  "current_role": "Engagement Manager",
+  "total_years_experience": 8,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Bain & Company",
+      "role": "Engagement Manager",
+      "start_date": "2023-01",
+      "end_date": null,
+      "responsibilities": "Lead post-merger integration projects in financial services, with deal sizes between EUR 200M and EUR 1.5B. Manage teams of 4-8 consultants across two ongoing projects. Develop integration roadmaps spanning organization design, IT consolidation, and cultural alignment."
+    },
+    {
+      "employer": "Bain & Company",
+      "role": "Senior Consultant",
+      "start_date": "2020-08",
+      "end_date": "2022-12",
+      "responsibilities": "Banking strategy projects for two top-5 German retail banks. Digital transformation initiative for a leading insurance carrier. Managed quantitative analysis and client communication for project workstreams."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Associate",
+      "start_date": "2017-09",
+      "end_date": "2020-07",
+      "responsibilities": "Worked on private equity diligence engagements across financial services and consumer goods. Performance improvement project in asset management."
+    }
+  ],
+  "education": [
+    {
+      "institution": "INSEAD, Fontainebleau",
+      "credential": "MBA",
+      "field_of_study": "Finance and Strategy (Dean's List)",
+      "start_date": "2016",
+      "end_date": "2017"
+    },
+    {
+      "institution": "London School of Economics",
+      "credential": "Bachelor of Arts",
+      "field_of_study": "Economics (First Class Honours)",
+      "start_date": "2011",
+      "end_date": "2014"
+    }
+  ],
+  "industries": [
+    "Financial Services",
+    "Banking",
+    "Insurance",
+    "Private Equity",
+    "Consumer Goods",
+    "Asset Management"
+  ],
+  "functional_expertise": [
+    "Post-Merger Integration",
+    "Strategy",
+    "Digital Transformation",
+    "Organization Design",
+    "Performance Improvement"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "Agile"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "SQL"
+  ],
+  "languages": [
+    "English (Native)",
+    "German (C1)",
+    "French (B2)"
+  ],
+  "certifications": []
+}

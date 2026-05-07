@@ -1,0 +1,73 @@
+{
+  "name": "Sophie Werner",
+  "email": "sophie.werner@example.com",
+  "phone": "+49 30 9876543",
+  "location": "Berlin, Deutschland",
+  "current_role": null,
+  "total_years_experience": 0,
+  "career_level": "Entry",
+  "employment_history": [
+    {
+      "employer": "Simon-Kucher & Partners",
+      "role": "Praktikant Strategy",
+      "start_date": "2024-07",
+      "end_date": "2024-12",
+      "responsibilities": "Mitarbeit in Pricing-Projekten im Konsumgüterbereich. Datenanalyse mit Excel und Power BI."
+    },
+    {
+      "employer": "Porsche Consulting",
+      "role": "Praktikant Operations",
+      "start_date": "2023-03",
+      "end_date": "2023-07",
+      "responsibilities": "Unterstützung in Lean-Projekten in der Automobilindustrie. Erstellung von Prozessdiagrammen."
+    },
+    {
+      "employer": "Henkel",
+      "role": "Werkstudent Marketing",
+      "start_date": "2021-10",
+      "end_date": "2023-02",
+      "responsibilities": "Marktanalysen und Wettbewerbsbeobachtung im Konsumgüterbereich."
+    }
+  ],
+  "education": [
+    {
+      "institution": "ESCP Business School Berlin",
+      "credential": "Master of Science",
+      "field_of_study": "Management, Schwerpunkt Operations und Digital Transformation",
+      "start_date": "2023",
+      "end_date": "2025"
+    },
+    {
+      "institution": "Universität zu Köln",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Volkswirtschaftslehre",
+      "start_date": "2020",
+      "end_date": "2023"
+    }
+  ],
+  "industries": [
+    "Consumer Goods",
+    "Automotive"
+  ],
+  "functional_expertise": [
+    "Pricing",
+    "Operations",
+    "Marketing and Sales"
+  ],
+  "methods": [
+    "Design Thinking",
+    "Agile"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Power BI"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C1)",
+    "Italian (B2)",
+    "Spanish (B2)"
+  ],
+  "certifications": []
+}

@@ -1,0 +1,90 @@
+{
+  "name": "Aarav Mehta",
+  "email": "aarav.mehta@example.com",
+  "phone": "+49 152 6677889",
+  "location": "Frankfurt, Germany",
+  "current_role": null,
+  "total_years_experience": 7,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Boston Consulting Group",
+      "role": "Project Leader",
+      "start_date": "2022-06",
+      "end_date": "2024-12",
+      "responsibilities": "Led strategy engagements primarily for financial services and consumer goods clients across India and Southeast Asia. Banking transformation, retail growth strategy, telecom operating model redesign."
+    },
+    {
+      "employer": "Boston Consulting Group",
+      "role": "Senior Associate",
+      "start_date": "2019-08",
+      "end_date": "2022-05",
+      "responsibilities": "US-focused engagements in technology and pharmaceuticals. Digital transformation at a US healthcare provider. M&A integration for a software company acquisition."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Associate",
+      "start_date": "2017-09",
+      "end_date": "2019-07",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "The Wharton School, University of Pennsylvania",
+      "credential": "MBA",
+      "field_of_study": "Strategy and Finance",
+      "start_date": "2015",
+      "end_date": "2017"
+    },
+    {
+      "institution": "Indian Institute of Technology Bombay",
+      "credential": "Master of Engineering",
+      "field_of_study": "Mechanical Engineering (B.Tech.)",
+      "start_date": "2010",
+      "end_date": "2014"
+    }
+  ],
+  "industries": [
+    "Banking",
+    "Financial Services",
+    "Consumer Goods",
+    "Retail",
+    "Telecommunications",
+    "Technology",
+    "Software",
+    "Healthcare",
+    "Pharmaceuticals"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Growth Strategy",
+    "Digital Transformation",
+    "Operations",
+    "Post-Merger Integration",
+    "Mergers and Acquisitions",
+    "Organization Design"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "Agile"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Tableau",
+    "SQL",
+    "Python"
+  ],
+  "languages": [
+    "English (Native)",
+    "unmapped",
+    "unmapped",
+    "Mandarin (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Green Belt"
+  ],
+  "_comment": "Note on languages: This candidate has Hindi (Native) and German (B2). Hindi is not in v1 taxonomy. German below C1 is also not in v1 taxonomy (persona-based decision: a German consultancy rarely receives serious applications with German B2). Both are mapped to 'unmapped'. This is exactly the kind of edge case where v2 should add an aliases.yaml or expand the taxonomy."
+}

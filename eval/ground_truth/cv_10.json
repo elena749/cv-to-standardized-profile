@@ -1,0 +1,80 @@
+{
+  "name": "Daniel Foster",
+  "email": "daniel.foster@example.com",
+  "phone": "+49 151 9988776",
+  "location": "Berlin, Germany",
+  "current_role": null,
+  "total_years_experience": 0,
+  "career_level": "Entry",
+  "employment_history": [
+    {
+      "employer": "McKinsey & Company",
+      "role": "Summer Associate Intern",
+      "start_date": "2024-07",
+      "end_date": "2024-09",
+      "responsibilities": "Worked on a digital transformation project for a mid-sized industrial goods company. Conducted process maturity assessments."
+    },
+    {
+      "employer": "Mercedes-Benz Group",
+      "role": "Working Student Strategy",
+      "start_date": "2023-04",
+      "end_date": "2024-06",
+      "responsibilities": "Supported strategic planning team with market analyses and competitive benchmarking."
+    },
+    {
+      "employer": "Zalando",
+      "role": "Software Engineering Intern",
+      "start_date": "2022-07",
+      "end_date": "2022-09",
+      "responsibilities": "Backend development on the recommendation engine team using Python."
+    }
+  ],
+  "education": [
+    {
+      "institution": "TUM School of Management",
+      "credential": "Master of Science",
+      "field_of_study": "Management, Specialization Digital Transformation and Innovation",
+      "start_date": "2023",
+      "end_date": "2025"
+    },
+    {
+      "institution": "ETH Zürich",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Computer Science",
+      "start_date": "2020",
+      "end_date": "2023"
+    }
+  ],
+  "industries": [
+    "Industrial Goods",
+    "Automotive",
+    "Retail",
+    "Technology",
+    "Software"
+  ],
+  "functional_expertise": [
+    "Digital Transformation",
+    "Strategy",
+    "Innovation"
+  ],
+  "methods": [
+    "Agile",
+    "Scrum",
+    "Design Thinking"
+  ],
+  "tools": [
+    "Python",
+    "SQL",
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Power BI",
+    "Tableau",
+    "Jira",
+    "Confluence"
+  ],
+  "languages": [
+    "English (Native)",
+    "German (C1)"
+  ],
+  "certifications": []
+}

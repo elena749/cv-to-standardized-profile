@@ -1,0 +1,80 @@
+{
+  "name": "Julia Brandt",
+  "email": "julia.brandt@example.com",
+  "phone": "+49 221 1122334",
+  "location": "Köln, Deutschland",
+  "current_role": "Consultant",
+  "total_years_experience": 5,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Horváth & Partners",
+      "role": "Consultant",
+      "start_date": "2022-05",
+      "end_date": null,
+      "responsibilities": "Performance Improvement Projekte in der Industriegüter- und Maschinenbau-Branche. Aufbau und Implementierung von OKR-Frameworks bei zwei mittelständischen Industriekunden. Steuerung von Workshops mit Geschäftsführungen."
+    },
+    {
+      "employer": "Horváth & Partners",
+      "role": "Junior Consultant",
+      "start_date": "2020-09",
+      "end_date": "2022-04",
+      "responsibilities": "Mitarbeit in Operations-Projekten in der Chemieindustrie. Datenanalysen und Visualisierungen mit Power BI und Tableau."
+    },
+    {
+      "employer": "BCG",
+      "role": "Praktikant",
+      "start_date": "2019-04",
+      "end_date": "2019-09",
+      "responsibilities": "Strategieprojekt im Konsumgüterbereich."
+    }
+  ],
+  "education": [
+    {
+      "institution": "TU Berlin",
+      "credential": "Master of Science",
+      "field_of_study": "Wirtschaftsingenieurwesen, Schwerpunkt Operations Management",
+      "start_date": "2018",
+      "end_date": "2020"
+    },
+    {
+      "institution": "KIT Karlsruhe",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Wirtschaftsingenieurwesen",
+      "start_date": "2014",
+      "end_date": "2018"
+    }
+  ],
+  "industries": [
+    "Industrial Goods",
+    "Chemicals",
+    "Consumer Goods"
+  ],
+  "functional_expertise": [
+    "Performance Improvement",
+    "Operations",
+    "Strategy"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "OKR",
+    "Kanban"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Power BI",
+    "Jira",
+    "Confluence"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C1)",
+    "French (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Green Belt"
+  ]
+}

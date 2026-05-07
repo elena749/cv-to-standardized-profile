@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Andreas Vogel",
+  "email": "andreas.vogel@example.com",
+  "phone": "+49 40 5555123",
+  "location": "Hamburg, Deutschland",
+  "current_role": "Senior Manager",
+  "total_years_experience": 14,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Roland Berger",
+      "role": "Senior Manager",
+      "start_date": "2020-01",
+      "end_date": null,
+      "responsibilities": "Verantwortung für M&A-Projekte im Energiesektor mit Transaktionsvolumen über 500 Mio. EUR. Leitung von Teams aus bis zu 12 Beratern auf internationalen Projekten. Aufbau einer neuen Practice-Initiative im Bereich Sustainability und Energiewende."
+    },
+    {
+      "employer": "Roland Berger",
+      "role": "Manager",
+      "start_date": "2017-01",
+      "end_date": "2019-12",
+      "responsibilities": "Steuerung von Strategie- und Performance-Improvement-Projekten in der Energiewirtschaft. Entwicklung neuer Geschäftsmodelle für Versorger im Wandel zu erneuerbaren Energien."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Senior Consultant",
+      "start_date": "2014-04",
+      "end_date": "2016-12",
+      "responsibilities": "Strategieprojekte im Bereich Industriegüter und Maschinenbau. Post-Merger Integration für einen DAX-Konzern."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Consultant",
+      "start_date": "2011-09",
+      "end_date": "2014-03",
+      "responsibilities": "Mitarbeit in Performance-Improvement-Projekten in der Automobilindustrie."
+    }
+  ],
+  "education": [
+    {
+      "institution": "RWTH Aachen",
+      "credential": "PhD",
+      "field_of_study": "Strategische Anpassungsprozesse in der Energiewirtschaft (Dr. rer. pol., summa cum laude)",
+      "start_date": "2008",
+      "end_date": "2011"
+    },
+    {
+      "institution": "Karlsruhe Institute of Technology (KIT)",
+      "credential": "Diplom",
+      "field_of_study": "Wirtschaftsingenieurwesen, Schwerpunkt Energietechnik und Industriebetriebslehre",
+      "start_date": "2003",
+      "end_date": "2008"
+    }
+  ],
+  "industries": [
+    "Energy",
+    "Utilities",
+    "Industrial Goods",
+    "Automotive"
+  ],
+  "functional_expertise": [
+    "Mergers and Acquisitions",
+    "Sustainability",
+    "Strategy",
+    "Performance Improvement",
+    "Post-Merger Integration"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Balanced Scorecard",
+    "OKR"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "SAP"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "French (C1)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt",
+    "PRINCE2 Practitioner"
+  ]
+}

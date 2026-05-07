@@ -1,0 +1,99 @@
+{
+  "name": "Dr. Christine Bauer",
+  "email": "christine.bauer@example.com",
+  "phone": "+49 40 9988123",
+  "location": "Hamburg, Deutschland",
+  "current_role": "Senior Manager",
+  "total_years_experience": 13,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Bain & Company",
+      "role": "Senior Manager",
+      "start_date": "2021-01",
+      "end_date": null,
+      "responsibilities": "Leitung von Strategieprojekten im Konsumgüter- und Handelssektor. Verantwortung für drei Account-Beziehungen mit DAX-Kunden. Co-Lead der Sustainability-Initiative im deutschen Office. Aufbau und Coaching von Beraterteams (5-10 Personen pro Projekt)."
+    },
+    {
+      "employer": "Bain & Company",
+      "role": "Manager",
+      "start_date": "2018-04",
+      "end_date": "2020-12",
+      "responsibilities": "Strategie- und M&A-Projekte im Handel und Online-Bereich. Entwicklung neuer Geschäftsmodelle für Omnichannel-Strategien."
+    },
+    {
+      "employer": "Bain & Company",
+      "role": "Senior Consultant",
+      "start_date": "2015-09",
+      "end_date": "2018-03",
+      "responsibilities": "Performance-Improvement-Projekte in der Konsumgüterindustrie. M&A-Due-Diligence-Projekte im Bereich Private Equity."
+    },
+    {
+      "employer": "McKinsey & Company",
+      "role": "Consultant",
+      "start_date": "2013-04",
+      "end_date": "2015-08",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universität St. Gallen",
+      "credential": "PhD",
+      "field_of_study": "Strategische Erneuerung in reifen Konsumgütermärkten (Dr. rer. pol., magna cum laude)",
+      "start_date": "2010",
+      "end_date": "2013"
+    },
+    {
+      "institution": "Universität St. Gallen",
+      "credential": "Master of Science",
+      "field_of_study": "Strategy and International Management",
+      "start_date": "2008",
+      "end_date": "2010"
+    },
+    {
+      "institution": "ESB Reutlingen",
+      "credential": "Bachelor of Arts",
+      "field_of_study": "International Business Administration",
+      "start_date": "2005",
+      "end_date": "2009"
+    }
+  ],
+  "industries": [
+    "Consumer Goods",
+    "Retail",
+    "Private Equity"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Mergers and Acquisitions",
+    "Performance Improvement",
+    "Sustainability",
+    "Growth Strategy"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking",
+    "OKR",
+    "Theory of Constraints"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "SAP",
+    "Salesforce"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "French (C2)",
+    "Italian (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt",
+    "PRINCE2 Practitioner"
+  ]
+}

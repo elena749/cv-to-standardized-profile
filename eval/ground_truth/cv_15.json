@@ -1,0 +1,79 @@
+{
+  "name": "Markus Reinhardt",
+  "email": "markus.reinhardt@example.com",
+  "phone": "+49 221 5544998",
+  "location": "Köln, Deutschland",
+  "current_role": null,
+  "total_years_experience": 6,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Freshfields Bruckhaus Deringer",
+      "role": "Senior Associate",
+      "start_date": "2020-08",
+      "end_date": "2024-07",
+      "responsibilities": "M&A-Transaktionen für DAX- und MDAX-Unternehmen. Schwerpunkt: Banken- und Versicherungsrecht, regulierte Übernahmen. Mitwirkung an Transaktionen mit Volumen über 1 Mrd. EUR."
+    },
+    {
+      "employer": "Hengeler Mueller",
+      "role": "Associate",
+      "start_date": "2018-09",
+      "end_date": "2020-07",
+      "responsibilities": "Beratung bei Unternehmenstransaktionen und kartellrechtlichen Verfahren."
+    },
+    {
+      "employer": "Universität Köln, Lehrstuhl für Bankrecht",
+      "role": "Wissenschaftlicher Mitarbeiter",
+      "start_date": "2016-10",
+      "end_date": "2018-08",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "IESE Business School Barcelona",
+      "credential": "MBA",
+      "field_of_study": "Strategy and Finance (berufsbegleitend)",
+      "start_date": "2023-09",
+      "end_date": "2024-06"
+    },
+    {
+      "institution": "OLG Düsseldorf",
+      "credential": "Staatsexamen",
+      "field_of_study": "Zweites Juristisches Staatsexamen (vollbefriedigend)",
+      "start_date": "2016",
+      "end_date": "2018"
+    },
+    {
+      "institution": "Universität Köln",
+      "credential": "Staatsexamen",
+      "field_of_study": "Erstes Juristisches Staatsexamen (gut)",
+      "start_date": "2011",
+      "end_date": "2016"
+    }
+  ],
+  "industries": [
+    "Banking",
+    "Insurance",
+    "Pharmaceuticals",
+    "Financial Services"
+  ],
+  "functional_expertise": [
+    "Mergers and Acquisitions",
+    "Strategy",
+    "Risk Management"
+  ],
+  "methods": [],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Microsoft Word",
+    "think-cell"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "French (B2)"
+  ],
+  "certifications": []
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Pia Neumann",
+  "email": "pia.neumann@example.com",
+  "phone": "+49 176 5544332",
+  "location": "München, Deutschland",
+  "current_role": null,
+  "total_years_experience": 0,
+  "career_level": "Entry",
+  "employment_history": [
+    {
+      "employer": "BCG",
+      "role": "Praktikant Sustainability",
+      "start_date": "2024-09",
+      "end_date": "2025-02",
+      "responsibilities": "Mitarbeit in einem Sustainability-Projekt für einen Automobilhersteller. Analyse von Scope-3-Emissionen."
+    },
+    {
+      "employer": "Siemens",
+      "role": "Werkstudent Operations",
+      "start_date": "2022-10",
+      "end_date": "2024-08",
+      "responsibilities": "Unterstützung im Bereich Lean Manufacturing. Erstellung von Wertstromanalysen."
+    },
+    {
+      "employer": "Roland Berger",
+      "role": "Praktikant Strategie",
+      "start_date": "2022-04",
+      "end_date": "2022-07",
+      "responsibilities": "Strategieprojekt in der Energiewirtschaft."
+    }
+  ],
+  "education": [
+    {
+      "institution": "TUM München",
+      "credential": "Master of Science",
+      "field_of_study": "Sustainability and Operations Management, Schwerpunkt Kreislaufwirtschaft und nachhaltige Lieferketten",
+      "start_date": "2023",
+      "end_date": "2025"
+    },
+    {
+      "institution": "TU München",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Wirtschaftsingenieurwesen",
+      "start_date": "2020",
+      "end_date": "2023"
+    }
+  ],
+  "industries": [
+    "Automotive",
+    "Industrial Goods",
+    "Energy"
+  ],
+  "functional_expertise": [
+    "Sustainability",
+    "Operations",
+    "Supply Chain",
+    "Strategy"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Design Thinking"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Tableau",
+    "SAP",
+    "Python"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C1)",
+    "French (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Yellow Belt"
+  ]
+}

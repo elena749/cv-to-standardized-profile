@@ -1,0 +1,80 @@
+{
+  "name": "Olivia Carter",
+  "email": "olivia.carter@example.com",
+  "phone": "+49 89 7777222",
+  "location": "Munich, Germany",
+  "current_role": "Senior Associate",
+  "total_years_experience": 8,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Oliver Wyman",
+      "role": "Senior Associate",
+      "start_date": "2022-04",
+      "end_date": null,
+      "responsibilities": "Insurance strategy projects for tier-1 European carriers, focusing on life and pensions. Co-led a digital transformation engagement at a major German insurer. Mentor for two associates and one summer intern."
+    },
+    {
+      "employer": "Oliver Wyman",
+      "role": "Associate",
+      "start_date": "2019-09",
+      "end_date": "2022-03",
+      "responsibilities": "Risk management projects for retail and corporate banking clients. Quantitative modelling using Python and SQL. Drafted regulatory response documents under EU compliance frameworks."
+    },
+    {
+      "employer": "Deloitte Consulting",
+      "role": "Analyst",
+      "start_date": "2017-08",
+      "end_date": "2019-08",
+      "responsibilities": "Banking transformation projects for two UK-headquartered banks. Process redesign and operating model assessments."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Imperial College London",
+      "credential": "Master of Science",
+      "field_of_study": "Risk Management and Financial Engineering (Distinction)",
+      "start_date": "2016",
+      "end_date": "2017"
+    },
+    {
+      "institution": "University of Cambridge",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Mathematics (First Class Honours)",
+      "start_date": "2013",
+      "end_date": "2016"
+    }
+  ],
+  "industries": [
+    "Insurance",
+    "Banking",
+    "Financial Services"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Digital Transformation",
+    "Risk Management",
+    "Performance Improvement",
+    "Organization Design"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Agile"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Python",
+    "R",
+    "SQL",
+    "Tableau",
+    "Microsoft PowerPoint"
+  ],
+  "languages": [
+    "English (Native)",
+    "German (C1)",
+    "Spanish (B2)"
+  ],
+  "certifications": [
+    "FRM (Financial Risk Manager)"
+  ]
+}

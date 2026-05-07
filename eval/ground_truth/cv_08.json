@@ -1,0 +1,91 @@
+{
+  "name": "Stefan Klein",
+  "email": "stefan.klein@example.com",
+  "phone": "+49 30 1115566",
+  "location": "Berlin, Deutschland",
+  "current_role": "Manager",
+  "total_years_experience": 11,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "A.T. Kearney",
+      "role": "Manager",
+      "start_date": "2021-03",
+      "end_date": null,
+      "responsibilities": "Leitung von Supply-Chain-Projekten in der Konsumgüterindustrie. Entwicklung von Resilienz-Strategien für globale Lieferketten nach COVID-19. Verantwortung für Projektakquise und Kundenpflege bei zwei Account-Teams."
+    },
+    {
+      "employer": "A.T. Kearney",
+      "role": "Senior Consultant",
+      "start_date": "2018-02",
+      "end_date": "2021-02",
+      "responsibilities": "Operations- und Performance-Improvement-Projekte im Handelssektor. Entwicklung von Procurement-Optimierungsmodellen für DAX-Kunden."
+    },
+    {
+      "employer": "BCG",
+      "role": "Consultant",
+      "start_date": "2014-10",
+      "end_date": "2018-01",
+      "responsibilities": "Strategie- und Transformationsprojekte im Telekommunikationssektor. Internes Wissensmanagement-Initiative."
+    },
+    {
+      "employer": "BCG",
+      "role": "Praktikant",
+      "start_date": "2013-04",
+      "end_date": "2013-09",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "ESMT Berlin",
+      "credential": "MBA",
+      "field_of_study": "Strategy and Innovation",
+      "start_date": "2012",
+      "end_date": "2014"
+    },
+    {
+      "institution": "Universität Mannheim",
+      "credential": "Diplom",
+      "field_of_study": "Wirtschaftswissenschaften, Schwerpunkte Strategisches Management und Logistik",
+      "start_date": "2007",
+      "end_date": "2012"
+    }
+  ],
+  "industries": [
+    "Consumer Goods",
+    "Retail",
+    "Telecommunications"
+  ],
+  "functional_expertise": [
+    "Supply Chain",
+    "Operations",
+    "Performance Improvement",
+    "Procurement",
+    "Strategy",
+    "Digital Transformation"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Theory of Constraints",
+    "Kanban",
+    "Design Thinking"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "Alteryx",
+    "SAP",
+    "Salesforce"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "Spanish (C1)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt"
+  ]
+}

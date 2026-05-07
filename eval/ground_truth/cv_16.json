@@ -1,0 +1,87 @@
+{
+  "name": "Katharina Maier",
+  "email": "katharina.maier@example.com",
+  "phone": "+49 89 1234999",
+  "location": "München, Deutschland",
+  "current_role": "Senior Consultant",
+  "total_years_experience": 8,
+  "career_level": "Senior",
+  "employment_history": [
+    {
+      "employer": "Roland Berger",
+      "role": "Senior Consultant",
+      "start_date": "2022-09",
+      "end_date": null,
+      "responsibilities": "Wiedereinstieg nach Elternzeit in Teilzeit (80%). Operations- und Supply-Chain-Projekte in der Industriegüterindustrie. Leitung eines Lean-Implementation-Projekts bei einem Maschinenbauer."
+    },
+    {
+      "employer": "Roland Berger",
+      "role": "Senior Consultant",
+      "start_date": "2018-04",
+      "end_date": "2018-12",
+      "responsibilities": "Strategie- und Operations-Projekte in der Automobilindustrie. Verantwortung für Workstreams in M&A-Projekten."
+    },
+    {
+      "employer": "Roland Berger",
+      "role": "Consultant",
+      "start_date": "2014-09",
+      "end_date": "2018-03",
+      "responsibilities": "Performance-Improvement-Projekte. Operations-Projekte im Maschinenbau und in der Chemieindustrie."
+    },
+    {
+      "employer": "BCG",
+      "role": "Praktikant",
+      "start_date": "2013-04",
+      "end_date": "2013-08",
+      "responsibilities": null
+    }
+  ],
+  "education": [
+    {
+      "institution": "TU München",
+      "credential": "Master of Science",
+      "field_of_study": "Wirtschaftsingenieurwesen, Schwerpunkt Operations Research",
+      "start_date": "2012",
+      "end_date": "2014"
+    },
+    {
+      "institution": "TU München",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Wirtschaftsingenieurwesen",
+      "start_date": "2009",
+      "end_date": "2012"
+    }
+  ],
+  "industries": [
+    "Industrial Goods",
+    "Automotive",
+    "Chemicals"
+  ],
+  "functional_expertise": [
+    "Operations",
+    "Supply Chain",
+    "Performance Improvement",
+    "Strategy",
+    "Mergers and Acquisitions"
+  ],
+  "methods": [
+    "Lean Six Sigma",
+    "Theory of Constraints",
+    "Kanban"
+  ],
+  "tools": [
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "think-cell",
+    "Tableau",
+    "SAP"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "Spanish (B2)"
+  ],
+  "certifications": [
+    "Lean Six Sigma Black Belt"
+  ]
+}

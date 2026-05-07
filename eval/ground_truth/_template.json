@@ -1,0 +1,46 @@
+{
+  "_comment": "Ground truth template for hand-labeling. Copy this file to cv_XX.json and fill in based on the corresponding CV. Use null for fields that cannot be extracted from the CV. Use empty arrays [] for list fields where no entries apply. All taxonomy fields must use the exact canonical strings from taxonomy/taxonomy.yaml.",
+  "name": "<full name as stated>",
+  "email": "<email or null>",
+  "phone": "<phone or null>",
+  "location": "<city, country or null>",
+  "current_role": "<current title or null if between roles>",
+  "total_years_experience": 0,
+  "career_level": "Entry | Mid | Senior | unmapped | null",
+  "employment_history": [
+    {
+      "employer": "<employer name>",
+      "role": "<role title>",
+      "start_date": "<YYYY or YYYY-MM or YYYY-MM-DD or null>",
+      "end_date": "<YYYY or YYYY-MM or YYYY-MM-DD or null>",
+      "responsibilities": "<short summary or null>"
+    }
+  ],
+  "education": [
+    {
+      "institution": "<institution name>",
+      "credential": "<must be from taxonomy enum>",
+      "field_of_study": "<subject or null>",
+      "start_date": "<YYYY or YYYY-MM or null>",
+      "end_date": "<YYYY or YYYY-MM or null>"
+    }
+  ],
+  "industries": [
+    "<must be from taxonomy enum, or 'unmapped'>"
+  ],
+  "functional_expertise": [
+    "<must be from taxonomy enum, or 'unmapped'>"
+  ],
+  "methods": [
+    "<must be from taxonomy enum, or 'unmapped'>"
+  ],
+  "tools": [
+    "<must be from taxonomy enum, or 'unmapped'>"
+  ],
+  "languages": [
+    "<must be from taxonomy enum, or 'unmapped'>"
+  ],
+  "certifications": [
+    "<free-text, no enum>"
+  ]
+}

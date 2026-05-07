@@ -1,0 +1,79 @@
+{
+  "name": "Mira Schulz",
+  "email": "mira.schulz@example.com",
+  "phone": "+49 162 2233445",
+  "location": "Frankfurt am Main, Deutschland",
+  "current_role": null,
+  "total_years_experience": 0,
+  "career_level": "Entry",
+  "employment_history": [
+    {
+      "employer": "Bain & Company",
+      "role": "Praktikant Strategy",
+      "start_date": "2024-09",
+      "end_date": "2025-02",
+      "responsibilities": "Mitarbeit in Strategieprojekten für eine deutsche Großbank. Entwicklung eines Marktmodells für Asset Management Produkte."
+    },
+    {
+      "employer": "Allianz Global Investors",
+      "role": "Werkstudent Risk",
+      "start_date": "2023-04",
+      "end_date": "2024-08",
+      "responsibilities": "Quantitative Risikoanalysen für Asset Management. Entwicklung von Reporting-Dashboards in Power BI."
+    },
+    {
+      "employer": "Goldman Sachs",
+      "role": "Praktikant Investment Banking",
+      "start_date": "2022-07",
+      "end_date": "2022-09",
+      "responsibilities": "Pitch-Vorbereitung und Marktanalysen im M&A-Team."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Goethe-Universität Frankfurt",
+      "credential": "Master of Science",
+      "field_of_study": "Finance and Information Management, Schwerpunkte Corporate Finance und Risk Management",
+      "start_date": "2023",
+      "end_date": "2025"
+    },
+    {
+      "institution": "Universität Heidelberg",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Wirtschaftsmathematik",
+      "start_date": "2020",
+      "end_date": "2023"
+    }
+  ],
+  "industries": [
+    "Banking",
+    "Asset Management",
+    "Insurance",
+    "Financial Services"
+  ],
+  "functional_expertise": [
+    "Strategy",
+    "Risk Management",
+    "Mergers and Acquisitions"
+  ],
+  "methods": [],
+  "tools": [
+    "Python",
+    "R",
+    "SQL",
+    "Microsoft Excel",
+    "Microsoft PowerPoint",
+    "Power BI",
+    "Tableau"
+  ],
+  "languages": [
+    "German (Native)",
+    "English (C2)",
+    "Spanish (C1)",
+    "French (B2)"
+  ],
+  "certifications": [
+    "CFA Level I (passed, 2024)",
+    "Bloomberg Market Concepts (2023)"
+  ]
+}

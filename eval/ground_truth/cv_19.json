@@ -1,0 +1,45 @@
+{
+  "name": "Tim Becker",
+  "email": null,
+  "phone": null,
+  "location": "Berlin, Deutschland",
+  "current_role": null,
+  "total_years_experience": 0,
+  "career_level": "Entry",
+  "employment_history": [
+    {
+      "employer": "unbenannt (Startup)",
+      "role": "Praktikant Marketing",
+      "start_date": null,
+      "end_date": null,
+      "responsibilities": "3 Monate Praktikum im Marketing-Bereich."
+    },
+    {
+      "employer": "unbenanntes Steuerbüro",
+      "role": "Praktikant",
+      "start_date": null,
+      "end_date": null,
+      "responsibilities": "2 Monate Praktikum."
+    }
+  ],
+  "education": [
+    {
+      "institution": "FU Berlin",
+      "credential": "Bachelor of Science",
+      "field_of_study": "Betriebswirtschaftslehre",
+      "start_date": null,
+      "end_date": "2024"
+    }
+  ],
+  "industries": [],
+  "functional_expertise": [
+    "Marketing and Sales"
+  ],
+  "methods": [],
+  "tools": [],
+  "languages": [
+    "German (Native)",
+    "unmapped"
+  ],
+  "certifications": []
+}
