@@ -1,0 +1,154 @@
+# Taxonomy for CV-to-Standardized-Profile
+# Controlled vocabulary for the extraction pipeline.
+# Every extracted value must map to exactly one entry here, or be marked as "unmapped".
+#
+# Scope: Management/strategy consulting profiles.
+# Language: English (international consulting standard).
+#
+# v1 sizing: ~80-110 entries total. v2 will expand based on actual CV distribution
+# from the eval set and red-team session.
+
+industries:
+  # Sectors where applicants have professional experience.
+  - Financial Services
+  - Banking
+  - Insurance
+  - Asset Management
+  - Private Equity
+  - Pharmaceuticals
+  - Healthcare
+  - MedTech
+  - Chemicals
+  - Automotive
+  - Industrial Goods
+  - Energy
+  - Utilities
+  - Consumer Goods
+  - Retail
+  - Telecommunications
+  - Media and Entertainment
+  - Public Sector
+  - Defense
+  - Technology
+  - Software
+  - Logistics and Transportation
+  # Out of scope for v1: Real Estate, Aerospace, Mining, Agriculture, Education, Non-Profit.
+  # Will be added in v2 based on actual CV distribution.
+
+functional_expertise:
+  # What applicants do across industries.
+  - Strategy
+  - Corporate Strategy
+  - Growth Strategy
+  - Operations
+  - Performance Improvement
+  - Mergers and Acquisitions
+  - Post-Merger Integration
+  - Digital Transformation
+  - Organization Design
+  - Change Management
+  - Marketing and Sales
+  - Supply Chain
+  - Pricing
+  - Procurement
+  - Risk Management
+  - Sustainability
+  - Innovation
+
+methods:
+  # Methodologies and frameworks applicants apply or have listed in their CV.
+  - Lean Six Sigma
+  - Design Thinking
+  - Agile
+  - Scrum
+  - Kanban
+  - Waterfall
+  - SAFe
+  - OKR
+  - Balanced Scorecard
+  - Theory of Constraints
+  - Total Quality Management
+  - BPMN
+  - ITIL
+  - PRINCE2
+
+tools:
+  # Software applicants list as proficiencies.
+  - Microsoft Excel
+  - Microsoft PowerPoint
+  - Microsoft Word
+  - think-cell
+  - Tableau
+  - Power BI
+  - Alteryx
+  - SAP
+  - Salesforce
+  - Jira
+  - Confluence
+  - SQL
+  - Python
+  - R
+
+languages:
+  # Languages with proficiency levels.
+  # Format: "<Language> (<Level>)"
+  # Levels follow CEFR: B2, C1, C2, Native.
+  # Note on asymmetry: For applications to a German-speaking consulting firm,
+  # German below C1 is rare in practice and excluded from v1. Foreign languages
+  # include B2 because international applicants frequently report B2 as a
+  # secondary language alongside their native language.
+
+  # German — required strong proficiency for DE-based consulting roles
+  - German (Native)
+  - German (C2)
+  - German (C1)
+
+  # English — international consulting standard
+  - English (Native)
+  - English (C2)
+  - English (C1)
+  - English (B2)
+
+  # French
+  - French (Native)
+  - French (C2)
+  - French (C1)
+  - French (B2)
+
+  # Spanish
+  - Spanish (Native)
+  - Spanish (C2)
+  - Spanish (C1)
+  - Spanish (B2)
+
+  # Italian
+  - Italian (Native)
+  - Italian (C2)
+  - Italian (C1)
+  - Italian (B2)
+
+  # Mandarin
+  - Mandarin (Native)
+  - Mandarin (C2)
+  - Mandarin (C1)
+  - Mandarin (B2)
+
+  # Portuguese
+  - Portuguese (Native)
+  - Portuguese (C2)
+  - Portuguese (C1)
+  - Portuguese (B2)
+
+education_credentials:
+  # Degree types relevant for consulting profiles.
+  - PhD
+  - MBA
+  - Executive MBA
+  - Master of Science
+  - Master of Arts
+  - Master of Engineering
+  - Master of Laws (LL.M.)
+  - Bachelor of Science
+  - Bachelor of Arts
+  - Diplom
+  - Staatsexamen
