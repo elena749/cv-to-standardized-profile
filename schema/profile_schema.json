@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/elena749/cv-to-standardized-profile/schema/profile.schema.json",
+  "title": "Standardized Candidate Profile",
+  "description": "Output schema for the CV-to-Standardized-Profile pipeline. Maps an unstructured CV onto a controlled, structured profile suitable for ATS ingestion. Only `name` is required; all other fields may be empty arrays or null when not present in the source CV.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full name of the applicant as stated in the CV. If no name can be extracted, the entire profile is rejected (FAILURE_LOG entry)."
+    },
+    "current_role": {
+      "type": ["string", "null"],
+      "description": "Current job title as stated in the CV. Null if applicant is between roles or no current role is identifiable."
+    },
+    "total_years_experience": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 60,
+      "description": "Total years of professional experience. Calculated by the LLM from employment_history. Null if not derivable."
+    },
+    "career_level": {
+      "type": ["string", "null"],
+      "enum": ["Entry", "Mid", "Senior", "unmapped", null],
+      "description": "Career level inferred from total_years_experience: Entry (0-2 years), Mid (2-4 years), Senior (5-8 years). Lead-level (8+ years) is out of scope for this pipeline."
+    },
+    "employment_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["employer", "role"],
+        "properties": {
+          "employer": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of the employing organization."
+          },
+          "role": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Job title at this employer."
+          },
+          "start_date": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?(-(0[1-9]|[12][0-9]|3[01]))?$",
+            "description": "Start date in ISO 8601 format. Year alone (YYYY), year-month (YYYY-MM), or full date (YYYY-MM-DD) accepted."
+          },
+          "end_date": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?(-(0[1-9]|[12][0-9]|3[01]))?$",
+            "description": "End date in ISO 8601 format, or null if current."
+          },
+          "responsibilities": {
+            "type": ["string", "null"],
+            "description": "Free-text summary of responsibilities at this role."
+          }
+        }
+      },
+      "description": "List of past and current employments. Empty array if no employment history is extractable (e.g., student CVs)."
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["institution", "credential"],
+        "properties": {
+          "institution": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of the educational institution."
+          },
+          "credential": {
+            "type": "string",
+            "enum": [
+              "PhD",
+              "MBA",
+              "Executive MBA",
+              "Master of Science",
+              "Master of Arts",
+              "Master of Engineering",
+              "Master of Laws (LL.M.)",
+              "Bachelor of Science",
+              "Bachelor of Arts",
+              "Diplom",
+              "Staatsexamen",
+              "unmapped"
+            ],
+            "description": "Type of credential. Must map to one entry in the taxonomy. Use 'unmapped' if no mapping is possible."
+          },
+          "field_of_study": {
+            "type": ["string", "null"],
+            "description": "Subject area, e.g., 'Mechanical Engineering', 'Economics'."
+          },
+          "start_date": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?$"
+          },
+          "end_date": {
+            "type": ["string", "null"],
+            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?$"
+          }
+        }
+      },
+      "description": "List of educational qualifications. Empty array allowed."
+    },
+    "industries": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Financial Services",
+          "Banking",
+          "Insurance",
+          "Asset Management",
+          "Private Equity",
+          "Pharmaceuticals",
+          "Healthcare",
+          "MedTech",
+          "Chemicals",
+          "Automotive",
+          "Industrial Goods",
+          "Energy",
+          "Utilities",
+          "Consumer Goods",
+          "Retail",
+          "Telecommunications",
+          "Media and Entertainment",
+          "Public Sector",
+          "Defense",
+          "Technology",
+          "Software",
+          "Logistics and Transportation",
+          "unmapped"
+        ]
+      },
+      "description": "Sectors where the applicant has professional experience. Each entry must map to taxonomy/taxonomy.yaml -> industries."
+    },
+    "functional_expertise": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Strategy",
+          "Corporate Strategy",
+          "Growth Strategy",
+          "Operations",
+          "Performance Improvement",
+          "Mergers and Acquisitions",
+          "Post-Merger Integration",
+          "Digital Transformation",
+          "Organization Design",
+          "Change Management",
+          "Marketing and Sales",
+          "Supply Chain",
+          "Pricing",
+          "Procurement",
+          "Risk Management",
+          "Sustainability",
+          "Innovation",
+          "unmapped"
+        ]
+      },
+      "description": "Functional areas of expertise. Each entry must map to taxonomy/taxonomy.yaml -> functional_expertise."
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Lean Six Sigma",
+          "Design Thinking",
+          "Agile",
+          "Scrum",
+          "Kanban",
+          "Waterfall",
+          "SAFe",
+          "OKR",
+          "Balanced Scorecard",
+          "Theory of Constraints",
+          "Total Quality Management",
+          "BPMN",
+          "ITIL",
+          "PRINCE2",
+          "unmapped"
+        ]
+      },
+      "description": "Methodologies and frameworks the applicant lists. Each entry must map to taxonomy/taxonomy.yaml -> methods."
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Microsoft Excel",
+          "Microsoft PowerPoint",
+          "Microsoft Word",
+          "think-cell",
+          "Tableau",
+          "Power BI",
+          "Alteryx",
+          "SAP",
+          "Salesforce",
+          "Jira",
+          "Confluence",
+          "SQL",
+          "Python",
+          "R",
+          "unmapped"
+        ]
+      },
+      "description": "Software tools the applicant lists. Each entry must map to taxonomy/taxonomy.yaml -> tools."
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "German (Native)",
+          "German (C2)",
+          "German (C1)",
+          "English (Native)",
+          "English (C2)",
+          "English (C1)",
+          "English (B2)",
+          "French (Native)",
+          "French (C2)",
+          "French (C1)",
+          "French (B2)",
+          "Spanish (Native)",
+          "Spanish (C2)",
+          "Spanish (C1)",
+          "Spanish (B2)",
+          "Italian (Native)",
+          "Italian (C2)",
+          "Italian (C1)",
+          "Italian (B2)",
+          "Mandarin (Native)",
+          "Mandarin (C2)",
+          "Mandarin (C1)",
+          "Mandarin (B2)",
+          "Portuguese (Native)",
+          "Portuguese (C2)",
+          "Portuguese (C1)",
+          "Portuguese (B2)",
+          "unmapped"
+        ]
+      },
+      "description": "Languages with proficiency levels. Each entry must map to taxonomy/taxonomy.yaml -> languages."
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Free-text certifications (e.g., 'PMP', 'CFA Level II'). No taxonomy enforcement in v1; can be added in v2 if eval shows demand."
+    }
+  }
+}
