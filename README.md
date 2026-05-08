@@ -6,6 +6,17 @@ See SCOPE.md for what this build does, what's out of scope, and definition of do
 
 Architecture, eval results, and ROI math will land here once v1 ships.
 
+## Schema
+
+This pipeline maps unstructured CVs onto a controlled, structured profile. Two schema variants are maintained side by side:
+
+| File | Purpose |
+|---|---|
+| [`schema/profile.schema.json`](schema/profile.schema.json) | Canonical specification — full JSON Schema Draft-07 with `$schema`, `$id`, descriptions, format constraints, and minimal `required` (only `name`). Single source of truth for the data structure. |
+| [`schema/profile.strict.schema.json`](schema/profile.strict.schema.json) | Runtime variant adapted for **OpenAI Structured Outputs Strict Mode**: all properties marked `required`, optional fields typed as `["type", "null"]`, format/pattern/minLength keywords removed, no `$schema`/`$id`. Used by the pipeline's extraction LLM node. |
+
+Both describe the same data structure. The runtime variant exists because OpenAI Strict Mode imposes additional constraints beyond standard JSON Schema; keeping the canonical variant clean preserves it as documentation independent of any single LLM provider.
+
 ## Architecture Decisions
 
 ### Why text-extraction path (not direct vision-to-LLM)
