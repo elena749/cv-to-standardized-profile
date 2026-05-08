@@ -10,29 +10,52 @@ Dieses Dokument hält fest, wie ich beim Hand-Labeling Entscheidungen treffe, da
 - **Studienprojekte und Masterarbeiten zählen NICHT** zu Industries, auch wenn sie thematisch in einem Sektor sind.
 - **Multi-Sektor-CVs:** alle erwähnten Industries werden gezählt, auch wenn nur ein einzelnes Projekt in dem Sektor stattfand.
 
-## Functional Expertise
+## Functional Expertise — strenge Auslegung
 
-- Wird nur gezählt, wenn der Bewerber konkrete Tätigkeiten beschreibt, die der Expertise zuzuordnen sind. Generischer Job-Titel wie *"Senior Consultant"* reicht nicht — es muss aus der Tätigkeitsbeschreibung hervorgehen.
-- *"Strategy"* und *"Corporate Strategy"* / *"Growth Strategy"* werden separat gezählt, wenn beides erkennbar ist. Wenn nur generisch *"Strategie"* erwähnt → nur *"Strategy"*.
+- Werden NUR gezählt, wenn der Bewerber **operativ** in dem Bereich gearbeitet hat
+- NICHT abzuleiten aus:
+  - Erwähnungen verwandter Begriffe (*"regulierte Übernahmen"* zählt nicht als *"Risk Management"*)
+  - MBA-Schwerpunkten oder Studiengängen (*"Strategy"* im MBA ≠ Strategy als Functional Expertise)
+  - Branchenkenntnis allein (jemand der für Banken arbeitet, hat nicht automatisch *"Banking"* als Functional Expertise — das wäre Industry, nicht Functional)
+- *"Strategy"* und *"Corporate Strategy"* / *"Growth Strategy"* werden separat gezählt, wenn beides erkennbar ist
+- Wenn nur generisch *"Strategie"* erwähnt → nur *"Strategy"*
 
-## Career Level
+## Career Level (Standard-Pfad)
 
 - **Entry:** 0-2 Jahre Vollzeit-Erfahrung, Hochschulabsolvent oder erste feste Stelle
 - **Mid:** 2-4 Jahre Vollzeit-Erfahrung
 - **Senior:** 5-8 Jahre Vollzeit-Erfahrung
-- **Praktika und Werkstudent-Zeiten zählen NICHT** zu den Erfahrungsjahren.
-- **Bei Lücken (Elternzeit, Sabbatical):** zählen auch nicht zu den Erfahrungsjahren.
+- **Lead-Level (8+ Jahre):** out-of-scope, läuft über Executive Search
+- **Praktika und Werkstudent-Zeiten zählen NICHT** zu den Erfahrungsjahren
+- **Bei Lücken (Elternzeit, Sabbatical):** zählen auch nicht zu den Erfahrungsjahren
+
+## Career Level für Career-Switcher
+
+Career-Switcher (z.B. Anwalt → Beratung) werden basierend auf **Erfahrung im Ziel-Beruf (Beratung)** eingestuft, nicht auf gesamte Berufserfahrung.
+
+- 0-2 Jahre Beratungserfahrung (egal wie viele Jahre andere Erfahrung) → Entry/Mid (typischerweise Mid mit MBA)
+- 2-4 Jahre Beratungserfahrung → Mid
+- 5-8 Jahre Beratungserfahrung → Senior
+
+**Begründung:** Recruiter und Hiring Manager evaluieren Career-Level nach passendem Funktions-Kontext, nicht nach Total-Years.
+
+**Wichtig:** `total_years_experience` bleibt aber die **Gesamtzahl** (alle Jahre, inklusive vorherige Berufe). Nur `career_level` folgt der Ziel-Beruf-Logik.
 
 ## Total Years Experience
 
 - Berechnet aus `employment_history`, ohne Praktika und Werkstudent-Zeiten, ohne Lücken
 - Bei laufenden Positionen: bis heute (Mai 2026)
-- Auf volle Jahre gerundet (5,4 Jahre → 5; 5,8 Jahre → 6)
+- **Mathematisches Runden** auf volle Jahre: 5,4 Jahre → 5; 5,5 Jahre → 6; 8,5 Jahre → 9
+
+## Teilzeit und Erfahrungsjahre
+
+- Teilzeit-Tätigkeiten zählen als **Kalenderzeit**, nicht als FTE-Äquivalent
+- **Begründung:** Standard in HR-Systemen, im CV wird Kalenderzeit dokumentiert. Beispiel: 4 Jahre Teilzeit (80%) zählen als 4 Jahre, nicht als 3,2 Jahre
 
 ## Employment History
 
 - Praktika und Werkstudent-Tätigkeiten WERDEN in `employment_history` aufgenommen (zur Vollständigkeit)
-- Sie zählen aber nicht zu `total_years_experience` und nicht zur Career-Level-Berechnung
+- Sie zählen aber **nicht** zu `total_years_experience` und **nicht** zur Career-Level-Berechnung
 - Lücken (Elternzeit, Sabbatical) werden NICHT als employment_history-Einträge aufgeführt — sie sind Lücken zwischen Einträgen
 
 ## Responsibilities
@@ -85,6 +108,12 @@ Dieses Dokument hält fest, wie ich beim Hand-Labeling Entscheidungen treffe, da
 - *"Power BI"* mit Leerzeichen
 - *"R"* nur wenn explizit als Tool/Sprache erwähnt — nicht aus *"R&D"* ableiten
 
+## Skill-Levels für Tools
+
+- **Skill-Levels werden in v1 NICHT erfasst** (z.B. *"Python (advanced)"* → nur *"Python"*)
+- **Begründung:** Self-Assessments sind unzuverlässig (jeder bewertet sich anders) und nicht standardisiert
+- **v2-Roadmap:** Levels nur erfassen, wenn auf standardisierten Credentials basierend (z.B. CEFR für Sprachen, Vendor-Zertifizierungen für Tools)
+
 ## Languages
 
 - CEFR-Level direkt übernehmen wenn angegeben (z.B. *"C2"* → *"German (C2)"*)
@@ -92,19 +121,27 @@ Dieses Dokument hält fest, wie ich beim Hand-Labeling Entscheidungen treffe, da
 - *"Verhandlungssicher"* → C2
 - *"Fließend"* → C1
 - *"Gut"* → B2
-- *"Grundkenntnisse"* → nicht aufnehmen (zu schwach für Beratungs-Persona)
+- *"Grundkenntnisse"* / *"ein bisschen [Sprache]"* → nicht aufnehmen oder als unmapped
+- **German (B2) und niedriger:** sind nicht in v1-Taxonomie (Persona-Entscheidung: deutsche Beratung erhält selten ernsthafte Bewerbungen mit Deutsch unter C1) → mappen auf `unmapped`
+- Sprachen außerhalb der Taxonomie (Hindi, Niederländisch, etc.) → mappen auf `unmapped`
 
 ## Certifications
 
 - Frei-Text, kein Mapping
 - Belt-Stufen ausschreiben: *"Lean Six Sigma Green Belt"* statt *"LSS GB"*
-- Nur Zertifikate die konkret abgeschlossen sind (nicht *"in Vorbereitung"* oder *"Candidate"*)
+- **Nur abgeschlossene Zertifikate** — nicht *"in Vorbereitung"* oder *"Candidate"* (z.B. *"CFA Level II Candidate"* zählt NICHT, *"CFA Level I (passed)"* zählt)
 
 ## Email, Phone, Location
 
 - **Email:** exakt wie im CV stehend, lower-case wenn ambig
 - **Phone:** im CV-Format belassen (Format variiert international)
 - **Location:** *"Stadt, Land"* wenn beides angegeben, sonst nur Stadt
+
+## Akademische Noten
+
+- **Noten werden in v1 NICHT erfasst** (auch nicht *"summa cum laude"*, *"First Class Honours"*, *"Distinction"*, GPA-Zahlen)
+- **Begründung:** Noten sind regional unterschiedlich kodiert (DE: 1.0-5.0, UK: First/Upper Second, US: 4.0-Skala) — Normalisierung ist v2-Aufwand
+- **Im README dokumentiert:** für Beratungs-Recruiting sind Noten ein primärer Filter (Top-3 Firmen screenen Top-Dezil) — daher v2-Roadmap-Item
 
 ## Datums-Format
 
@@ -129,4 +166,13 @@ Dieses Dokument hält fest, wie ich beim Hand-Labeling Entscheidungen treffe, da
 
 ## Änderungs-Log dieses Dokuments
 
-- **2026-05-07:** Initial version basierend auf cv_01-Labeling.
+- **2026-05-07 (initial):** Initial version basierend auf cv_01-Labeling
+- **2026-05-07 (review pass):** Ergänzungen aus cv_02-cv_18 Review:
+  - Functional Expertise strenge Auslegung (cv_15: keine Halluzinationen aus verwandten Begriffen)
+  - Career-Switcher-Convention (Sichtweise B: Erfahrung im Ziel-Beruf zählt)
+  - Teilzeit als Kalenderzeit
+  - Mathematisches Runden (8,5 → 9)
+  - Skill-Levels für Tools out-of-scope für v1
+  - Akademische Noten out-of-scope für v1
+  - CFA Candidate weglassen, CFA passed aufnehmen
+  - German B2 und niedriger als unmapped

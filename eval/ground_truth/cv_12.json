@@ -4,22 +4,22 @@
   "phone": "+49 211 6677889",
   "location": "Düsseldorf, Deutschland",
   "current_role": "Consultant",
-  "total_years_experience": 4,
-  "career_level": "Mid",
+  "total_years_experience": 5,
+  "career_level": "Senior",
   "employment_history": [
     {
       "employer": "Bain & Company",
       "role": "Consultant",
       "start_date": "2023-05",
       "end_date": null,
-      "responsibilities": "Pricing-Strategie für FMCG-Konzern. Wachstumsstrategie für Pharmahersteller. Co-Lead Workstream zur Modernisierung der Kernbankenarchitektur."
+      "responsibilities": "Pricing-Strategie für FMCG-Konzern (dynamische Pricing-Strategie, Datenanalyse und Modellbildung). Wachstumsstrategie für mittelgroßen Pharmahersteller mit Fokus auf Zentral- und Osteuropa."
     },
     {
       "employer": "Bain & Company",
       "role": "Associate Consultant",
       "start_date": "2021-08",
       "end_date": "2023-04",
-      "responsibilities": null
+      "responsibilities": "Co-Lead eines Workstreams zur Modernisierung der Kernbankenarchitektur einer regionalen Sparkasse (Digital Transformation Banking, 2022)."
     },
     {
       "employer": "Bain & Company",

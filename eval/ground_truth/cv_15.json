@@ -5,7 +5,7 @@
   "location": "Köln, Deutschland",
   "current_role": null,
   "total_years_experience": 6,
-  "career_level": "Senior",
+  "career_level": "Mid",
   "employment_history": [
     {
       "employer": "Freshfields Bruckhaus Deringer",
@@ -59,9 +59,7 @@
     "Financial Services"
   ],
   "functional_expertise": [
-    "Mergers and Acquisitions",
-    "Strategy",
-    "Risk Management"
+    "Mergers and Acquisitions"
   ],
   "methods": [],
   "tools": [
