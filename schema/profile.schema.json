@@ -1,61 +1,93 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/elena749/cv-to-standardized-profile/schema/profile.schema.json",
-  "title": "Standardized Candidate Profile",
-  "description": "Output schema for the CV-to-Standardized-Profile pipeline. Maps an unstructured CV onto a controlled, structured profile suitable for ATS ingestion. Only `name` is required; all other fields may be empty arrays or null when not present in the source CV.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["name"],
+  "required": [
+    "name",
+    "current_role",
+    "total_years_experience",
+    "career_level",
+    "employment_history",
+    "education",
+    "industries",
+    "functional_expertise",
+    "methods",
+    "tools",
+    "languages",
+    "certifications"
+  ],
   "properties": {
     "name": {
       "type": "string",
-      "minLength": 1,
-      "description": "Full name of the applicant as stated in the CV. If no name can be extracted, the entire profile is rejected (FAILURE_LOG entry)."
+      "description": "Full name of the applicant as stated in the CV. If no name can be extracted, set to empty string and the entire profile will be rejected downstream."
     },
     "current_role": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Current job title as stated in the CV. Null if applicant is between roles or no current role is identifiable."
     },
     "total_years_experience": {
-      "type": ["integer", "null"],
-      "minimum": 0,
-      "maximum": 60,
-      "description": "Total years of professional experience. Calculated by the LLM from employment_history. Null if not derivable."
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Total years of full-time professional experience, excluding internships and gaps. Mathematically rounded (8.5 -> 9). Null if not derivable."
     },
     "career_level": {
-      "type": ["string", "null"],
-      "enum": ["Entry", "Mid", "Senior", "unmapped", null],
-      "description": "Career level inferred from total_years_experience: Entry (0-2 years), Mid (2-4 years), Senior (5-8 years). Lead-level (8+ years) is out of scope for this pipeline."
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Entry",
+        "Mid",
+        "Senior",
+        "unmapped",
+        null
+      ],
+      "description": "Career level: Entry (0-2 years), Mid (2-4 years), Senior (5+ years). For career-switchers, base on experience in target profession (consulting), not total years."
     },
     "employment_history": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["employer", "role"],
+        "required": [
+          "employer",
+          "role",
+          "start_date",
+          "end_date",
+          "responsibilities"
+        ],
         "properties": {
           "employer": {
             "type": "string",
-            "minLength": 1,
             "description": "Name of the employing organization."
           },
           "role": {
             "type": "string",
-            "minLength": 1,
             "description": "Job title at this employer."
           },
           "start_date": {
-            "type": ["string", "null"],
-            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?(-(0[1-9]|[12][0-9]|3[01]))?$",
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Start date in ISO 8601 format. Year alone (YYYY), year-month (YYYY-MM), or full date (YYYY-MM-DD) accepted."
           },
           "end_date": {
-            "type": ["string", "null"],
-            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?(-(0[1-9]|[12][0-9]|3[01]))?$",
-            "description": "End date in ISO 8601 format, or null if current."
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "End date in ISO 8601 format. Null if position is current."
           },
           "responsibilities": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Free-text summary of responsibilities at this role."
           }
         }
@@ -67,11 +99,16 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["institution", "credential"],
+        "required": [
+          "institution",
+          "credential",
+          "field_of_study",
+          "start_date",
+          "end_date"
+        ],
         "properties": {
           "institution": {
             "type": "string",
-            "minLength": 1,
             "description": "Name of the educational institution."
           },
           "credential": {
@@ -90,19 +127,28 @@
               "Staatsexamen",
               "unmapped"
             ],
-            "description": "Type of credential. Must map to one entry in the taxonomy. Use 'unmapped' if no mapping is possible."
+            "description": "Type of credential. Must map to one entry in the controlled vocabulary. Use 'unmapped' if no mapping is possible."
           },
           "field_of_study": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Subject area, e.g., 'Mechanical Engineering', 'Economics'."
           },
           "start_date": {
-            "type": ["string", "null"],
-            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?$"
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Start date as YYYY or YYYY-MM."
           },
           "end_date": {
-            "type": ["string", "null"],
-            "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2]))?$"
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "End date as YYYY or YYYY-MM."
           }
         }
       },
@@ -138,7 +184,7 @@
           "unmapped"
         ]
       },
-      "description": "Sectors where the applicant has professional experience. Each entry must map to taxonomy/taxonomy.yaml -> industries."
+      "description": "Sectors where the applicant has professional experience (including internships). Each entry must map to the controlled vocabulary."
     },
     "functional_expertise": {
       "type": "array",
@@ -165,7 +211,7 @@
           "unmapped"
         ]
       },
-      "description": "Functional areas of expertise. Each entry must map to taxonomy/taxonomy.yaml -> functional_expertise."
+      "description": "Functional areas of operationally performed expertise. Do not derive from related terms, MBA specializations, or industry knowledge alone."
     },
     "methods": {
       "type": "array",
@@ -189,7 +235,7 @@
           "unmapped"
         ]
       },
-      "description": "Methodologies and frameworks the applicant lists. Each entry must map to taxonomy/taxonomy.yaml -> methods."
+      "description": "Methodologies and frameworks the applicant lists."
     },
     "tools": {
       "type": "array",
@@ -213,7 +259,7 @@
           "unmapped"
         ]
       },
-      "description": "Software tools the applicant lists. Each entry must map to taxonomy/taxonomy.yaml -> tools."
+      "description": "Software tools the applicant lists."
     },
     "languages": {
       "type": "array",
@@ -250,15 +296,14 @@
           "unmapped"
         ]
       },
-      "description": "Languages with proficiency levels. Each entry must map to taxonomy/taxonomy.yaml -> languages."
+      "description": "Languages with proficiency levels (Native or CEFR B2/C1/C2). German B2 and below are not mapped in v1."
     },
     "certifications": {
       "type": "array",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "type": "string"
       },
-      "description": "Free-text certifications (e.g., 'PMP', 'CFA Level II'). No taxonomy enforcement in v1; can be added in v2 if eval shows demand."
+      "description": "Free-text completed certifications (e.g., 'CFA Level III', 'PMP'). Exclude 'Candidate' or 'in preparation' status."
     }
   }
 }
