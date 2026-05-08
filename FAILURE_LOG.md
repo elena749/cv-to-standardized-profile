@@ -52,3 +52,36 @@ Hand-validation of all 20 ground truth files. Updated `LABELING_CONVENTIONS.md` 
 
 ### Generalizes to (most important)
 **AI-pre-labeling of ground truth is a valid technique, but only if a human verifies — not durchklickt.** The cost of skipping verification: ground truth itself becomes unreliable, eval results become circular, downstream comparison loses meaning.
+
+---
+
+## 2026-05-08 — First End-to-End Pipeline Run: System Prompt Constraint Leakage
+
+### What I tried
+First successful end-to-end pipeline run with cv_05.pdf (Mira Schulz, Berufseinsteigerin) through Webhook → Extract from File → OpenAI Structured Outputs (Strict Mode, gpt-4o, temperature=0).
+
+### What broke
+Pipeline executed successfully (schema-valid JSON, 191 output tokens, no errors). However, **employment_history was empty** despite the CV listing three positions: Praktikant Strategy at Bain & Company, Werkstudent at Allianz Global Investors, and Praktikant at Goldman Sachs.
+
+Other fields were correct: education (2 entries), industries (3 entries derived from internships), tools (all 7), languages (all 4), certifications (both). Name, current_role, total_years_experience, career_level all matched ground truth.
+
+### Root cause
+**Implicit constraint propagation in the system prompt.** The original system prompt contained the rule:
+
+> "For total_years_experience: count only full-time professional experience, excluding internships, working student roles..."
+
+The LLM generalized "excluding internships" beyond its intended scope (total_years_experience only) to also exclude internships from employment_history — even though the schema and intent expected internships to appear there.
+
+### Fix
+Rewrote the system prompt with **field-scoped rules**: each constraint now explicitly names the field it applies to (NAME, EMPLOYMENT_HISTORY, FUNCTIONAL_EXPERTISE, etc.). Added an explicit override for employment_history: *"INCLUDE ALL employment entries including internships and working student roles. The 'exclude internships' rule from total_years_experience does NOT apply here."*
+
+### Generalizes to (most important)
+**LLMs treat system prompts as a global rule space, not as field-scoped instructions.** Any constraint stated without an explicit field scope will leak across fields, especially when fields share semantic territory (employment_history and total_years_experience both relate to "professional experience"). 
+
+**Mitigations:**
+1. Every rule in a system prompt must be prefixed with the field it governs.
+2. When a rule excludes something from one field, explicitly state whether it applies to related fields.
+3. For pipelines extracting structured data with multiple related fields, field-scoped prompting is a hard requirement, not a style preference.
+4. v2-roadmap candidate: split extraction into multiple LLM calls per field-cluster (employment-cluster, education-cluster, taxonomy-cluster), eliminating cross-field leakage entirely.
+
+This is the same class of failure as **AI-pre-labeling liberal interpretation** documented earlier — LLMs default to generous, plausible interpretations when constraints are ambiguous. The mitigation pattern is the same: be explicit, be scoped, be unambiguous.
