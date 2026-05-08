@@ -6,19 +6,36 @@ See SCOPE.md for what this build does, what's out of scope, and definition of do
 
 Architecture, eval results, and ROI math will land here once v1 ships.
 
-## Architecture Decisions for v1
+## Architecture Decisions
 
-### Why n8n instead of custom code
-- **Pro:** legible to non-developers (Langdock customer fit)
-- **Pro:** every step is visible as a workflow node
-- **Con:** less testable than dedicated code
-- **v2-trigger:** when validation logic exceeds 50 lines, extract to FastAPI
+### Why text-extraction path (not direct vision-to-LLM)
+- 8 of 20 CVs in eval set are DOCX — no LLM accepts DOCX directly, 
+  so a text-extraction step is required regardless
+- Keeping all formats on one pipeline gives one debugging surface
+- Cost difference vs. vision is marginal at this volume in 2026 
+  (~$30/month at 3,500 CVs)
+- v2-roadmap: hybrid approach — simple layouts via text, complex 
+  layouts (multi-column, embedded tables) via vision API based on 
+  eval-driven trigger
 
-### Why Google Sheets instead of ATS API
-- **v1 reason:** mock for demo without ATS access
-- **Production:** replaced by REST-API call to ATS (SAP SuccessFactors, Personio)
-- **Architecture impact:** zero — only the last node changes
+### Why GPT-4o (not gpt-4o-mini, not Claude)
+- Structured extraction is core use case for GPT-4o
+- OpenAI Structured Outputs guarantee schema compliance >99%
+- Smaller models lose 3-5pp accuracy on edge cases 
+  (career-switcher, multi-sector)
+- Build 1 used OpenAI — provider consistency
+- v2-roadmap: A/B test against Claude Sonnet 4.6 
+  (leads on extraction accuracy benchmarks at 97.6%)
 
-### Why single LLM provider
-- **v1 reason:** structured extraction is one task, one model fit
-- **v2-trigger:** when cost dominates Bill or when fallback resilience is needed
+### Why n8n (not custom Python service)
+- Workflow is the legible artifact — Pascal/Lennart see every step
+- Langdock customers use workflow tools, not custom code
+- Validation in n8n Code-Node is appropriate for single pipeline
+- v2-trigger: extract validation to FastAPI microservice when 
+  2+ pipelines share validation logic
+
+### Why Google Sheets as ATS stand-in
+- v1 mock for demo without real ATS access
+- Production architecture: replaced by REST-API call to ATS 
+  (SAP SuccessFactors, Personio)
+- Architecture impact of v1 → production: only the last node changes
