@@ -50,3 +50,11 @@ Both describe the same data structure. The runtime variant exists because OpenAI
 - Production architecture: replaced by REST-API call to ATS 
   (SAP SuccessFactors, Personio)
 - Architecture impact of v1 → production: only the last node changes
+
+## Pending before eval phase
+
+- [ ] Re-review all 20 ground_truth JSONs against updated LABELING_CONVENTIONS (functional_expertise: liberal with role evidence — internships count when role title clearly reflects function)
+- [ ] Document convention-drift pattern in FAILURE_LOG (discovered through first end-to-end pipeline run)
+- [ ] Instrument pipeline (cost, latency, token tracking per LLM call)
+- [ ] Run full pipeline against eval set (Field-Level F1, baseline comparison)
+- [ ] BREAK session: adversarial inputs (10-15 stress CVs)
