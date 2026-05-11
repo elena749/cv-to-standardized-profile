@@ -20,81 +20,90 @@ Both describe the same data structure. The runtime variant exists because OpenAI
 ## Architecture Decisions
 
 ### Why text-extraction path (not direct vision-to-LLM)
-- 8 of 20 CVs in eval set are DOCX — no LLM accepts DOCX directly, 
-  so a text-extraction step is required regardless
+- 8 of 20 CVs in eval set are DOCX — no LLM accepts DOCX directly in the n8n OpenAI node (PDF only as of May 2026), so a text-extraction step is required regardless
 - Keeping all formats on one pipeline gives one debugging surface
-- Cost difference vs. vision is marginal at this volume in 2026 
-  (~$30/month at 3,500 CVs)
-- v2-roadmap: hybrid approach — simple layouts via text, complex 
-  layouts (multi-column, embedded tables) via vision API based on 
-  eval-driven trigger
+- Cost difference vs. vision is marginal at this volume in 2026 (~$30/month at 3,500 CVs)
+- Reproducibility better than vision-LLM (~95% vs ~93% across repeat runs on same input)
+- v2-roadmap: hybrid approach — simple layouts via text, complex layouts (multi-column, embedded tables) via vision API based on eval-driven trigger
 
 ### Why GPT-4o (not gpt-4o-mini, not Claude)
 - Structured extraction is core use case for GPT-4o
 - OpenAI Structured Outputs guarantee schema compliance >99%
-- Smaller models lose 3-5pp accuracy on edge cases 
-  (career-switcher, multi-sector)
+- Smaller models lose 3-5pp accuracy on edge cases (career-switcher, multi-sector)
 - Build 1 used OpenAI — provider consistency
-- v2-roadmap: A/B test against Claude Sonnet 4.6 
-  (leads on extraction accuracy benchmarks at 97.6%)
+- v2-roadmap: A/B test against Claude Sonnet 4.6 (leads on extraction accuracy benchmarks at 97.6%)
 
 ### Why n8n (not custom Python service)
 - Workflow is the legible artifact — Pascal/Lennart see every step
 - Langdock customers use workflow tools, not custom code
 - Validation in n8n Code-Node is appropriate for single pipeline
-- v2-trigger: extract validation to FastAPI microservice when 
-  2+ pipelines share validation logic
+- v2-trigger: extract validation to FastAPI microservice when 2+ pipelines share validation logic
 
-### Why CloudConvert for DOCX in v1 (not self-hosted, not AWS Textract)
+### Why DOCX is deferred to v2 (not in v1)
 
-- 8 of 20 CVs in the eval set are DOCX. n8n Cloud's standard Code Nodes disallow `require('mammoth')`, so DOCX-to-text conversion requires either a self-hosted runtime or an external service.
-- **v1 choice:** CloudConvert. Free tier (25 conversions/day) is sufficient for eval, native n8n node exists, REST API is documented. Synthetic test data means no real PII flows through a US vendor.
-- **v2 trigger:** as soon as the pipeline processes real candidate data, swap to AWS Textract Frankfurt for EU data residency with standard enterprise DPA.
-- **v3 trigger:** if the customer's DPO rejects US-vendor regional deployments (US CLOUD Act exposure), migrate to self-hosted n8n + mammoth on EU infrastructure, or AWS European Sovereign Cloud, or STACKIT.
-- **Architecture invariant:** all three tiers use the same HTTP-Request shape. Provider swap is a credential change, not a workflow change.
+v1 processes PDF and TXT only — 14 of 20 eval CVs. DOCX (the remaining 8) is deferred. Four conversion paths were evaluated:
+
+| Option | Setup | Compliance | Status |
+|---|---|---|---|
+| OpenAI Responses API native DOCX (Feb 2026) | Medium | US vendor processes file | n8n's OpenAI node currently exposes PDF only as file input |
+| AWS Textract Frankfurt | Medium-high | EU data residency, US CLOUD Act applies | Production-ready, v2 candidate |
+| AWS European Sovereign Cloud Textract (Jan 2026) | High (enterprise onboarding) | Full EU sovereignty, US CLOUD Act excluded | v3 candidate for regulated industries |
+| CloudConvert | Low | US vendor only | Synthetic demo only |
+
+**v1 decision:** ship PDF + TXT pipeline. Defer DOCX until either (a) n8n exposes DOCX in the OpenAI Responses node, or (b) a customer's compliance tier determines which AWS Textract variant fits. The DOCX path is a compliance choice, not a technical gap — it should be made when the customer is identified, not pre-empted by v1 defaults.
+
+**Build phasing rationale:** Phase 1 (happy-path end-to-end) ships PDF + TXT. Phase 2 (eval against ground truth) measures the existing pipeline's quality. Phase 4 (format expansion) extends to DOCX with data-driven compliance-tier selection. Expanding formats before Phase 2 measurement means building on an unmeasured foundation.
+
+**Architecture invariant:** all four DOCX paths plug into the existing pipeline at the same point (between the file-type router and the OpenAI extraction node). Adding DOCX in v2 is additive, not a rebuild.
 
 ### Why Google Sheets as ATS stand-in
 - v1 mock for demo without real ATS access
-- Production architecture: replaced by REST-API call to ATS 
-  (SAP SuccessFactors, Personio)
+- Production architecture: replaced by REST-API call to ATS (SAP SuccessFactors, Personio)
 - Architecture impact of v1 → production: only the last node changes
-
-## Pending before eval phase
-
-- [ ] Re-review all 20 ground_truth JSONs against updated LABELING_CONVENTIONS (functional_expertise: liberal with role evidence — internships count when role title clearly reflects function)
-- [ ] Document convention-drift pattern in FAILURE_LOG (discovered through first end-to-end pipeline run)
-- [ ] Instrument pipeline (cost, latency, token tracking per LLM call)
-- [ ] Run full pipeline against eval set (Field-Level F1, baseline comparison)
-- [ ] BREAK session: adversarial inputs (10-15 stress CVs)
 
 ## Compliance and Sovereignty
 
-CV extraction touches PII, so the deployment tier matters. v1 uses CloudConvert (US-based SaaS) for DOCX-to-text conversion. This is appropriate for the synthetic eval set but not for production with real candidate data.
+CV extraction touches PII, so the deployment tier matters. v1 uses synthetic eval data only and does not yet process DOCX (see Architecture Decisions).
 
 | Compliance need | v1 (this build) | v2 (production-ready) | v3 (fully sovereign) |
 |---|---|---|---|
-| Synthetic data, demo | CloudConvert (US) ✓ | — | — |
-| EU data residency, US vendor acceptable | CloudConvert Enterprise with DPA | AWS Textract Frankfurt region | — |
-| US CLOUD Act exclusion required | — | — | Self-hosted mammoth on EU infrastructure, AWS European Sovereign Cloud (GA Jan 2026), or STACKIT (Schwarz-Gruppe) |
+| Synthetic data, demo | OpenAI direct ✓ | — | — |
+| EU data residency, US vendor acceptable | OpenAI EU region | AWS Textract Frankfurt for DOCX | — |
+| US CLOUD Act exclusion required | — | — | Self-hosted n8n + mammoth on EU infrastructure, AWS European Sovereign Cloud (GA Jan 2026), or STACKIT (Schwarz-Gruppe) |
 
 Customer chooses the tier based on their procurement constraints. German Mittelstand consulting firms typically accept v2 with US-vendor DPA. Regulated industries (banking, insurance, government, healthcare) require v3.
 
-The pipeline architecture supports all three tiers by isolating DOCX conversion behind an HTTP node — swapping providers is a configuration change, not an architectural rebuild.
+The pipeline architecture supports all three tiers by isolating each external service behind a stable interface — swapping providers is a configuration change, not an architectural rebuild.
 
 ## Security and Governance Note
 
 Data flows in v1:
 
-1. **Inbound:** CV file (DOCX/PDF/TXT) via webhook POST to n8n Cloud (hosted by n8n GmbH, Berlin, EU)
-2. **DOCX conversion:** DOCX files only — uploaded to CloudConvert (US) for text extraction. Files retained per CloudConvert retention policy (24h on free tier). PDF and TXT files do not leave the n8n Cloud environment.
-3. **Extraction:** plaintext sent to OpenAI API. OpenAI does not train on API data; logs retained 30 days for abuse monitoring.
-4. **Output:** structured profile written to Google Sheets (Google Cloud, EU region available).
+1. **Inbound:** CV file (PDF or TXT) via webhook POST to n8n Cloud (hosted by n8n GmbH, Berlin, EU)
+2. **Extraction:** plaintext sent to OpenAI API. OpenAI does not train on API data; logs retained 30 days for abuse monitoring
+3. **Output:** structured profile written to Google Sheets (Google Cloud, EU region available)
 
 What a DPO would object to in v1:
-- CloudConvert is US-based — for production with real PII, requires either Enterprise DPA or migration to EU-resident alternative (see Compliance and Sovereignty section)
-- OpenAI is US-based — production deployments would route via OpenAI EU data residency option (announced 2024, generally available 2026) or Azure OpenAI Service in EU region with DPA
+- OpenAI is US-based — production deployments would route via OpenAI EU data residency option or Azure OpenAI Service in EU region with DPA
+- Google Sheets is a mock — production replaces this with direct ATS REST-API call
 
 Mitigations already in place:
 - Synthetic eval data only — no real candidate PII processed
 - Sheet contains no resume PDFs themselves, only extracted structured data
 - Pipeline is stateless — no candidate data persists in n8n beyond the active execution
+
+## Pending before eval phase
+
+- [ ] Re-review all 20 ground_truth JSONs against updated LABELING_CONVENTIONS (functional_expertise: liberal with role evidence — internships count when role title clearly reflects function)
+- [ ] Document convention-drift pattern in FAILURE_LOG (constraint leakage discovered through first end-to-end pipeline run)
+- [ ] Instrument pipeline (cost, latency, token tracking per LLM call)
+- [ ] Run full pipeline against eval set — 14 of 20 CVs (PDF + TXT only in v1)
+- [ ] Compute Field-Level F1 with baseline comparison (zero-shot GPT-4o without schema)
+- [ ] BREAK session: adversarial inputs (10-15 stress CVs)
+
+## Deferred to v2
+
+- [ ] DOCX support — compliance-driven path selection (see Architecture Decisions)
+- [ ] Email-trigger for inbound CV files (currently webhook-only)
+- [ ] REST-API output to ATS (currently Google Sheets mock)
+- [ ] Multi-provider LLM routing (currently OpenAI-only)

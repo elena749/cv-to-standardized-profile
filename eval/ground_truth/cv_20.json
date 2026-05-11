@@ -3,13 +3,13 @@
   "email": "patricia.wells@example.com",
   "phone": "+49 89 7766554",
   "location": "Munich, Germany",
-  "current_role": "Senior Manager",
+  "current_role": "Engagement Manager",
   "total_years_experience": 12,
   "career_level": "Senior",
   "employment_history": [
     {
       "employer": "McKinsey & Company",
-      "role": "Senior Manager",
+      "role": "Engagement Manager",
       "start_date": "2021-03",
       "end_date": null,
       "responsibilities": "Lead consulting engagements with revenue responsibility of EUR 4-6M per project. Manage teams of 8-12 consultants across two parallel engagements. Co-lead the German Healthcare Practice. Pharma strategy refresh, banking digital transformation, healthcare PMI, insurance market entry."
@@ -23,7 +23,7 @@
     },
     {
       "employer": "McKinsey & Company",
-      "role": "Senior Associate",
+      "role": "Associate",
       "start_date": "2016-09",
       "end_date": "2018-08",
       "responsibilities": "Engagements primarily in financial services and private equity. PE diligence projects, banking performance improvement, insurance digital transformation."
