@@ -45,6 +45,14 @@ Both describe the same data structure. The runtime variant exists because OpenAI
 - v2-trigger: extract validation to FastAPI microservice when 
   2+ pipelines share validation logic
 
+### Why CloudConvert for DOCX in v1 (not self-hosted, not AWS Textract)
+
+- 8 of 20 CVs in the eval set are DOCX. n8n Cloud's standard Code Nodes disallow `require('mammoth')`, so DOCX-to-text conversion requires either a self-hosted runtime or an external service.
+- **v1 choice:** CloudConvert. Free tier (25 conversions/day) is sufficient for eval, native n8n node exists, REST API is documented. Synthetic test data means no real PII flows through a US vendor.
+- **v2 trigger:** as soon as the pipeline processes real candidate data, swap to AWS Textract Frankfurt for EU data residency with standard enterprise DPA.
+- **v3 trigger:** if the customer's DPO rejects US-vendor regional deployments (US CLOUD Act exposure), migrate to self-hosted n8n + mammoth on EU infrastructure, or AWS European Sovereign Cloud, or STACKIT.
+- **Architecture invariant:** all three tiers use the same HTTP-Request shape. Provider swap is a credential change, not a workflow change.
+
 ### Why Google Sheets as ATS stand-in
 - v1 mock for demo without real ATS access
 - Production architecture: replaced by REST-API call to ATS 
@@ -58,3 +66,35 @@ Both describe the same data structure. The runtime variant exists because OpenAI
 - [ ] Instrument pipeline (cost, latency, token tracking per LLM call)
 - [ ] Run full pipeline against eval set (Field-Level F1, baseline comparison)
 - [ ] BREAK session: adversarial inputs (10-15 stress CVs)
+
+## Compliance and Sovereignty
+
+CV extraction touches PII, so the deployment tier matters. v1 uses CloudConvert (US-based SaaS) for DOCX-to-text conversion. This is appropriate for the synthetic eval set but not for production with real candidate data.
+
+| Compliance need | v1 (this build) | v2 (production-ready) | v3 (fully sovereign) |
+|---|---|---|---|
+| Synthetic data, demo | CloudConvert (US) ✓ | — | — |
+| EU data residency, US vendor acceptable | CloudConvert Enterprise with DPA | AWS Textract Frankfurt region | — |
+| US CLOUD Act exclusion required | — | — | Self-hosted mammoth on EU infrastructure, AWS European Sovereign Cloud (GA Jan 2026), or STACKIT (Schwarz-Gruppe) |
+
+Customer chooses the tier based on their procurement constraints. German Mittelstand consulting firms typically accept v2 with US-vendor DPA. Regulated industries (banking, insurance, government, healthcare) require v3.
+
+The pipeline architecture supports all three tiers by isolating DOCX conversion behind an HTTP node — swapping providers is a configuration change, not an architectural rebuild.
+
+## Security and Governance Note
+
+Data flows in v1:
+
+1. **Inbound:** CV file (DOCX/PDF/TXT) via webhook POST to n8n Cloud (hosted by n8n GmbH, Berlin, EU)
+2. **DOCX conversion:** DOCX files only — uploaded to CloudConvert (US) for text extraction. Files retained per CloudConvert retention policy (24h on free tier). PDF and TXT files do not leave the n8n Cloud environment.
+3. **Extraction:** plaintext sent to OpenAI API. OpenAI does not train on API data; logs retained 30 days for abuse monitoring.
+4. **Output:** structured profile written to Google Sheets (Google Cloud, EU region available).
+
+What a DPO would object to in v1:
+- CloudConvert is US-based — for production with real PII, requires either Enterprise DPA or migration to EU-resident alternative (see Compliance and Sovereignty section)
+- OpenAI is US-based — production deployments would route via OpenAI EU data residency option (announced 2024, generally available 2026) or Azure OpenAI Service in EU region with DPA
+
+Mitigations already in place:
+- Synthetic eval data only — no real candidate PII processed
+- Sheet contains no resume PDFs themselves, only extracted structured data
+- Pipeline is stateless — no candidate data persists in n8n beyond the active execution
