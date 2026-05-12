@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-12T09:38:23.876Z",
+    "name": "Mira Schulz",
+    "current_role": "",
+    "total_years_experience": "",
+    "career_level": "Entry",
+    "employment_history": "Bain & Company — Praktikant Strategy (2024-09 → 2025-02)\nMitarbeit in Strategieprojekten für eine deutsche Großbank. Entwicklung eines Marktmodells für Asset Management Produkte.\n\nAllianz Global Investors — Werkstudent Risk (2023-04 → 2024-08)\nQuantitative Risikoanalysen für Asset Management. Entwicklung von Reporting-Dashboards in Power BI.\n\nGoldman Sachs — Praktikant Investment Banking (2022-07 → 2022-09)\nPitch-Vorbereitung und Marktanalysen im M&A-Team.",
+    "education": "Goethe-Universität Frankfurt — Master of Science in Finance and Information Management (2023 → 2025)\nUniversität Heidelberg — Bachelor of Science in Wirtschaftsmathematik (2020 → 2023)",
+    "industries": "Financial Services, Banking, Asset Management",
+    "functional_expertise": "Strategy, Risk Management, Mergers and Acquisitions",
+    "methods": "",
+    "tools": "Python, R, SQL, Microsoft Excel, Microsoft PowerPoint, Power BI, Tableau",
+    "languages": "German (Native), English (C2), Spanish (C1), French (B2)",
+    "certifications": "CFA Level I, Bloomberg Market Concepts",
+    "latency_ms": 4555,
+    "input_tokens": 2091,
+    "output_tokens": 366,
+    "total_tokens": 2457,
+    "cost_usd": "0.008887",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

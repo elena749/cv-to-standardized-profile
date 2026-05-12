@@ -1,0 +1,211 @@
+{
+  "industries": {
+    "pipeline_only": [],
+    "ground_truth_only": [
+      "software",
+      "utilities"
+    ],
+    "both": [
+      "asset management",
+      "automotive",
+      "banking",
+      "chemicals",
+      "consumer goods",
+      "defense",
+      "energy",
+      "financial services",
+      "healthcare",
+      "industrial goods",
+      "insurance",
+      "logistics and transportation",
+      "medtech",
+      "pharmaceuticals",
+      "private equity",
+      "public sector",
+      "retail",
+      "technology",
+      "telecommunications"
+    ],
+    "all_pipeline": [
+      "asset management",
+      "automotive",
+      "banking",
+      "chemicals",
+      "consumer goods",
+      "defense",
+      "energy",
+      "financial services",
+      "healthcare",
+      "industrial goods",
+      "insurance",
+      "logistics and transportation",
+      "medtech",
+      "pharmaceuticals",
+      "private equity",
+      "public sector",
+      "retail",
+      "technology",
+      "telecommunications"
+    ],
+    "all_ground_truth": [
+      "asset management",
+      "automotive",
+      "banking",
+      "chemicals",
+      "consumer goods",
+      "defense",
+      "energy",
+      "financial services",
+      "healthcare",
+      "industrial goods",
+      "insurance",
+      "logistics and transportation",
+      "medtech",
+      "pharmaceuticals",
+      "private equity",
+      "public sector",
+      "retail",
+      "software",
+      "technology",
+      "telecommunications",
+      "utilities"
+    ]
+  },
+  "functional_expertise": {
+    "pipeline_only": [],
+    "ground_truth_only": [
+      "organization design",
+      "procurement"
+    ],
+    "both": [
+      "digital transformation",
+      "growth strategy",
+      "mergers and acquisitions",
+      "operations",
+      "performance improvement",
+      "post-merger integration",
+      "pricing",
+      "risk management",
+      "strategy",
+      "supply chain",
+      "sustainability"
+    ],
+    "all_pipeline": [
+      "digital transformation",
+      "growth strategy",
+      "mergers and acquisitions",
+      "operations",
+      "performance improvement",
+      "post-merger integration",
+      "pricing",
+      "risk management",
+      "strategy",
+      "supply chain",
+      "sustainability"
+    ],
+    "all_ground_truth": [
+      "digital transformation",
+      "growth strategy",
+      "mergers and acquisitions",
+      "operations",
+      "organization design",
+      "performance improvement",
+      "post-merger integration",
+      "pricing",
+      "procurement",
+      "risk management",
+      "strategy",
+      "supply chain",
+      "sustainability"
+    ]
+  },
+  "methods": {
+    "pipeline_only": [
+      "unmapped"
+    ],
+    "ground_truth_only": [],
+    "both": [
+      "agile",
+      "balanced scorecard",
+      "design thinking",
+      "kanban",
+      "lean six sigma",
+      "okr",
+      "scrum",
+      "theory of constraints",
+      "total quality management"
+    ],
+    "all_pipeline": [
+      "agile",
+      "balanced scorecard",
+      "design thinking",
+      "kanban",
+      "lean six sigma",
+      "okr",
+      "scrum",
+      "theory of constraints",
+      "total quality management",
+      "unmapped"
+    ],
+    "all_ground_truth": [
+      "agile",
+      "balanced scorecard",
+      "design thinking",
+      "kanban",
+      "lean six sigma",
+      "okr",
+      "scrum",
+      "theory of constraints",
+      "total quality management"
+    ]
+  },
+  "tools": {
+    "pipeline_only": [],
+    "ground_truth_only": [],
+    "both": [
+      "alteryx",
+      "confluence",
+      "jira",
+      "microsoft excel",
+      "microsoft powerpoint",
+      "power bi",
+      "python",
+      "r",
+      "salesforce",
+      "sap",
+      "sql",
+      "tableau",
+      "think-cell"
+    ],
+    "all_pipeline": [
+      "alteryx",
+      "confluence",
+      "jira",
+      "microsoft excel",
+      "microsoft powerpoint",
+      "power bi",
+      "python",
+      "r",
+      "salesforce",
+      "sap",
+      "sql",
+      "tableau",
+      "think-cell"
+    ],
+    "all_ground_truth": [
+      "alteryx",
+      "confluence",
+      "jira",
+      "microsoft excel",
+      "microsoft powerpoint",
+      "power bi",
+      "python",
+      "r",
+      "salesforce",
+      "sap",
+      "sql",
+      "tableau",
+      "think-cell"
+    ]
+  }
+}

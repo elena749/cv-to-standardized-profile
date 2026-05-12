@@ -85,3 +85,41 @@ Rewrote the system prompt with **field-scoped rules**: each constraint now expli
 4. v2-roadmap candidate: split extraction into multiple LLM calls per field-cluster (employment-cluster, education-cluster, taxonomy-cluster), eliminating cross-field leakage entirely.
 
 This is the same class of failure as **AI-pre-labeling liberal interpretation** documented earlier — LLMs default to generous, plausible interpretations when constraints are ambiguous. The mitigation pattern is the same: be explicit, be scoped, be unambiguous.
+
+---
+
+## 2026-05-12 — Synonym lookup rejected after vocabulary inspection
+
+**What I tried:** Built `eval/extract_vocabulary.py` to dump unique values across 11 paired pipeline outputs and ground truth files, intending to use the dump to manually construct a synonym lookup table for F1 evaluation.
+
+**What broke:** Nothing broke — the assumption broke. Vocabulary overlap was near-100% across all four set-valued fields. No long-form vs. short-form drift, no casing variants, no synonym pairs. The 4 GT-only terms (`software`, `utilities`, `organization design`, `procurement`) and 1 pipeline-only term (`unmapped`) are not synonyms — they are real pipeline failure modes (missed extractions and fallback emissions).
+
+**Root cause:** The eval corpus is synthetic, generated from a closed vocabulary defined in `LABELING_CONVENTIONS.md`. Both PDFs and ground truth draw from the same vocabulary set. A synonym lookup assumes vocabulary drift between pipeline and ground truth — that drift does not exist in this corpus.
+
+**Fix:** Abandoned synonym-table construction. Pivoted to: exact-match (case-insensitive, whitespace-stripped) F1 as v1 baseline, per-CV F1 breakdown, investigation of the "unmapped" fallback as its own failure mode. Synonym normalization deferred to v2 (for non-synthetic corpora).
+
+**Generalizes to:** Eval methodology must match corpus methodology. A synonym lookup is the right tool for open-vocabulary, real-world data; it is the wrong tool for closed-vocabulary synthetic data. The decision to use one or the other should be driven by inspecting actual data distributions, not by anticipating problems. "Premature optimization in evaluation" is a real failure mode — it inflates effort without changing the score, and worse, can mask actual pipeline defects by absorbing them into a normalization layer.
+
+---
+
+## 2026-05-12 — Ground truth provenance audit
+
+**What I checked:** Vocabulary dump showed ~100% string-level overlap between pipeline output and ground truth on set-valued fields. Investigated whether this reflected genuine pipeline accuracy, ground truth leakage from pipeline iteration, or a closed-vocabulary artifact.
+
+**Root cause analysis:** Reviewed `REVIEW_LOG.md` and convention drift history. Confirmed ground truth was edited against CV content, not against pipeline output. Each correction is documented with CV-content-based or convention-based justification (e.g., cv_15: removed Risk Management because "regulated takeovers" is not operational risk management; cv_11/12: re-attributed projects to roles via date-overlap logic against the CV). Conventions, not individual values, evolved during build. The pre-labeling prompt and initial GT-generation drew from the same conceptual space as the pipeline prompt — this explains high string-level overlap without implying leakage.
+
+**Fix:** No remediation needed. But documenting this audit explicitly because high overlap is a signal worth investigating, not celebrating. The real test of pipeline quality is per-CV F1 and analysis of the `unmapped` fallback + missing GT terms — none of which the aggregate vocabulary dump surfaces.
+
+**Generalizes to:** When eval results look surprisingly good, the default assumption should be methodology artifact, not system excellence. Investigate provenance before celebrating numbers. Conversely, when investigation comes back clean, document the audit trail — "we checked and here's why it's fine" is stronger material than "the numbers were good." Audit trails (like `REVIEW_LOG.md`) earn their cost in moments exactly like this.
+
+---
+
+## 2026-05-12 — Headline F1 numbers can hide real failure modes
+
+**What I observed:** `certifications` field showed aggregate F1 = 0.24, suggesting massive recall failure. Investigation showed most "missed" certifications were format mismatches, not true misses: pipeline emits `"scrum master psm i"` while GT has `"scrum master (psm i)"`. Same certification, different tokenization. Also: pipeline emits `"cfa level i"` while GT has `"cfa level i (passed, 2024)"`.
+
+**Root cause:** F1 on set-valued fields is exact-match-after-lowercase. Any formatting drift between pipeline and GT (parentheticals, years, qualifiers like "passed") counts as a full miss. The headline 0.24 conflated three distinct problems: genuine recall loss (e.g., losing belt-level on Lean Six Sigma certifications), annotation-format drift (parentheses), and qualifier-handling decisions.
+
+**Fix:** Added format-tolerant matching for `certifications` and `languages` in `compute_metrics.py`. Each string generates up to three match-set variants (original, parenthetical content stripped, parens removed but content preserved). A pred-string matches a gold-string when their variant sets intersect. Reported both raw and normalized F1 alongside each other for transparency. Certifications F1 went from 0.24 to 0.94 normalized — the remaining 0.06 is genuine recall loss (belt-level detail), not format drift.
+
+**Generalizes to:** F1 is a useful headline but not a diagnosis. Aggregate metrics summarize, they don't explain. Without per-instance inspection, a 0.24 looks catastrophic when reality is mixed. In any eval, always drill into the misses before drawing conclusions. The headline number is a starting question, not an answer. And: when a normalization is applied, report both raw and normalized scores — never just the better one.

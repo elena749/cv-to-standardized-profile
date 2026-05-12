@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-12T09:39:22.631Z",
+    "name": "Katharina Maier",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Roland Berger — Senior Consultant (2022-09 → current)\nWiedereinstieg nach Elternzeit in Teilzeit (80%) - Operations- und Supply-Chain-Projekte in der Industriegüterindustrie - Leitung eines Lean-Implementation-Projekts bei einem Maschinenbauer\n\nRoland Berger — Senior Consultant (2018-04 → 2018-12)\nStrategie- und Operations-Projekte in der Automobilindustrie - Verantwortung für Workstreams in M&A-Projekten\n\nRoland Berger — Consultant (2014-09 → 2018-03)\nPerformance-Improvement-Projekte - Operations-Projekte im Maschinenbau und in der Chemieindustrie\n\nBCG — Praktikant (2013-04 → 2013-08)",
+    "education": "TU München — Master of Science in Wirtschaftsingenieurwesen (2012 → 2014)\nTU München — Bachelor of Science in Wirtschaftsingenieurwesen (2009 → 2012)",
+    "industries": "Industrial Goods, Automotive, Chemicals",
+    "functional_expertise": "Operations, Supply Chain, Mergers and Acquisitions",
+    "methods": "Lean Six Sigma, Theory of Constraints, Kanban",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, SAP",
+    "languages": "German (Native), English (C2), Spanish (B2)",
+    "certifications": "Lean Six Sigma Black Belt (2017)",
+    "latency_ms": 4529,
+    "input_tokens": 2176,
+    "output_tokens": 415,
+    "total_tokens": 2591,
+    "cost_usd": "0.009590",
+    "model": "gpt-4o-2024-08-06"
+  }
+]
