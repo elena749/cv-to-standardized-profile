@@ -56,7 +56,7 @@ OpenAI Structured Outputs Strict Mode imposes constraints beyond standard JSON S
 
 ### Why DOCX is deferred to v2 (not in v1)
 
-v1 processes PDF and TXT only — 14 of 20 eval CVs. DOCX (the remaining 8) is deferred. Four conversion paths were evaluated:
+v1 processes PDF and TXT only — 13 of 20 eval CVs. DOCX (the remaining 7) is deferred. Four conversion paths were evaluated:
 
 | Option | Setup | Compliance | Status |
 |---|---|---|---|
@@ -112,13 +112,44 @@ Mitigations already in place:
 - [ ] Re-review all 20 ground_truth JSONs against updated LABELING_CONVENTIONS (functional_expertise: liberal with role evidence — internships count when role title clearly reflects function)
 - [ ] Document convention-drift pattern in FAILURE_LOG (constraint leakage discovered through first end-to-end pipeline run)
 - [ ] Instrument pipeline (cost, latency, token tracking per LLM call)
-- [ ] Run full pipeline against eval set — 14 of 20 CVs (PDF + TXT only in v1)
+- [ ] Run full pipeline against eval set — 13 of 20 CVs (PDF + TXT only in v1)
 - [ ] Compute Field-Level F1 with baseline comparison (zero-shot GPT-4o without schema)
 - [ ] BREAK session: adversarial inputs (10-15 stress CVs)
+- [ ] Run full pipeline against eval set — 11 of 20 CVs (PDF only in v1)
 
 ## Deferred to v2
 
-- [ ] DOCX support — compliance-driven path selection (see Architecture Decisions)
+- [ ] DOCX and txt support — compliance-driven path selection (see Architecture Decisions)
 - [ ] Email-trigger for inbound CV files (currently webhook-only)
 - [ ] REST-API output to ATS (currently Google Sheets mock)
 - [ ] Multi-provider LLM routing (currently OpenAI-only)
+
+### Why DOCX and TXT are deferred to v2 (not in v1)
+
+v1 processes **PDF only** — 11 of 20 eval CVs. DOCX (8 CVs) and TXT (1 CV) are deferred.
+
+### Extraction Strategy: v1 vs v2
+
+v1: single-shot extraction with GPT-4o Structured Outputs Strict Mode.
+Measured F1: X% on 11-CV eval set.
+
+v2-trigger: failure analysis on v1 results determines next move:
+- If employment_history sub-F1 < 85% → multi-stage extraction (separate LLM for project-to-role temporal mapping)
+- If taxonomy sub-F1 < 90% → self-critique loop for taxonomy validation
+- If long-CV F1 < short-CV F1 by >5pp → A/B test against Claude Sonnet 4.6
+
+The choice is eval-driven, not vendor-marketing-driven.Ich verstehe nicht, wie es sein kann, dass man höchste Genauigkeit hat, aber dann gleichzeitig mehr Failure Mode hat. Das verstehe ich nicht. 
+
+## v2 Architecture Roadmap (eval-driven)
+
+v2 architecture decisions wait on Phase 2 eval results. Three patterns are pre-evaluated; the choice depends on which failure modes Phase 2 surfaces:
+
+| Pattern | Trigger condition | Trade-off |
+|---|---|---|
+| **B — Multi-stage extraction** | A specific field has sub-F1 below 85% (especially employment_history with project-to-role temporal mapping, education, or taxonomy fields). Failure-isolation matters more than aggregate accuracy. | 3× cost, 3× latency, better failure isolation. Each LLM call has a single clear task. |
+| **C — Self-critique loop** | Aggregate F1 acceptable but "confidently wrong" outputs frequent (e.g., LLM derives functional_expertise from MBA specializations despite explicit convention against it). Or: high variance between repeat-runs on same input. | 2× cost, 2× latency, best accuracy on convention violations. More failure-modes (see "Failure-modes vs accuracy" note in /docs/learnings). |
+| **Provider A/B test** | Long-CV F1 lower than short-CV F1 by >5pp, OR DACH-language F1 notably weaker than English. Suggests model-capability ceiling rather than prompting issue. | Different cost/latency curve depending on chosen provider. Claude Sonnet 4.6 leads at 97.6% on extraction benchmarks; Gemini 2.5 Pro offers larger context window. |
+
+These patterns are not mutually exclusive — v3 could combine Multi-stage with Self-critique on specific stages. The decision is sequential: Phase 2 surfaces the dominant failure mode, v2 addresses it, Phase 5 re-evaluates.
+
+**What this rules out:** pre-empting v2 architecture before eval data exists. Vendor-marketing-driven decisions ("Claude is more accurate, switch to Claude") without baseline comparison on this specific use case are not architecture decisions — they are guesses.
