@@ -15,7 +15,7 @@ This pipeline maps unstructured CVs onto a controlled, structured profile. Two s
 | [`schema/profile.schema.json`](schema/profile.schema.json) | Canonical specification — full JSON Schema Draft-07 with `$schema`, `$id`, descriptions, format constraints, and minimal `required` (only `name`). Single source of truth for the data structure. |
 | [`schema/profile.strict.schema.json`](schema/profile.strict.schema.json) | Runtime variant adapted for **OpenAI Structured Outputs Strict Mode**: all properties marked `required`, optional fields typed as `["type", "null"]`, format/pattern/minLength keywords removed, no `$schema`/`$id`. Used by the pipeline's extraction LLM node. |
 
-Both describe the same data structure. The runtime variant exists because OpenAI Strict Mode imposes additional constraints beyond standard JSON Schema; keeping the canonical variant clean preserves it as documentation independent of any single LLM provider.
+Both describe the same data structure. The runtime variant exists because OpenAI Strict Mode imposes additional constraints beyond standard JSON Schema; keeping the canonical variant clean preserves it as documentation independent of any single LLM provider. See *"Why a separate Strict-Mode schema variant"* in Architecture Decisions for the full rationale.
 
 ## Architecture Decisions
 
@@ -38,6 +38,21 @@ Both describe the same data structure. The runtime variant exists because OpenAI
 - Langdock customers use workflow tools, not custom code
 - Validation in n8n Code-Node is appropriate for single pipeline
 - v2-trigger: extract validation to FastAPI microservice when 2+ pipelines share validation logic
+
+### Why a separate Strict-Mode schema variant (not one schema for both)
+
+OpenAI Structured Outputs Strict Mode imposes constraints beyond standard JSON Schema: all properties must be in `required`, optional fields must use union types like `["string", "null"]`, and format/pattern/minLength keywords are not supported. Two paths were considered:
+
+1. **One schema, Strict-Mode-compliant:** modify the canonical schema to satisfy Strict Mode constraints. Loses standard JSON Schema features (format validation, descriptions, `$schema`/`$id` metadata) in the canonical file.
+2. **Two schemas, separate concerns:** keep the canonical schema as provider-independent documentation; derive a runtime variant for OpenAI Strict Mode.
+
+**Decision:** Option 2 — two schemas, separate concerns.
+
+**Rationale:** the canonical schema is documentation that outlives any single LLM provider. If we A/B-test against Claude in v2 (already in roadmap), or migrate to a different provider entirely, we don't want to have already compromised the canonical schema to fit OpenAI's runtime requirements. The two-schema pattern isolates provider-specific constraints behind a derivation step.
+
+**Trade-off accepted:** two files to keep in sync. Mitigation: the derivation rules are documented in the Schema section so the runtime variant can be regenerated mechanically if the canonical schema changes.
+
+**v2-trigger:** if/when multiple LLM providers are supported (Claude, Gemini, others), formalize the derivation as a build-step script rather than manual sync.
 
 ### Why DOCX is deferred to v2 (not in v1)
 

@@ -67,6 +67,13 @@ Career switchers (e.g., lawyer → consulting) are classified based on **experie
 - For ongoing positions: counted up to today (May 2026)
 - **Mathematical rounding** to whole years: 5.4 years → 5; 5.5 years → 6; 8.5 years → 9
 
+## Total Years Experience (continued)
+
+- **Academic positions (wissenschaftliche Mitarbeiter, research assistant, lecturer) do NOT count** toward total_years_experience when the candidate is not pursuing an academic career path.
+- **Rationale:** consulting/professional-services recruiting evaluates relevant industry experience. Academic positions are treated as a training/PhD-adjacent phase, not as professional consulting experience, even when full-time and salaried.
+- **Edge case:** if the candidate IS pursuing an academic career and the role is being assessed (e.g., academic-to-industry transition), the position counts. The default for consulting-track applicants is exclude.
+- **Convention origin:** cv_15 (Markus Reinhardt, lawyer transitioning to consulting) — his Wissenschaftlicher Mitarbeiter at Universität Köln was excluded from total_years (legal career path, not consulting).
+
 ## Part-Time and Years of Experience
 
 - Part-time roles count as **calendar time**, not as FTE-equivalent
@@ -197,3 +204,4 @@ Career switchers (e.g., lawyer → consulting) are classified based on **experie
   - CFA Candidate excluded, CFA passed included
   - German B2 and below as unmapped
 - **2026-05-08 (pipeline run):** Functional expertise changed from strict to liberal interpretation (with role evidence). Rationale: customer use case practice routing — pre-full-time functional exposure is a recruiter signal, not a mastery claim. Surfaced by first end-to-end pipeline run with cv_05.
+- **2026-05-11 (drift re-review pass):** Academic positions (wissenschaftliche Mitarbeiter, research assistants, lecturers) excluded from total_years_experience for candidates not pursuing an academic career path. Surfaced through cv_15 re-verification. Plus: five functional_expertise corrections applied across cv_02 (add Strategy), cv_08 (remove Digital Transformation), cv_09 (remove Supply Chain), cv_10 (remove Innovation), cv_13 (remove Growth Strategy). Re-review documented in CONVENTION_DRIFT_REVIEW.md.

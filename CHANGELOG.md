@@ -51,3 +51,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Added
 - Initial repo setup
 - README stub, .gitignore, .env.example
+
+- **2026-05-11 (re-review pass):** Academic positions (wiss. Mitarbeiter, RA) excluded from total_years_experience for non-academic career-track candidates. Surfaced through cv_15 re-verification.
