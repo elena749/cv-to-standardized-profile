@@ -19,6 +19,18 @@
     quality variance (handled in Eval results), integration cost (handled in
     Architecture decisions section).
 
+### Budget signals
+
+Recruiting-tooling line items typically exist in this customer profile. Enterprise AI pilots run €20-50k for proof-of-value engagements and €100-300k for production rollouts. Inference cost at this volume (~€30/month at 3,500 CVs) is rounding error against that scale; the meaningful spend is integration and change management.
+
+### Procurement objections and mitigations
+
+- **"Where does CV data flow?"** OpenAI EU residency tier in v1. v2 supports AWS Frankfurt (Anthropic) or Mistral for full EU sovereignty per customer DPO requirement.
+- **"How do we audit AI decisions?"** Every LLM call is instrumented (latency, tokens, cost, model) and logged alongside output. FAILURE_LOG documents known limitations explicitly. Ground truth construction process is auditable in REVIEW_LOG.
+- **"What if the model changes or pricing shifts?"** The schema is the contract, not the provider. Switching providers is a 1-2 week eval, not a rewrite. v2 architecture roadmap includes provider A/B evaluation.
+- **"What happens when the pipeline can't classify something?"** Explicit `unmapped` fallback token surfaces taxonomy gaps for human review. No silent drops, no hallucinated values. Failure-mode catalog in EVAL_REPORT tracks these per-CV.
+- **"How do we know this works on our actual CVs?"** Phase 1 of any customer engagement is eval on 50-100 of the customer's real CVs (anonymized or under DPA), producing a customer-specific F1 report before rollout decisions.
+
     ## Schema
 
     This pipeline maps unstructured CVs onto a controlled, structured profile. Two schema variants are maintained side by side:
