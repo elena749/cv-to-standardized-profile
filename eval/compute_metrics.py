@@ -10,19 +10,20 @@ v2 (see README "v2 Architecture Roadmap").
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import statistics
 from pathlib import Path
 
 EVAL_DIR = Path(__file__).parent
-RAW_DIR = EVAL_DIR / "raw_outputs"
+DEFAULT_RAW_DIR = EVAL_DIR / "raw_outputs"
 GT_DIR = EVAL_DIR / "ground_truth"
 RESULTS_DIR = EVAL_DIR / "results"
-OUTPUT_PATH = RESULTS_DIR / "metrics_v1.json"
+DEFAULT_OUTPUT_NAME = "metrics_v1.json"
 
-RUN_ID = "v1_2026-05-12"
-V1_SCOPE_NOTE = "PDF only; DOCX/TXT deferred to v2"
+DEFAULT_DATE = "2026-05-12"
+SCOPE_NOTE = "PDF only; DOCX and TXT not processed in this run"
 
 STRING_FIELDS_CASE_SENSITIVE = ["name", "current_role"]
 STRING_FIELDS_CASE_INSENSITIVE = ["career_level"]
@@ -74,10 +75,18 @@ def match_set(value: str) -> set[str]:
 
 # ---------- I/O ----------
 
-def find_paired_cvs() -> list[str]:
-    raw = {p.name for p in RAW_DIR.glob("cv_*.json") if CV_NAME_RE.match(p.name)}
+def find_paired_cvs(raw_dir: Path) -> list[str]:
+    raw = {p.name for p in raw_dir.glob("cv_*.json") if CV_NAME_RE.match(p.name)}
     gt = {p.name for p in GT_DIR.glob("cv_*.json") if CV_NAME_RE.match(p.name)}
     return sorted(raw & gt)
+
+
+def derive_run_id(raw_dir: Path) -> str:
+    """Default raw_dir → 'v1_<date>'. Non-default → prefix derived from dir name."""
+    if raw_dir.resolve() == DEFAULT_RAW_DIR.resolve():
+        return f"v1_{DEFAULT_DATE}"
+    source = raw_dir.name.removesuffix("_outputs") or raw_dir.name
+    return f"{source}_{DEFAULT_DATE}"
 
 
 def load_pipeline(path: Path) -> dict:
@@ -426,13 +435,30 @@ def print_top_weakest(per_cv: dict[str, dict], agg: dict) -> None:
 # ---------- Main ----------
 
 def main() -> None:
-    paired = find_paired_cvs()
+    parser = argparse.ArgumentParser(
+        description="Compute per-CV and aggregate F1 against ground truth."
+    )
+    parser.add_argument(
+        "--raw-dir", default=str(DEFAULT_RAW_DIR),
+        help=f"Directory of pipeline outputs (default: {DEFAULT_RAW_DIR})",
+    )
+    parser.add_argument(
+        "--output-name", default=DEFAULT_OUTPUT_NAME,
+        help=f"Filename for metrics JSON written into {RESULTS_DIR} (default: {DEFAULT_OUTPUT_NAME})",
+    )
+    args = parser.parse_args()
+
+    raw_dir = Path(args.raw_dir)
+    output_path = RESULTS_DIR / args.output_name
+    run_id = derive_run_id(raw_dir)
+
+    paired = find_paired_cvs(raw_dir)
     print(f"Paired CVs: {len(paired)}\n")
 
     per_cv: dict[str, dict] = {}
     for name in paired:
         cv_id = name.removesuffix(".json")
-        pipeline = load_pipeline(RAW_DIR / name)
+        pipeline = load_pipeline(raw_dir / name)
         gt = load_ground_truth(GT_DIR / name)
         scores = score_cv(cv_id, pipeline, gt)
         per_cv[cv_id] = scores
@@ -443,9 +469,9 @@ def main() -> None:
 
     output = {
         "meta": {
-            "run_id": RUN_ID,
+            "run_id": run_id,
             "n_cvs": len(paired),
-            "v1_scope_note": V1_SCOPE_NOTE,
+            "scope_note": SCOPE_NOTE,
         },
         "per_cv": per_cv,
         "aggregate": agg,
@@ -453,9 +479,9 @@ def main() -> None:
     }
 
     RESULTS_DIR.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+    output_path.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"\nWrote {OUTPUT_PATH.relative_to(EVAL_DIR.parent)}")
+    print(f"\nWrote {output_path.relative_to(EVAL_DIR.parent)}")
     print(f"Overall macro F1 (raw):        {agg['overall_f1_macro_raw']:.2f}")
     print(f"Overall macro F1 (normalized): {agg['overall_f1_macro_normalized']:.2f}")
     print_top_weakest(per_cv, agg)

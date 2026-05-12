@@ -123,3 +123,45 @@ This is the same class of failure as **AI-pre-labeling liberal interpretation** 
 **Fix:** Added format-tolerant matching for `certifications` and `languages` in `compute_metrics.py`. Each string generates up to three match-set variants (original, parenthetical content stripped, parens removed but content preserved). A pred-string matches a gold-string when their variant sets intersect. Reported both raw and normalized F1 alongside each other for transparency. Certifications F1 went from 0.24 to 0.94 normalized — the remaining 0.06 is genuine recall loss (belt-level detail), not format drift.
 
 **Generalizes to:** F1 is a useful headline but not a diagnosis. Aggregate metrics summarize, they don't explain. Without per-instance inspection, a 0.24 looks catastrophic when reality is mixed. In any eval, always drill into the misses before drawing conclusions. The headline number is a starting question, not an answer. And: when a normalization is applied, report both raw and normalized scores — never just the better one.
+
+---
+
+## 2026-05-12 — Baseline comparison surfaces five distinct failure modes
+
+**What I observed:** Naive zero-shot extraction (gpt-4o, no schema, no taxonomy, 
+no field-scoped rules) scored 0.58 macro F1 against pipeline's 0.80 on the 
+same 11 PDFs. Drilling into the baseline outputs revealed not one but five 
+distinct failure modes the schema-enforced pipeline addresses:
+
+1. **Information loss.** Baseline emitted employment_history without employer 
+   names — just role titles. Pipeline preserves both.
+2. **Vocabulary drift.** Baseline emitted "Risk Analysis" where ground truth 
+   has "Risk Management"; "Quantitative Analysis" where GT has methods from 
+   the closed taxonomy.
+3. **Cross-field leakage (taxonomy).** "Investment Banking" appeared as 
+   functional_expertise instead of industries. Without field-scoped prompts, 
+   the LLM blurs category boundaries.
+4. **Cross-field leakage (qualifier).** "Bloomberg Terminal" appeared as a 
+   tool instead of being recognized as adjacent to the certification 
+   "Bloomberg Market Concepts." Free-text extraction has no awareness of 
+   which field a token belongs in.
+5. **Language drift.** Baseline emitted "Deutsch (Muttersprache)" — German 
+   labels — where ground truth (and pipeline) use English ("German (Native)"). 
+   Without an explicit output-language instruction, the LLM mirrors the 
+   source CV's language.
+
+**Root cause:** Each failure maps to a specific pipeline-design choice:
+- Schema enforcement → fixes (1) and (3)
+- Controlled vocabulary → fixes (2)
+- Field-scoped prompt rules → fixes (3) and (4)
+- Explicit output-language instruction → fixes (5)
+
+The +0.22 lift over baseline isn't a single quality improvement; it's the 
+sum of mitigations for these five mostly-independent failure modes.
+
+**Generalizes to:** A naive baseline isn't useful as a single number; it's 
+useful as a *failure-mode catalog*. Each kind of degradation in zero-shot 
+output corresponds to a specific engineering decision in the production 
+pipeline. "Why is our schema-enforced pipeline worth the cost?" becomes 
+answerable line by line. This is how baselines become pre-sales material 
+instead of just engineering trivia.

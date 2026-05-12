@@ -70,11 +70,12 @@ def cv_list(ids: list[str]) -> str:
 # ---------- sections ----------
 
 def section_header(meta: dict) -> str:
+    scope = meta.get("scope_note") or meta.get("v1_scope_note", "")
     return (
         "# CV-to-Standardized-Profile — v1 Evaluation Report\n"
         "\n"
         f"**Run:** `{meta['run_id']}` | **N CVs:** {meta['n_cvs']} | "
-        f"**Scope:** {meta['v1_scope_note']}\n"
+        f"**Scope:** {scope}\n"
     )
 
 

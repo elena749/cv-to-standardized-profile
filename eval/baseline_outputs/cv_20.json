@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Patricia Wells",
+    "current_role": "Senior Manager",
+    "total_years_experience": 13,
+    "career_level": "Senior",
+    "employment_history": "Senior Manager (March 2021 → Present)\n\nAssociate (September 2018 → February 2021)\n\nSenior Associate (September 2016 → August 2018)\n\nAssociate (August 2014 → August 2016)\n\nResearch Assistant (September 2010 → June 2014)",
+    "education": "London School of Economics — PhD in Economics\nLondon School of Economics — M.Sc. Economics\nUniversity of Cambridge — B.A. (Hons) Economics",
+    "industries": "Financial Services, Healthcare, Consumer Goods, Pharmaceuticals, Insurance, Retail",
+    "functional_expertise": "Strategy, M&A, Digital Transformation, Post-Merger Integration, Market Entry Assessment",
+    "methods": "Lean Six Sigma, Design Thinking, Agile, OKR, Theory of Constraints, Total Quality Management",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx, Power BI, SQL, Python, R, SAP, Salesforce",
+    "languages": "English (Native), German (C2), French (C1), Italian (B2), Spanish (B2)",
+    "certifications": "Lean Six Sigma Black Belt (2017), Scrum Master PSM II (2020), CFA Level III (2019)",
+    "latency_ms": 8798,
+    "input_tokens": 1872,
+    "output_tokens": 675,
+    "total_tokens": 2547,
+    "cost_usd": "0.011430",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

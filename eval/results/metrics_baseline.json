@@ -1,0 +1,2623 @@
+{
+  "meta": {
+    "run_id": "baseline_2026-05-12",
+    "n_cvs": 11,
+    "scope_note": "PDF only; DOCX and TXT not processed in this run"
+  },
+  "per_cv": {
+    "cv_03": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "utilities"
+          ],
+          "extra": [],
+          "pred": [
+            "automotive",
+            "energy",
+            "industrial goods"
+          ],
+          "gold": [
+            "automotive",
+            "energy",
+            "industrial goods",
+            "utilities"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6,
+          "missed": [
+            "mergers and acquisitions",
+            "post-merger integration"
+          ],
+          "extra": [
+            "energy transition",
+            "m&a"
+          ],
+          "pred": [
+            "energy transition",
+            "m&a",
+            "performance improvement",
+            "strategy",
+            "sustainability"
+          ],
+          "gold": [
+            "mergers and acquisitions",
+            "performance improvement",
+            "post-merger integration",
+            "strategy",
+            "sustainability"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "balanced scorecard",
+            "lean six sigma",
+            "okr"
+          ],
+          "gold": [
+            "balanced scorecard",
+            "lean six sigma",
+            "okr"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sap",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sap",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (c2)",
+            "french (c1)",
+            "german (native)"
+          ],
+          "gold": [
+            "english (c2)",
+            "french (c1)",
+            "german (native)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "lean six sigma black belt",
+              "prince2 practitioner"
+            ],
+            "extra": [
+              "lean six sigma black belt (2018)",
+              "prince2 practitioner (2015)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "lean six sigma black belt (2018)",
+            "prince2 practitioner (2015)"
+          ],
+          "gold": [
+            "lean six sigma black belt",
+            "prince2 practitioner"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "mckinsey & company",
+            "roland berger"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "mckinsey & company",
+            "roland berger"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "karlsruhe institute of technology (kit)",
+            "rwth aachen"
+          ],
+          "gold_institutions": [
+            "karlsruhe institute of technology (kit)",
+            "rwth aachen"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_05": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 0,
+        "career_level": 0
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285715,
+          "missed": [
+            "banking",
+            "insurance"
+          ],
+          "extra": [
+            "investment banking"
+          ],
+          "pred": [
+            "asset management",
+            "financial services",
+            "investment banking"
+          ],
+          "gold": [
+            "asset management",
+            "banking",
+            "financial services",
+            "insurance"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.3333333333333333,
+          "missed": [
+            "mergers and acquisitions",
+            "risk management"
+          ],
+          "extra": [
+            "investment banking",
+            "risk analysis"
+          ],
+          "pred": [
+            "investment banking",
+            "risk analysis",
+            "strategy"
+          ],
+          "gold": [
+            "mergers and acquisitions",
+            "risk management",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [],
+          "extra": [
+            "market modeling",
+            "quantitative analysis"
+          ],
+          "pred": [
+            "market modeling",
+            "quantitative analysis"
+          ],
+          "gold": []
+        },
+        "tools": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.9333333333333333,
+          "missed": [],
+          "extra": [
+            "bloomberg terminal"
+          ],
+          "pred": [
+            "bloomberg terminal",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "r",
+            "sql",
+            "tableau"
+          ],
+          "gold": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "r",
+            "sql",
+            "tableau"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "french (b2)",
+              "german (native)",
+              "spanish (c1)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "französisch (b2)",
+              "spanisch (c1)"
+            ]
+          },
+          "normalized": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "french (b2)",
+              "german (native)",
+              "spanish (c1)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "französisch (b2)",
+              "spanisch (c1)"
+            ]
+          },
+          "pred": [
+            "deutsch (muttersprache)",
+            "englisch (c2)",
+            "französisch (b2)",
+            "spanisch (c1)"
+          ],
+          "gold": [
+            "english (c2)",
+            "french (b2)",
+            "german (native)",
+            "spanish (c1)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4,
+            "missed": [
+              "cfa level i (passed, 2024)"
+            ],
+            "extra": [
+              "2024)",
+              "cfa level i (bestanden"
+            ]
+          },
+          "normalized": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4,
+            "missed": [
+              "cfa level i (passed, 2024)"
+            ],
+            "extra": [
+              "2024)",
+              "cfa level i (bestanden"
+            ]
+          },
+          "pred": [
+            "2024)",
+            "bloomberg market concepts (2023)",
+            "cfa level i (bestanden"
+          ],
+          "gold": [
+            "bloomberg market concepts (2023)",
+            "cfa level i (passed, 2024)"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "allianz global investors",
+            "bain & company",
+            "goldman sachs"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "allianz global investors",
+            "bain & company",
+            "goldman sachs"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "goethe-universität frankfurt",
+            "universität heidelberg"
+          ],
+          "gold_institutions": [
+            "goethe-universität frankfurt",
+            "universität heidelberg"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_06": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 0
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "chemicals",
+            "consumer goods",
+            "industrial goods"
+          ],
+          "extra": [
+            "chemie",
+            "industriegüter",
+            "konsumgüter",
+            "maschinenbau"
+          ],
+          "pred": [
+            "chemie",
+            "industriegüter",
+            "konsumgüter",
+            "maschinenbau"
+          ],
+          "gold": [
+            "chemicals",
+            "consumer goods",
+            "industrial goods"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666,
+          "missed": [
+            "operations"
+          ],
+          "extra": [
+            "operations management"
+          ],
+          "pred": [
+            "operations management",
+            "performance improvement",
+            "strategy"
+          ],
+          "gold": [
+            "operations",
+            "performance improvement",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "kanban",
+            "lean six sigma",
+            "okr"
+          ],
+          "gold": [
+            "kanban",
+            "lean six sigma",
+            "okr"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "confluence",
+            "jira",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "confluence",
+            "jira",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c1)",
+              "french (b2)",
+              "german (native)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c1)",
+              "französisch (b2)"
+            ]
+          },
+          "normalized": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c1)",
+              "french (b2)",
+              "german (native)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c1)",
+              "französisch (b2)"
+            ]
+          },
+          "pred": [
+            "deutsch (muttersprache)",
+            "englisch (c1)",
+            "französisch (b2)"
+          ],
+          "gold": [
+            "english (c1)",
+            "french (b2)",
+            "german (native)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "lean six sigma green belt"
+            ],
+            "extra": [
+              "lean six sigma green belt (2022)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "lean six sigma green belt (2022)"
+          ],
+          "gold": [
+            "lean six sigma green belt"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "bcg",
+            "horváth & partners"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "bcg",
+            "horváth & partners"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "kit karlsruhe",
+            "tu berlin"
+          ],
+          "gold_institutions": [
+            "kit karlsruhe",
+            "tu berlin"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_07": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "missed": [
+            "financial services"
+          ],
+          "extra": [],
+          "pred": [
+            "banking",
+            "insurance"
+          ],
+          "gold": [
+            "banking",
+            "financial services",
+            "insurance"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "f1": 0.5,
+          "missed": [
+            "organization design",
+            "performance improvement",
+            "strategy"
+          ],
+          "extra": [
+            "process redesign"
+          ],
+          "pred": [
+            "digital transformation",
+            "process redesign",
+            "risk management"
+          ],
+          "gold": [
+            "digital transformation",
+            "organization design",
+            "performance improvement",
+            "risk management",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "missed": [],
+          "extra": [
+            "risk management (basel iii)"
+          ],
+          "pred": [
+            "agile",
+            "lean six sigma",
+            "risk management (basel iii)"
+          ],
+          "gold": [
+            "agile",
+            "lean six sigma"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "python",
+            "r",
+            "sql",
+            "tableau"
+          ],
+          "gold": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "python",
+            "r",
+            "sql",
+            "tableau"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (native)",
+            "german (c1)",
+            "spanish (b2)"
+          ],
+          "gold": [
+            "english (native)",
+            "german (c1)",
+            "spanish (b2)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "missed": [],
+            "extra": [
+              "cfa level iii candidate"
+            ]
+          },
+          "normalized": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "missed": [],
+            "extra": [
+              "cfa level iii candidate"
+            ]
+          },
+          "pred": [
+            "cfa level iii candidate",
+            "frm (financial risk manager)"
+          ],
+          "gold": [
+            "frm (financial risk manager)"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "deloitte consulting",
+            "oliver wyman"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "deloitte consulting",
+            "oliver wyman"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "imperial college london",
+            "university of cambridge"
+          ],
+          "gold_institutions": [
+            "imperial college london",
+            "university of cambridge"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_10": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 0,
+        "career_level": 0
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.25,
+          "recall": 0.2,
+          "f1": 0.22222222222222224,
+          "missed": [
+            "industrial goods",
+            "retail",
+            "software",
+            "technology"
+          ],
+          "extra": [
+            "e-commerce",
+            "strategy consulting",
+            "technology consulting"
+          ],
+          "pred": [
+            "automotive",
+            "e-commerce",
+            "strategy consulting",
+            "technology consulting"
+          ],
+          "gold": [
+            "automotive",
+            "industrial goods",
+            "retail",
+            "software",
+            "technology"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.25,
+          "recall": 0.5,
+          "f1": 0.3333333333333333,
+          "missed": [
+            "strategy"
+          ],
+          "extra": [
+            "backend development",
+            "market analysis",
+            "strategic planning"
+          ],
+          "pred": [
+            "backend development",
+            "digital transformation",
+            "market analysis",
+            "strategic planning"
+          ],
+          "gold": [
+            "digital transformation",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "agile",
+            "design thinking",
+            "scrum"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "scrum"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "confluence",
+            "jira",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "sql",
+            "tableau"
+          ],
+          "gold": [
+            "confluence",
+            "jira",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "sql",
+            "tableau"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (native)",
+            "german (c1)"
+          ],
+          "gold": [
+            "english (native)",
+            "german (c1)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [],
+          "gold": []
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "mckinsey & company",
+            "mercedes-benz group",
+            "zalando"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "mckinsey & company",
+            "mercedes-benz group",
+            "zalando"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "eth zürich",
+            "tum school of management"
+          ],
+          "gold_institutions": [
+            "eth zürich",
+            "tum school of management"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_11": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "missed": [
+            "automotive",
+            "industrial goods"
+          ],
+          "extra": [
+            "automobile",
+            "industrial"
+          ],
+          "pred": [
+            "automobile",
+            "consumer goods",
+            "industrial",
+            "telecommunications"
+          ],
+          "gold": [
+            "automotive",
+            "consumer goods",
+            "industrial goods",
+            "telecommunications"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5,
+          "missed": [
+            "mergers and acquisitions",
+            "strategy"
+          ],
+          "extra": [
+            "m&a due diligence",
+            "strategy review"
+          ],
+          "pred": [
+            "digital transformation",
+            "m&a due diligence",
+            "performance improvement",
+            "strategy review"
+          ],
+          "gold": [
+            "digital transformation",
+            "mergers and acquisitions",
+            "performance improvement",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285715,
+          "missed": [
+            "lean six sigma",
+            "scrum"
+          ],
+          "extra": [
+            "lean six sigma green belt"
+          ],
+          "pred": [
+            "agile",
+            "design thinking",
+            "lean six sigma green belt"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "scrum"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sql",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sql",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "french (b2)",
+              "german (native)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "französisch (b2)"
+            ]
+          },
+          "normalized": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "french (b2)",
+              "german (native)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "französisch (b2)"
+            ]
+          },
+          "pred": [
+            "deutsch (muttersprache)",
+            "englisch (c2)",
+            "französisch (b2)"
+          ],
+          "gold": [
+            "english (c2)",
+            "french (b2)",
+            "german (native)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "missed": [
+              "lean six sigma green belt"
+            ],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "missed": [
+              "lean six sigma green belt"
+            ],
+            "extra": []
+          },
+          "pred": [
+            "scrum master (psm i)"
+          ],
+          "gold": [
+            "lean six sigma green belt",
+            "scrum master (psm i)"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "kpmg strategy",
+            "strategy&"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "kpmg strategy",
+            "strategy&"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "rwth aachen"
+          ],
+          "gold_institutions": [
+            "rwth aachen"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_12": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 0
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "financial services"
+          ],
+          "extra": [],
+          "pred": [
+            "banking",
+            "consumer goods",
+            "pharmaceuticals"
+          ],
+          "gold": [
+            "banking",
+            "consumer goods",
+            "financial services",
+            "pharmaceuticals"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285715,
+          "missed": [
+            "pricing",
+            "strategy"
+          ],
+          "extra": [
+            "pricing strategy"
+          ],
+          "pred": [
+            "digital transformation",
+            "growth strategy",
+            "pricing strategy"
+          ],
+          "gold": [
+            "digital transformation",
+            "growth strategy",
+            "pricing",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "scrum"
+          ],
+          "extra": [],
+          "pred": [
+            "agile",
+            "design thinking",
+            "okr"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "okr",
+            "scrum"
+          ]
+        },
+        "tools": {
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571,
+          "f1": 0.8571428571428571,
+          "missed": [
+            "python"
+          ],
+          "extra": [
+            "python (basic knowledge)"
+          ],
+          "pred": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python (basic knowledge)",
+            "sql",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "sql",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "missed": [],
+            "extra": [
+              "dutch (c1)"
+            ]
+          },
+          "normalized": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "missed": [],
+            "extra": [
+              "dutch (c1)"
+            ]
+          },
+          "pred": [
+            "dutch (c1)",
+            "english (c2)",
+            "german (native)",
+            "spanish (b2)"
+          ],
+          "gold": [
+            "english (c2)",
+            "german (native)",
+            "spanish (b2)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "scrum master (psm i)"
+            ],
+            "extra": [
+              "2022)",
+              "scrum master (psm i"
+            ]
+          },
+          "normalized": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "missed": [],
+            "extra": [
+              "2022)"
+            ]
+          },
+          "pred": [
+            "2022)",
+            "scrum master (psm i"
+          ],
+          "gold": [
+            "scrum master (psm i)"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "bain & company"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "bain & company"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "hhl leipzig graduate school of management",
+            "maastricht university"
+          ],
+          "gold_institutions": [
+            "hhl leipzig graduate school of management",
+            "maastricht university"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_14": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 0,
+        "career_level": 0
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 1.0,
+          "recall": 0.8571428571428571,
+          "f1": 0.923076923076923,
+          "missed": [
+            "private equity"
+          ],
+          "extra": [],
+          "pred": [
+            "consumer goods",
+            "healthcare",
+            "insurance",
+            "medtech",
+            "pharmaceuticals",
+            "retail"
+          ],
+          "gold": [
+            "consumer goods",
+            "healthcare",
+            "insurance",
+            "medtech",
+            "pharmaceuticals",
+            "private equity",
+            "retail"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6,
+          "missed": [
+            "mergers and acquisitions",
+            "strategy"
+          ],
+          "extra": [
+            "m&a diligence",
+            "strategy refresh"
+          ],
+          "pred": [
+            "digital transformation",
+            "m&a diligence",
+            "performance improvement",
+            "post-merger integration",
+            "strategy refresh"
+          ],
+          "gold": [
+            "digital transformation",
+            "mergers and acquisitions",
+            "performance improvement",
+            "post-merger integration",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "okr"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "okr"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (native)",
+            "french (b2)",
+            "german (c1)",
+            "spanish (b2)"
+          ],
+          "gold": [
+            "english (native)",
+            "french (b2)",
+            "german (c1)",
+            "spanish (b2)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "lean six sigma green belt",
+              "scrum master psm i"
+            ],
+            "extra": [
+              "lean six sigma green belt (2017)",
+              "scrum master psm i (2020)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "lean six sigma green belt (2017)",
+            "scrum master psm i (2020)"
+          ],
+          "gold": [
+            "lean six sigma green belt",
+            "scrum master psm i"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "bain & company",
+            "mckinsey & company"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "bain & company",
+            "mckinsey & company"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "harvard business school",
+            "university of oxford"
+          ],
+          "gold_institutions": [
+            "harvard business school",
+            "university of oxford"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_16": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "automotive",
+            "chemicals",
+            "industrial goods"
+          ],
+          "extra": [
+            "automobilindustrie",
+            "chemieindustrie",
+            "industriegüterindustrie",
+            "maschinenbau"
+          ],
+          "pred": [
+            "automobilindustrie",
+            "chemieindustrie",
+            "industriegüterindustrie",
+            "maschinenbau"
+          ],
+          "gold": [
+            "automotive",
+            "chemicals",
+            "industrial goods"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "missed": [
+            "mergers and acquisitions"
+          ],
+          "extra": [
+            "m&a"
+          ],
+          "pred": [
+            "m&a",
+            "operations",
+            "performance improvement",
+            "strategy",
+            "supply chain"
+          ],
+          "gold": [
+            "mergers and acquisitions",
+            "operations",
+            "performance improvement",
+            "strategy",
+            "supply chain"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "kanban",
+            "lean six sigma",
+            "theory of constraints"
+          ],
+          "gold": [
+            "kanban",
+            "lean six sigma",
+            "theory of constraints"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sap",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "microsoft excel",
+            "microsoft powerpoint",
+            "sap",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "german (native)",
+              "spanish (b2)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "spanisch (b2)"
+            ]
+          },
+          "normalized": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "english (c2)",
+              "german (native)",
+              "spanish (b2)"
+            ],
+            "extra": [
+              "deutsch (muttersprache)",
+              "englisch (c2)",
+              "spanisch (b2)"
+            ]
+          },
+          "pred": [
+            "deutsch (muttersprache)",
+            "englisch (c2)",
+            "spanisch (b2)"
+          ],
+          "gold": [
+            "english (c2)",
+            "german (native)",
+            "spanish (b2)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "lean six sigma black belt"
+            ],
+            "extra": [
+              "lean six sigma black belt (2017)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "lean six sigma black belt (2017)"
+          ],
+          "gold": [
+            "lean six sigma black belt"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "bcg",
+            "roland berger"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "bcg",
+            "roland berger"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "tu münchen"
+          ],
+          "gold_institutions": [
+            "tu münchen"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_17": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 1,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 0.9090909090909091,
+          "recall": 0.7692307692307693,
+          "f1": 0.8333333333333333,
+          "missed": [
+            "chemicals",
+            "consumer goods",
+            "logistics and transportation"
+          ],
+          "extra": [
+            "logistics & transportation"
+          ],
+          "pred": [
+            "asset management",
+            "automotive",
+            "banking",
+            "defense",
+            "energy",
+            "industrial goods",
+            "insurance",
+            "logistics & transportation",
+            "pharmaceuticals",
+            "public sector",
+            "telecommunications"
+          ],
+          "gold": [
+            "asset management",
+            "automotive",
+            "banking",
+            "chemicals",
+            "consumer goods",
+            "defense",
+            "energy",
+            "industrial goods",
+            "insurance",
+            "logistics and transportation",
+            "pharmaceuticals",
+            "public sector",
+            "telecommunications"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.2857142857142857,
+          "recall": 0.4444444444444444,
+          "f1": 0.34782608695652173,
+          "missed": [
+            "growth strategy",
+            "mergers and acquisitions",
+            "organization design",
+            "pricing",
+            "procurement"
+          ],
+          "extra": [
+            "aftermarket strategy",
+            "claims process redesign",
+            "distribution strategy",
+            "investment thesis",
+            "m&a advisory",
+            "market entry",
+            "network optimization",
+            "pricing optimization",
+            "procurement strategy",
+            "service design"
+          ],
+          "pred": [
+            "aftermarket strategy",
+            "claims process redesign",
+            "digital transformation",
+            "distribution strategy",
+            "investment thesis",
+            "m&a advisory",
+            "market entry",
+            "network optimization",
+            "operations",
+            "performance improvement",
+            "pricing optimization",
+            "procurement strategy",
+            "service design",
+            "strategy"
+          ],
+          "gold": [
+            "digital transformation",
+            "growth strategy",
+            "mergers and acquisitions",
+            "operations",
+            "organization design",
+            "performance improvement",
+            "pricing",
+            "procurement",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "missed": [
+            "total quality management"
+          ],
+          "extra": [
+            "tqm"
+          ],
+          "pred": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "tqm"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "total quality management"
+          ]
+        },
+        "tools": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "missed": [
+            "microsoft excel",
+            "microsoft powerpoint"
+          ],
+          "extra": [
+            "excel",
+            "powerpoint"
+          ],
+          "pred": [
+            "alteryx",
+            "excel",
+            "powerpoint",
+            "python",
+            "r",
+            "salesforce",
+            "sap",
+            "sql",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "python",
+            "r",
+            "salesforce",
+            "sap",
+            "sql",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (c2)",
+            "french (native)",
+            "german (c1)",
+            "italian (b2)",
+            "spanish (c1)"
+          ],
+          "gold": [
+            "english (c2)",
+            "french (native)",
+            "german (c1)",
+            "italian (b2)",
+            "spanish (c1)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "cfa level ii",
+              "lean six sigma black belt",
+              "scrum master psm i"
+            ],
+            "extra": [
+              "cfa level ii (2021)",
+              "lean six sigma black belt (2020)",
+              "scrum master psm i (2021)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "cfa level ii (2021)",
+            "lean six sigma black belt (2020)",
+            "scrum master psm i (2021)"
+          ],
+          "gold": [
+            "cfa level ii",
+            "lean six sigma black belt",
+            "scrum master psm i"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "bnp paribas investment banking",
+            "strategy&"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "bnp paribas investment banking",
+            "strategy&"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "insead, fontainebleau",
+            "école polytechnique"
+          ],
+          "gold_institutions": [
+            "insead, fontainebleau",
+            "école polytechnique"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    },
+    "cv_20": {
+      "string_fields": {
+        "name": 1,
+        "current_role": 0,
+        "career_level": 1
+      },
+      "integer_fields": {
+        "total_years_experience": 0
+      },
+      "set_fields": {
+        "industries": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "missed": [
+            "asset management",
+            "banking",
+            "private equity"
+          ],
+          "extra": [],
+          "pred": [
+            "consumer goods",
+            "financial services",
+            "healthcare",
+            "insurance",
+            "pharmaceuticals",
+            "retail"
+          ],
+          "gold": [
+            "asset management",
+            "banking",
+            "consumer goods",
+            "financial services",
+            "healthcare",
+            "insurance",
+            "pharmaceuticals",
+            "private equity",
+            "retail"
+          ]
+        },
+        "functional_expertise": {
+          "precision": 0.6,
+          "recall": 0.375,
+          "f1": 0.4615384615384615,
+          "missed": [
+            "growth strategy",
+            "mergers and acquisitions",
+            "organization design",
+            "performance improvement",
+            "pricing"
+          ],
+          "extra": [
+            "m&a",
+            "market entry assessment"
+          ],
+          "pred": [
+            "digital transformation",
+            "m&a",
+            "market entry assessment",
+            "post-merger integration",
+            "strategy"
+          ],
+          "gold": [
+            "digital transformation",
+            "growth strategy",
+            "mergers and acquisitions",
+            "organization design",
+            "performance improvement",
+            "post-merger integration",
+            "pricing",
+            "strategy"
+          ]
+        },
+        "methods": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "okr",
+            "theory of constraints",
+            "total quality management"
+          ],
+          "gold": [
+            "agile",
+            "design thinking",
+            "lean six sigma",
+            "okr",
+            "theory of constraints",
+            "total quality management"
+          ]
+        },
+        "tools": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "r",
+            "salesforce",
+            "sap",
+            "sql",
+            "tableau",
+            "think-cell"
+          ],
+          "gold": [
+            "alteryx",
+            "microsoft excel",
+            "microsoft powerpoint",
+            "power bi",
+            "python",
+            "r",
+            "salesforce",
+            "sap",
+            "sql",
+            "tableau",
+            "think-cell"
+          ]
+        },
+        "languages": {
+          "raw": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "english (native)",
+            "french (c1)",
+            "german (c2)",
+            "italian (b2)",
+            "spanish (b2)"
+          ],
+          "gold": [
+            "english (native)",
+            "french (c1)",
+            "german (c2)",
+            "italian (b2)",
+            "spanish (b2)"
+          ]
+        },
+        "certifications": {
+          "raw": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "missed": [
+              "cfa level iii",
+              "lean six sigma black belt",
+              "scrum master psm ii"
+            ],
+            "extra": [
+              "cfa level iii (2019)",
+              "lean six sigma black belt (2017)",
+              "scrum master psm ii (2020)"
+            ]
+          },
+          "normalized": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "missed": [],
+            "extra": []
+          },
+          "pred": [
+            "cfa level iii (2019)",
+            "lean six sigma black belt (2017)",
+            "scrum master psm ii (2020)"
+          ],
+          "gold": [
+            "cfa level iii",
+            "lean six sigma black belt",
+            "scrum master psm ii"
+          ]
+        }
+      },
+      "list_fields": {
+        "employment_history": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "missed": [
+            "boston consulting group",
+            "london school of economics",
+            "mckinsey & company"
+          ],
+          "extra": [],
+          "pred_employers": [],
+          "gold_employers": [
+            "boston consulting group",
+            "london school of economics",
+            "mckinsey & company"
+          ]
+        },
+        "education": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "missed": [],
+          "extra": [],
+          "pred_institutions": [
+            "london school of economics",
+            "university of cambridge"
+          ],
+          "gold_institutions": [
+            "london school of economics",
+            "university of cambridge"
+          ]
+        }
+      },
+      "unmapped_flags": {
+        "industries": false,
+        "functional_expertise": false,
+        "methods": false,
+        "tools": false,
+        "languages": false,
+        "certifications": false
+      },
+      "missing_extractions": []
+    }
+  },
+  "aggregate": {
+    "string_fields": {
+      "name": 1.0,
+      "current_role": 0.6363636363636364,
+      "career_level": 0.5454545454545454
+    },
+    "integer_fields": {
+      "total_years_experience": 0.0
+    },
+    "set_fields": {
+      "industries": {
+        "mean_f1": 0.5785769785769785,
+        "mean_precision": 0.6659779614325069,
+        "mean_recall": 0.5145188145188145
+      },
+      "functional_expertise": {
+        "mean_f1": 0.5194660412051717,
+        "mean_precision": 0.5426406926406927,
+        "mean_recall": 0.5199494949494949
+      },
+      "methods": {
+        "mean_f1": 0.8162337662337662,
+        "mean_precision": 0.8257575757575758,
+        "mean_recall": 0.8181818181818182
+      },
+      "tools": {
+        "mean_f1": 0.9627705627705627,
+        "mean_precision": 0.9574675324675325,
+        "mean_recall": 0.9688311688311688
+      },
+      "languages": {
+        "raw": {
+          "mean_f1": 0.6233766233766234,
+          "mean_precision": 0.6136363636363636,
+          "mean_recall": 0.6363636363636364
+        },
+        "normalized": {
+          "mean_f1": 0.6233766233766234,
+          "mean_precision": 0.6136363636363636,
+          "mean_recall": 0.6363636363636364
+        }
+      },
+      "certifications": {
+        "raw": {
+          "mean_f1": 0.2484848484848485,
+          "mean_precision": 0.25757575757575757,
+          "mean_recall": 0.2727272727272727
+        },
+        "normalized": {
+          "mean_f1": 0.8545454545454546,
+          "mean_precision": 0.8484848484848485,
+          "mean_recall": 0.9090909090909091
+        }
+      }
+    },
+    "list_fields": {
+      "employment_history": {
+        "mean_f1": 0.0
+      },
+      "education": {
+        "mean_f1": 1.0
+      }
+    },
+    "overall_f1_macro_raw": 0.5775605835388444,
+    "overall_f1_macro_normalized": 0.6280656340438949
+  },
+  "failure_modes": {
+    "unmapped_occurrences": {},
+    "missing_extractions": {},
+    "recall_gaps_by_field": {
+      "certifications": {
+        "cfa level i (passed, 2024)": [
+          "cv_05"
+        ],
+        "cfa level ii": [
+          "cv_17"
+        ],
+        "cfa level iii": [
+          "cv_20"
+        ],
+        "lean six sigma black belt": [
+          "cv_03",
+          "cv_16",
+          "cv_17",
+          "cv_20"
+        ],
+        "lean six sigma green belt": [
+          "cv_06",
+          "cv_11",
+          "cv_14"
+        ],
+        "prince2 practitioner": [
+          "cv_03"
+        ],
+        "scrum master (psm i)": [
+          "cv_12"
+        ],
+        "scrum master psm i": [
+          "cv_14",
+          "cv_17"
+        ],
+        "scrum master psm ii": [
+          "cv_20"
+        ]
+      },
+      "functional_expertise": {
+        "growth strategy": [
+          "cv_17",
+          "cv_20"
+        ],
+        "mergers and acquisitions": [
+          "cv_03",
+          "cv_05",
+          "cv_11",
+          "cv_14",
+          "cv_16",
+          "cv_17",
+          "cv_20"
+        ],
+        "operations": [
+          "cv_06"
+        ],
+        "organization design": [
+          "cv_07",
+          "cv_17",
+          "cv_20"
+        ],
+        "performance improvement": [
+          "cv_07",
+          "cv_20"
+        ],
+        "post-merger integration": [
+          "cv_03"
+        ],
+        "pricing": [
+          "cv_12",
+          "cv_17",
+          "cv_20"
+        ],
+        "procurement": [
+          "cv_17"
+        ],
+        "risk management": [
+          "cv_05"
+        ],
+        "strategy": [
+          "cv_07",
+          "cv_10",
+          "cv_11",
+          "cv_12",
+          "cv_14"
+        ]
+      },
+      "industries": {
+        "asset management": [
+          "cv_20"
+        ],
+        "automotive": [
+          "cv_11",
+          "cv_16"
+        ],
+        "banking": [
+          "cv_05",
+          "cv_20"
+        ],
+        "chemicals": [
+          "cv_06",
+          "cv_16",
+          "cv_17"
+        ],
+        "consumer goods": [
+          "cv_06",
+          "cv_17"
+        ],
+        "financial services": [
+          "cv_07",
+          "cv_12"
+        ],
+        "industrial goods": [
+          "cv_06",
+          "cv_10",
+          "cv_11",
+          "cv_16"
+        ],
+        "insurance": [
+          "cv_05"
+        ],
+        "logistics and transportation": [
+          "cv_17"
+        ],
+        "private equity": [
+          "cv_14",
+          "cv_20"
+        ],
+        "retail": [
+          "cv_10"
+        ],
+        "software": [
+          "cv_10"
+        ],
+        "technology": [
+          "cv_10"
+        ],
+        "utilities": [
+          "cv_03"
+        ]
+      },
+      "languages": {
+        "english (c1)": [
+          "cv_06"
+        ],
+        "english (c2)": [
+          "cv_05",
+          "cv_11",
+          "cv_16"
+        ],
+        "french (b2)": [
+          "cv_05",
+          "cv_06",
+          "cv_11"
+        ],
+        "german (native)": [
+          "cv_05",
+          "cv_06",
+          "cv_11",
+          "cv_16"
+        ],
+        "spanish (b2)": [
+          "cv_16"
+        ],
+        "spanish (c1)": [
+          "cv_05"
+        ]
+      },
+      "methods": {
+        "lean six sigma": [
+          "cv_11"
+        ],
+        "scrum": [
+          "cv_11",
+          "cv_12"
+        ],
+        "total quality management": [
+          "cv_17"
+        ]
+      },
+      "tools": {
+        "microsoft excel": [
+          "cv_17"
+        ],
+        "microsoft powerpoint": [
+          "cv_17"
+        ],
+        "python": [
+          "cv_12"
+        ]
+      }
+    }
+  }
+}
