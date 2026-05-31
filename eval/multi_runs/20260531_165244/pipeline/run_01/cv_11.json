@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T14:53:35.251Z",
+    "name": "Tobias Engel",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 5,
+    "career_level": "Senior",
+    "employment_history": "Strategy& — Senior Consultant (2022-03 → current)\n\nStrategy& — Consultant (2019-09 → 2022-02)\n\nKPMG Strategy — Junior Consultant (2018-04 → 2019-08)",
+    "education": "RWTH Aachen — Master of Science in Industrial Engineering (2016 → 2018)\nRWTH Aachen — Bachelor of Science in Industrial Engineering (2013 → 2016)",
+    "industries": "Automotive, Telecommunications, Consumer Goods",
+    "functional_expertise": "Strategy, Performance Improvement, Digital Transformation",
+    "methods": "Lean Six Sigma, Design Thinking, Agile",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx, SQL",
+    "languages": "German (Native), English (C2), French (B2)",
+    "certifications": "Scrum Master (PSM I)",
+    "latency_ms": 2884,
+    "input_tokens": 2095,
+    "output_tokens": 289,
+    "total_tokens": 2384,
+    "cost_usd": "0.008127",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

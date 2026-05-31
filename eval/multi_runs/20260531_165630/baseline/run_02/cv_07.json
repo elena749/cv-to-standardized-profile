@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Olivia Carter",
+    "current_role": "Senior Associate",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Senior Associate (April 2022 → Present)\nInsurance strategy projects for tier-1 European carriers, focusing on life and pensions. Co-led a digital transformation engagement at a major German insurer. Mentor for two associates and one summer intern\n\nAssociate (September 2019 → March 2022)\nRisk management projects for retail and corporate banking clients. Quantitative modelling using Python and SQL. Drafted regulatory response documents under EU compliance frameworks\n\nAnalyst (August 2017 → August 2019)\nBanking transformation projects for two UK-headquartered banks. Process redesign and operating model assessments",
+    "education": "Imperial College London — M.Sc. Risk Management and Financial Engineering\nUniversity of Cambridge — B.Sc. Mathematics",
+    "industries": "Insurance, Banking",
+    "functional_expertise": "Risk Management, Digital Transformation, Process Redesign",
+    "methods": "Lean Six Sigma, Agile, Risk Management (Basel III)",
+    "tools": "Microsoft Excel, Python, R, SQL, Tableau, Microsoft PowerPoint",
+    "languages": "English (Native), German (C1), Spanish (B2)",
+    "certifications": "FRM (Financial Risk Manager), CFA Level III Candidate",
+    "latency_ms": 4432,
+    "input_tokens": 483,
+    "output_tokens": 577,
+    "total_tokens": 1060,
+    "cost_usd": "0.006978",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

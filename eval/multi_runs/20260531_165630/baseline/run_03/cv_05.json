@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Mira Schulz",
+    "current_role": "Berufseinsteigerin",
+    "total_years_experience": 2,
+    "career_level": "Entry Level",
+    "employment_history": "Praktikant Strategy\nMitarbeit in Strategieprojekten für eine deutsche Großbank. Entwicklung eines Marktmodells für Asset Management Produkte\n\nWerkstudent Risk\nQuantitative Risikoanalysen für Asset Management. Entwicklung von Reporting-Dashboards in Power BI\n\nPraktikant Investment Banking\nPitch-Vorbereitung und Marktanalysen im M&A-Team",
+    "education": "Goethe-Universität Frankfurt — M.Sc. Finance and Information Management\nUniversität Heidelberg — B.Sc. Wirtschaftsmathematik",
+    "industries": "Financial Services, Asset Management, Investment Banking",
+    "functional_expertise": "Strategy, Risk Analysis, Investment Banking",
+    "methods": "Quantitative Analysis, Market Modeling",
+    "tools": "Python, R, SQL, Microsoft Excel, Microsoft PowerPoint, Power BI, Tableau, Bloomberg Terminal",
+    "languages": "Deutsch (Muttersprache), Englisch (C2), Spanisch (C1), Französisch (B2)",
+    "certifications": "CFA Level I (bestanden, 2024), Bloomberg Market Concepts (2023)",
+    "latency_ms": 3614,
+    "input_tokens": 560,
+    "output_tokens": 560,
+    "total_tokens": 1120,
+    "cost_usd": "0.007000",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

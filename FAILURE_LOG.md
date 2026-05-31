@@ -6,6 +6,25 @@ The "generalizes to" line is the most valuable — it's the pattern that informs
 
 ---
 
+## 2026-05-31 — Multi-eval script lacks in-run progress logging
+
+### What I tried
+Ran `eval/run_multi_eval.py` with N=5 runs over 11 PDF CVs (110 LLM calls, ~15.5 min total wall-clock).
+
+### What broke
+Script prints per-run summary line only after a full run completes (~3 min per run). During the first run, no stdout activity → felt like the script was hanging. Aborted with Ctrl+C twice before realizing it was actually running.
+
+### Root cause
+Print verbosity was specified as "one line per run, mirror Build 1." That choice was correct for Build 1 (severity-only output, ~5s per ticket, ~3 min per run feels short). For Build 2, pipeline latency is 5-8s per CV × 11 CVs × 2 systems = ~3 min per run, which feels long without progress lines. The verbosity choice didn't account for the felt-time difference between builds.
+
+### Fix or mitigation
+Diagnose mid-run via second terminal: `ls eval/multi_runs/<timestamp>/pipeline/run_01/` shows file count = progress indicator. Once verified script is alive, let it run to completion. For v2 of the script: add per-CV progress prints (`Pipeline run 3/5, CV 4/11: cv_07.pdf`).
+
+### Generalizes to
+Async/long-running scripts need per-step logging when (step latency × step count) > human attention span (roughly 30 seconds). "Print at end of phase" works when phases are short. For phases >2 minutes, print per item — the cost of verbosity is far lower than the cost of operators aborting healthy runs because silence reads as failure.
+
+---
+
 ## 2026-05-07 — Eval Set Generation: Six Failure Classes Identified
 
 ### What I tried
@@ -128,27 +147,13 @@ This is the same class of failure as **AI-pre-labeling liberal interpretation** 
 
 ## 2026-05-12 — Baseline comparison surfaces five distinct failure modes
 
-**What I observed:** Naive zero-shot extraction (gpt-4o, no schema, no taxonomy, 
-no field-scoped rules) scored 0.58 macro F1 against pipeline's 0.80 on the 
-same 11 PDFs. Drilling into the baseline outputs revealed not one but five 
-distinct failure modes the schema-enforced pipeline addresses:
+**What I observed:** Naive zero-shot extraction (gpt-4o, no schema, no taxonomy, no field-scoped rules) scored 0.58 macro F1 against pipeline's 0.80 on the same 11 PDFs. Drilling into the baseline outputs revealed not one but five distinct failure modes the schema-enforced pipeline addresses:
 
-1. **Information loss.** Baseline emitted employment_history without employer 
-   names — just role titles. Pipeline preserves both.
-2. **Vocabulary drift.** Baseline emitted "Risk Analysis" where ground truth 
-   has "Risk Management"; "Quantitative Analysis" where GT has methods from 
-   the closed taxonomy.
-3. **Cross-field leakage (taxonomy).** "Investment Banking" appeared as 
-   functional_expertise instead of industries. Without field-scoped prompts, 
-   the LLM blurs category boundaries.
-4. **Cross-field leakage (qualifier).** "Bloomberg Terminal" appeared as a 
-   tool instead of being recognized as adjacent to the certification 
-   "Bloomberg Market Concepts." Free-text extraction has no awareness of 
-   which field a token belongs in.
-5. **Language drift.** Baseline emitted "Deutsch (Muttersprache)" — German 
-   labels — where ground truth (and pipeline) use English ("German (Native)"). 
-   Without an explicit output-language instruction, the LLM mirrors the 
-   source CV's language.
+1. **Information loss.** Baseline emitted employment_history without employer names — just role titles. Pipeline preserves both.
+2. **Vocabulary drift.** Baseline emitted "Risk Analysis" where ground truth has "Risk Management"; "Quantitative Analysis" where GT has methods from the closed taxonomy.
+3. **Cross-field leakage (taxonomy).** "Investment Banking" appeared as functional_expertise instead of industries. Without field-scoped prompts, the LLM blurs category boundaries.
+4. **Cross-field leakage (qualifier).** "Bloomberg Terminal" appeared as a tool instead of being recognized as adjacent to the certification "Bloomberg Market Concepts." Free-text extraction has no awareness of which field a token belongs in.
+5. **Language drift.** Baseline emitted "Deutsch (Muttersprache)" — German labels — where ground truth (and pipeline) use English ("German (Native)"). Without an explicit output-language instruction, the LLM mirrors the source CV's language.
 
 **Root cause:** Each failure maps to a specific pipeline-design choice:
 - Schema enforcement → fixes (1) and (3)
@@ -156,12 +161,6 @@ distinct failure modes the schema-enforced pipeline addresses:
 - Field-scoped prompt rules → fixes (3) and (4)
 - Explicit output-language instruction → fixes (5)
 
-The +0.22 lift over baseline isn't a single quality improvement; it's the 
-sum of mitigations for these five mostly-independent failure modes.
+The +0.22 lift over baseline isn't a single quality improvement; it's the sum of mitigations for these five mostly-independent failure modes.
 
-**Generalizes to:** A naive baseline isn't useful as a single number; it's 
-useful as a *failure-mode catalog*. Each kind of degradation in zero-shot 
-output corresponds to a specific engineering decision in the production 
-pipeline. "Why is our schema-enforced pipeline worth the cost?" becomes 
-answerable line by line. This is how baselines become pre-sales material 
-instead of just engineering trivia.
+**Generalizes to:** A naive baseline isn't useful as a single number; it's useful as a *failure-mode catalog*. Each kind of degradation in zero-shot output corresponds to a specific engineering decision in the production pipeline. "Why is our schema-enforced pipeline worth the cost?" becomes answerable line by line. This is how baselines become pre-sales material instead of just engineering trivia.

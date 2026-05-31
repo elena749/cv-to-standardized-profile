@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T14:56:36.289Z",
+    "name": "Dr. Andreas Vogel",
+    "current_role": "Senior Manager",
+    "total_years_experience": 12,
+    "career_level": "Senior",
+    "employment_history": "Roland Berger — Senior Manager (2020-01 → current)\nVerantwortung für M&A-Projekte im Energiesektor mit Transaktionsvolumen über 500 Mio. EUR. Leitung von Teams aus bis zu 12 Beratern auf internationalen Projekten. Aufbau einer neuen Practice-Initiative im Bereich Sustainability und Energiewende.\n\nRoland Berger — Manager (2017-01 → 2019-12)\nSteuerung von Strategie- und Performance-Improvement-Projekten in der Energiewirtschaft. Entwicklung neuer Geschäftsmodelle für Versorger im Wandel zu erneuerbaren Energien.\n\nMcKinsey & Company — Senior Consultant (2014-04 → 2016-12)\nStrategieprojekte im Bereich Industriegüter und Maschinenbau. Post-Merger Integration für einen DAX-Konzern.\n\nMcKinsey & Company — Consultant (2011-09 → 2014-03)\nMitarbeit in Performance-Improvement-Projekten in der Automobilindustrie.",
+    "education": "RWTH Aachen — unmapped in Strategische Anpassungsprozesse in der Energiewirtschaft (2008 → 2011)\nKarlsruhe Institute of Technology (KIT) — unmapped in Energietechnik und Industriebetriebslehre (2003 → 2008)",
+    "industries": "Energy, Industrial Goods, Automotive",
+    "functional_expertise": "Mergers and Acquisitions, Sustainability, Strategy, Performance Improvement, Post-Merger Integration",
+    "methods": "Lean Six Sigma, Balanced Scorecard, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, SAP",
+    "languages": "German (Native), English (C2), French (C1)",
+    "certifications": "Lean Six Sigma Black Belt (2018), PRINCE2 Practitioner (2015)",
+    "latency_ms": 5366,
+    "input_tokens": 2203,
+    "output_tokens": 502,
+    "total_tokens": 2705,
+    "cost_usd": "0.010527",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

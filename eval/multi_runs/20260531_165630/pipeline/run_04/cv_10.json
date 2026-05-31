@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T15:10:21.440Z",
+    "name": "Daniel Foster",
+    "current_role": "",
+    "total_years_experience": "",
+    "career_level": "Entry",
+    "employment_history": "McKinsey & Company — Summer Associate Intern (2024-07 → 2024-09)\nWorked on a digital transformation project for a mid-sized industrial goods company. Conducted process maturity assessments.\n\nMercedes-Benz Group — Working Student Strategy (2023-04 → 2024-06)\nSupported strategic planning team with market analyses and competitive benchmarking.\n\nZalando — Software Engineering Intern (2022-07 → 2022-09)\nBackend development on the recommendation engine team using Python.",
+    "education": "TUM School of Management — Master of Science in Management (2023 → 2025)\nETH Zürich — Bachelor of Science in Computer Science (2020 → 2023)",
+    "industries": "Technology, Industrial Goods",
+    "functional_expertise": "Strategy, Digital Transformation",
+    "methods": "Agile, Scrum, Design Thinking",
+    "tools": "Python, SQL, Microsoft Excel, Microsoft PowerPoint, Power BI, Tableau, Jira, Confluence",
+    "languages": "English (Native), German (C1)",
+    "certifications": "",
+    "latency_ms": 2646,
+    "input_tokens": 2058,
+    "output_tokens": 315,
+    "total_tokens": 2373,
+    "cost_usd": "0.008295",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

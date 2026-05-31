@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Tobias Engel",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 5,
+    "career_level": "Senior",
+    "employment_history": "",
+    "education": "RWTH Aachen — M.Sc. Industrial Engineering\nRWTH Aachen — B.Sc. Industrial Engineering",
+    "industries": "Automobile, Telecommunications, Industrial, Consumer Goods",
+    "functional_expertise": "M&A Due Diligence, Performance Improvement, Digital Transformation, Strategy Review",
+    "methods": "Lean Six Sigma Green Belt, Design Thinking, Agile",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx, SQL",
+    "languages": "Deutsch (Muttersprache), Englisch (C2), Französisch (B2)",
+    "certifications": "Scrum Master (PSM I)",
+    "latency_ms": 2736,
+    "input_tokens": 546,
+    "output_tokens": 432,
+    "total_tokens": 978,
+    "cost_usd": "0.005685",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

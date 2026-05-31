@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Anna-Lena Wolff",
+    "current_role": "Consultant",
+    "total_years_experience": 3,
+    "career_level": "Mid-level",
+    "employment_history": "Consultant\n\nAssociate Consultant\n\nIntern & Working Student",
+    "education": "HHL Leipzig Graduate School of Management — M.Sc. Management\nMaastricht University — B.Sc. International Business",
+    "industries": "Consulting, FMCG, Pharmaceuticals, Banking",
+    "functional_expertise": "Pricing Strategy, Growth Strategy, Digital Transformation",
+    "methods": "Design Thinking, Agile, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Power BI, SQL, Python (basic)",
+    "languages": "German (Native), English (C2), Dutch (C1), Spanish (B2)",
+    "certifications": "Scrum Master (PSM I, 2022)",
+    "latency_ms": 3737,
+    "input_tokens": 592,
+    "output_tokens": 423,
+    "total_tokens": 1015,
+    "cost_usd": "0.005710",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

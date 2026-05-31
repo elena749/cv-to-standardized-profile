@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Rachel Thompson",
+    "current_role": "Manager at McKinsey & Company, Frankfurt",
+    "total_years_experience": 10,
+    "career_level": "Manager",
+    "employment_history": "Manager\nLead post-merger integration projects in pharmaceuticals and medtech. Drive client engagements with revenue responsibility of EUR 3-5M per project. Manage teams of 6-10 consultants across two parallel engagements. Mentor for two senior associates\n\nAssociate\nM&A diligence projects in healthcare and consumer goods. Strategy refresh for a top-3 European pharmaceutical company. Co-led a digital transformation engagement at a leading insurance carrier\n\nEngagement Manager\nPrivate equity diligence engagements. Performance improvement projects in retail and consumer goods\n\nAssociate",
+    "education": "Harvard Business School — MBA\nUniversity of Oxford — B.A. Philosophy, Politics and Economics (PPE)",
+    "industries": "Pharmaceuticals, Medtech, Healthcare, Consumer Goods, Retail, Insurance",
+    "functional_expertise": "Post-merger integration, M&A diligence, Strategy refresh, Digital transformation, Performance improvement",
+    "methods": "Lean Six Sigma, Design Thinking, Agile, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx",
+    "languages": "English (Native), German (C1), French (B2), Spanish (B2)",
+    "certifications": "Lean Six Sigma Green Belt (2017), Scrum Master PSM I (2020)",
+    "latency_ms": 3937,
+    "input_tokens": 559,
+    "output_tokens": 658,
+    "total_tokens": 1217,
+    "cost_usd": "0.007978",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

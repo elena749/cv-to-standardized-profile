@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Andreas Vogel",
+    "current_role": "Senior Manager",
+    "total_years_experience": 12,
+    "career_level": "Senior",
+    "employment_history": "Senior Manager (January 2020 → Present)\nVerantwortung für M&A-Projekte im Energiesektor mit Transaktionsvolumen über 500 Mio. EUR. Leitung von Teams aus bis zu 12 Beratern auf internationalen Projekten. Aufbau einer neuen Practice-Initiative im Bereich Sustainability und Energiewende\n\nManager (January 2017 → December 2019)\nSteuerung von Strategie- und Performance-Improvement-Projekten in der Energiewirtschaft. Entwicklung neuer Geschäftsmodelle für Versorger im Wandel zu erneuerbaren Energien\n\nSenior Consultant (April 2014 → December 2016)\nStrategieprojekte im Bereich Industriegüter und Maschinenbau. Post-Merger Integration für einen DAX-Konzern\n\nConsultant (September 2011 → March 2014)\nMitarbeit in Performance-Improvement-Projekten in der Automobilindustrie",
+    "education": "RWTH Aachen — Promotion (Dr. rer. pol.)\nKarlsruhe Institute of Technology (KIT) — Diplom-Wirtschaftsingenieur",
+    "industries": "Energiesektor, Energiewirtschaft, Industriegüter, Maschinenbau, Automobilindustrie",
+    "functional_expertise": "M&A-Projekte, Strategie, Performance-Improvement, Post-Merger Integration, Geschäftsmodelle Entwicklung",
+    "methods": "Lean Six Sigma, Balanced Scorecard, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, SAP",
+    "languages": "Deutsch (Muttersprache), Englisch (C2), Französisch (C1)",
+    "certifications": "Lean Six Sigma Black Belt (2018), PRINCE2 Practitioner (2015)",
+    "latency_ms": 5837,
+    "input_tokens": 630,
+    "output_tokens": 780,
+    "total_tokens": 1410,
+    "cost_usd": "0.009375",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

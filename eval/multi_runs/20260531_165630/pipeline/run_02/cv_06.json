@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T15:03:55.229Z",
+    "name": "Julia Brandt",
+    "current_role": "Consultant",
+    "total_years_experience": 3,
+    "career_level": "Mid",
+    "employment_history": "Horváth & Partners — Consultant (2022-05 → current)\nPerformance Improvement Projekte in der Industriegüter- und Maschinenbau-Branche. Aufbau und Implementierung von OKR-Frameworks bei zwei mittelständischen Industriekunden. Steuerung von Workshops mit Geschäftsführungen.\n\nHorváth & Partners — Junior Consultant (2020-09 → 2022-04)\nMitarbeit in Operations-Projekten in der Chemieindustrie. Datenanalysen und Visualisierungen mit Power BI und Tableau.\n\nBCG — Praktikant (2019-04 → 2019-09)\nStrategieprojekt im Konsumgüterbereich.",
+    "education": "TU Berlin — Master of Science in Wirtschaftsingenieurwesen (2018 → 2020)\nKIT Karlsruhe — Bachelor of Science in Wirtschaftsingenieurwesen (2014 → 2018)",
+    "industries": "Industrial Goods, Chemicals, Consumer Goods",
+    "functional_expertise": "Performance Improvement, Operations, Strategy",
+    "methods": "Lean Six Sigma, OKR, Kanban",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Power BI, Jira, Confluence",
+    "languages": "German (Native), English (C1), French (B2)",
+    "certifications": "Lean Six Sigma Green Belt (2022)",
+    "latency_ms": 2788,
+    "input_tokens": 2050,
+    "output_tokens": 381,
+    "total_tokens": 2431,
+    "cost_usd": "0.008935",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Andreas Vogel",
+    "current_role": "Senior Manager",
+    "total_years_experience": 12,
+    "career_level": "Senior",
+    "employment_history": "Senior Manager (January 2020 → Present)\nResponsible for M&A projects in the energy sector with transaction volumes over 500 million EUR. Led teams of up to 12 consultants on international projects. Developed a new practice initiative in sustainability and energy transition\n\nManager (January 2017 → December 2019)\nManaged strategy and performance improvement projects in the energy industry. Developed new business models for utilities transitioning to renewable energies\n\nSenior Consultant (April 2014 → December 2016)\nWorked on strategy projects in industrial goods and mechanical engineering. Post-merger integration for a DAX corporation\n\nConsultant (September 2011 → March 2014)\nParticipated in performance improvement projects in the automotive industry",
+    "education": "RWTH Aachen — PhD (Dr. rer. pol.)\nKarlsruhe Institute of Technology (KIT) — Diplom-Wirtschaftsingenieur",
+    "industries": "Energy, Industrial Goods, Automotive",
+    "functional_expertise": "M&A, Strategy, Performance Improvement, Sustainability, Energy Transition",
+    "methods": "Lean Six Sigma, Balanced Scorecard, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, SAP",
+    "languages": "German (Native), English (C2), French (C1)",
+    "certifications": "Lean Six Sigma Black Belt (2018), PRINCE2 Practitioner (2015)",
+    "latency_ms": 4805,
+    "input_tokens": 630,
+    "output_tokens": 695,
+    "total_tokens": 1325,
+    "cost_usd": "0.008525",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

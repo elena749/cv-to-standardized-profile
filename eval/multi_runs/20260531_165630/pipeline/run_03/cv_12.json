@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T15:07:45.310Z",
+    "name": "Anna-Lena Wolff",
+    "current_role": "Consultant",
+    "total_years_experience": 2,
+    "career_level": "Mid",
+    "employment_history": "Bain & Company — Consultant (2023-05 → current)\n\nBain & Company — Associate Consultant (2021-08 → 2023-04)\n\nBain & Company — Praktikum & Werkstudent (2020-09 → 2021-07)",
+    "education": "HHL Leipzig Graduate School of Management — Master of Science in Management (2018 → 2020)\nMaastricht University — Bachelor of Science in International Business (2014 → 2017)",
+    "industries": "Consumer Goods, Pharmaceuticals, Banking",
+    "functional_expertise": "Pricing, Growth Strategy, Digital Transformation",
+    "methods": "Design Thinking, Agile, OKR",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Power BI, SQL, Python",
+    "languages": "German (Native), English (C2), French (C1), Spanish (B2)",
+    "certifications": "Scrum Master (PSM I, 2022)",
+    "latency_ms": 2648,
+    "input_tokens": 2146,
+    "output_tokens": 313,
+    "total_tokens": 2459,
+    "cost_usd": "0.008495",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

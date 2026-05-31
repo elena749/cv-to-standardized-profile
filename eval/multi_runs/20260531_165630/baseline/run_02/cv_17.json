@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Alexandre Dubois",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Senior Consultant\n\nConsultant\n\nAnalyst",
+    "education": "INSEAD, Fontainebleau — MBA\nÉcole Polytechnique — M.Sc. Engineering Management\nÉcole Polytechnique — B.Eng. Engineering",
+    "industries": "Banking, Pharmaceuticals, Industrial Goods, Energy, Public Sector, Telecommunications, Insurance, Asset Management, Automotive, Logistics & Transportation, Defense",
+    "functional_expertise": "Strategy, Operations, Digital Transformation, Market Entry, Performance Improvement, Investment Thesis, Service Design, Pricing Optimization, Claims Process Redesign, Distribution Strategy, Aftermarket Strategy, Network Optimization, Procurement Strategy, M&A Advisory",
+    "methods": "Lean Six Sigma, Design Thinking, Agile, TQM",
+    "tools": "Excel, PowerPoint, think-cell, Tableau, Alteryx, SAP, Salesforce, Python, R, SQL",
+    "languages": "{'language': 'French', 'proficiency': 'Native'}, {'language': 'English', 'proficiency': 'C2'}, {'language': 'German', 'proficiency': 'C1'}, {'language': 'Spanish', 'proficiency': 'C1'}, {'language': 'Italian', 'proficiency': 'B2'}",
+    "certifications": "Lean Six Sigma Black Belt (2020), Scrum Master PSM I (2021), CFA Level II (2021)",
+    "latency_ms": 5900,
+    "input_tokens": 752,
+    "output_tokens": 973,
+    "total_tokens": 1725,
+    "cost_usd": "0.011610",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

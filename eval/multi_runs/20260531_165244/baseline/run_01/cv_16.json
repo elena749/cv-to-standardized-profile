@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Katharina Maier",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Senior Consultant (September 2022 → Present)\n\nElternzeit (2020 → 2022)\n\nSabbatical / Reise (2019 → 2020)\n\nSenior Consultant (April 2018 → Dezember 2018)\n\nConsultant (September 2014 → März 2018)\n\nPraktikant (April 2013 → August 2013)",
+    "education": "TU München — M.Sc. Wirtschaftsingenieurwesen (2012 → 2014)\nTU München — B.Sc. Wirtschaftsingenieurwesen (2009 → 2012)",
+    "industries": "Industriegüterindustrie, Automobilindustrie, Maschinenbau, Chemieindustrie",
+    "functional_expertise": "Operations, Supply Chain, Strategy, Performance Improvement",
+    "methods": "Lean Six Sigma, Theory of Constraints, Kanban",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, SAP",
+    "languages": "Deutsch (Muttersprache), Englisch (C2), Spanisch (B2)",
+    "certifications": "Lean Six Sigma Black Belt (2017)",
+    "latency_ms": 5574,
+    "input_tokens": 678,
+    "output_tokens": 809,
+    "total_tokens": 1487,
+    "cost_usd": "0.009785",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

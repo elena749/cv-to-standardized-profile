@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Daniel Foster",
+    "current_role": "M.Sc. Management student at TUM School of Management",
+    "total_years_experience": 1,
+    "career_level": "Entry-level",
+    "employment_history": "Summer Associate Intern\nWorked on a digital transformation project for a mid-sized industrial goods company. Conducted process maturity assessments.\n\nWorking Student Strategy\nSupported strategic planning team with market analyses and competitive benchmarking.\n\nSoftware Engineering Intern\nBackend development on the recommendation engine team using Python.",
+    "education": "TUM School of Management — M.Sc. Management\nETH Zürich — B.Sc. Computer Science",
+    "industries": "Technology Consulting, Strategy Consulting, Automotive, E-commerce",
+    "functional_expertise": "Digital Transformation, Strategy Planning, Market Analysis, Competitive Benchmarking, Backend Development",
+    "methods": "Agile, Scrum, Design Thinking",
+    "tools": "Python, SQL, Microsoft Excel, Microsoft PowerPoint, Power BI, Tableau, Jira, Confluence",
+    "languages": "English (Native), German (C1)",
+    "certifications": "",
+    "latency_ms": 3894,
+    "input_tokens": 528,
+    "output_tokens": 521,
+    "total_tokens": 1049,
+    "cost_usd": "0.006530",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

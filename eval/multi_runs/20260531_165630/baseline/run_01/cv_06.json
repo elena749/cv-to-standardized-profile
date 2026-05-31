@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Julia Brandt",
+    "current_role": "Consultant",
+    "total_years_experience": 4,
+    "career_level": "Mid-level",
+    "employment_history": "Consultant (May 2022 → Present)\nPerformance Improvement Projekte in der Industriegüter- und Maschinenbau-Branche. Aufbau und Implementierung von OKR-Frameworks bei zwei mittelständischen Industriekunden. Steuerung von Workshops mit Geschäftsführungen\n\nJunior Consultant (September 2020 → April 2022)\nMitarbeit in Operations-Projekten in der Chemieindustrie. Datenanalysen und Visualisierungen mit Power BI und Tableau\n\nPraktikant (April 2019 → September 2019)\nStrategieprojekt im Konsumgüterbereich",
+    "education": "TU Berlin — M.Sc. Wirtschaftsingenieurwesen\nKIT Karlsruhe — B.Sc. Wirtschaftsingenieurwesen",
+    "industries": "Industriegüter, Maschinenbau, Chemie, Konsumgüter",
+    "functional_expertise": "Performance Improvement, Operations Management, Strategy",
+    "methods": "Lean Six Sigma, OKR, Kanban",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Power BI, Jira, Confluence",
+    "languages": "Deutsch (Muttersprache), Englisch (C1), Französisch (B2)",
+    "certifications": "Lean Six Sigma Green Belt (2022)",
+    "latency_ms": 4611,
+    "input_tokens": 508,
+    "output_tokens": 597,
+    "total_tokens": 1105,
+    "cost_usd": "0.007240",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Dr. Patricia Wells",
+    "current_role": "Senior Manager",
+    "total_years_experience": 8,
+    "career_level": "Senior",
+    "employment_history": "Senior Manager (March 2021 → Present)\nLead consulting engagements with revenue responsibility of EUR 4-6M per project.. Manage teams of 8-12 consultants across two parallel engagements.. Mentor for three associates and one engagement manager.. Co-lead the German Healthcare Practice for the Munich office.\n\nAssociate (September 2018 → February 2021)\nConsultant on strategy and M&A engagements primarily in financial services and pharmaceuticals.\n\nSenior Associate (September 2016 → August 2018)\nConsultant on engagements primarily in financial services and private equity.\n\nAssociate (August 2014 → August 2016)\nStrategy and operations engagements primarily in consumer goods and retail.\n\nResearch Assistant (September 2010 → June 2014)\nPhD research on banking regulation and systemic risk.. Co-authored three peer-reviewed publications.",
+    "education": "London School of Economics — PhD in Economics\nLondon School of Economics — M.Sc. Economics\nUniversity of Cambridge — B.A. (Hons) Economics",
+    "industries": "Financial Services, Healthcare, Consumer Goods, Pharmaceuticals, Insurance, Retail",
+    "functional_expertise": "Strategy, M&A, Digital Transformation, Post-Merger Integration, Market Entry Assessment",
+    "methods": "Lean Six Sigma, Design Thinking, Agile, OKR, Theory of Constraints, Total Quality Management",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx, Power BI, SQL, Python, R, SAP, Salesforce",
+    "languages": "English (Native), German (C2), French (C1), Italian (B2), Spanish (B2)",
+    "certifications": "Lean Six Sigma Black Belt (2017), Scrum Master PSM II (2020), CFA Level III (2019)",
+    "latency_ms": 6184,
+    "input_tokens": 1872,
+    "output_tokens": 895,
+    "total_tokens": 2767,
+    "cost_usd": "0.013630",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

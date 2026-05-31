@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T14:54:05.138Z",
+    "name": "Alexandre Dubois",
+    "current_role": "Senior Consultant",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Strategy& — Senior Consultant (2022-04 → current)\nMulti-sector strategy & operations including digital transformation, market entry, performance improvement, investment thesis, digital service design, and pricing optimization.\n\nStrategy& — Consultant (2019-09 → 2022-03)\nWorked on claims process redesign, distribution strategy, aftermarket strategy, network optimization, and procurement strategy.\n\nBNP Paribas Investment Banking — Analyst (2017-09 → 2019-08)\nM&A advisory primarily for industrial goods and consumer goods clients in France and Benelux.",
+    "education": "INSEAD — MBA (2016 → 2017)\nÉcole Polytechnique — Master of Science in Engineering Management (2013 → 2016)\nÉcole Polytechnique — Bachelor of Science in Engineering (2010 → 2013)",
+    "industries": "Banking, Pharmaceuticals, Industrial Goods, Energy, Public Sector, Telecommunications, Insurance, Asset Management, Automotive, Logistics and Transportation, Defense",
+    "functional_expertise": "Strategy, Digital Transformation, Performance Improvement, Pricing",
+    "methods": "Lean Six Sigma, Design Thinking, Agile, Total Quality Management",
+    "tools": "Microsoft Excel, Microsoft PowerPoint, think-cell, Tableau, Alteryx, SAP, Salesforce, Python, R, SQL",
+    "languages": "French (Native), English (C2), German (C1), Spanish (C1), Italian (B2)",
+    "certifications": "Lean Six Sigma Black Belt (2020), Scrum Master PSM I (2021), CFA Level II (2021)",
+    "latency_ms": 3171,
+    "input_tokens": 2281,
+    "output_tokens": 456,
+    "total_tokens": 2737,
+    "cost_usd": "0.010263",
+    "model": "gpt-4o-2024-08-06"
+  }
+]

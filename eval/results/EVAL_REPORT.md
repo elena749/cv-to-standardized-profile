@@ -1,6 +1,39 @@
 # CV-to-Standardized-Profile — v1 Evaluation Report
 
-**Run:** `v1_2026-05-12` | **N CVs:** 11 | **Scope:** PDF only; DOCX/TXT deferred to v2
+**Single-run snapshot:** `v1_2026-05-12` | **Multi-run reliability:** `multi_2026-05-31_165630` (N=5) | **N CVs:** 11 | **Scope:** PDF only; DOCX/TXT deferred to v2
+
+## Multi-Run Reliability (N=5)
+
+Both pipeline and baseline were run 5× over the same 11-CV PDF set to test reliability of the single-run number. Multi-run distinguishes prompt/architecture quality from LLM stochasticity (LLMs are not byte-deterministic even at temperature=0).
+
+### Aggregate
+
+| System | Mode | Mean F1 | Stdev | Range |
+|---|---|---|---|---|
+| **Pipeline** (schema-enforced) | raw | 0.809 | 0.006 | [0.802, 0.815] |
+| **Pipeline** (schema-enforced) | normalized | 0.861 | 0.0004 | [0.860, 0.861] |
+| **Baseline** (zero-shot, no schema) | raw | 0.567 | 0.005 | [0.562, 0.572] |
+| **Baseline** (zero-shot, no schema) | normalized | 0.618 | 0.005 | [0.613, 0.623] |
+
+### Lift
+
+- **Raw:** +0.241 (Pipeline 0.809 vs Baseline 0.567)
+- **Normalized:** +0.243 (Pipeline 0.861 vs Baseline 0.618)
+
+### Ranges-overlap check
+
+- **Raw:** no overlap — resolvable at n=5
+- **Normalized:** no overlap — resolvable at n=5
+
+Interpretation: pipeline ranges and baseline ranges do not overlap at n=5. The +24pp lift is real, not measurement noise. Both systems are highly stable across runs (pipeline normalized stdev = 0.0004 — near-deterministic thanks to schema-enforced structured outputs).
+
+**Wall-clock:** 929s (~15.5 min) for 110 LLM calls (55 pipeline + 55 baseline).
+
+**Raw artifacts:** `eval/multi_runs/20260531_165630/` (per-run outputs + `summary.json`)
+
+The single-run analysis below remains as the source of per-field and per-CV detail; the multi-run section establishes the reliability of those numbers.
+
+---
 
 ## TL;DR
 
@@ -112,7 +145,7 @@ A pred-string matches a gold-string when their variant sets intersect. This avoi
 
 - Eval set: 11 synthetic PDF CVs. DOCX (8 CVs) and TXT (1 CV) are deferred to v2 (see README *Architecture Decisions*).
 - Ground truth was iteratively refined during build; corrections are documented in `REVIEW_LOG.md` and justified against CV content rather than against pipeline output.
-- No baseline comparison in this report. Zero-shot GPT-4o-without-schema baseline is a separate concern and a separate run.
+- Baseline comparison (zero-shot GPT-4o without schema) is included in the Multi-Run Reliability section above. Pipeline lift over baseline: +24pp at n=5, ranges non-overlapping.
 
 ## What v2 Will Improve
 

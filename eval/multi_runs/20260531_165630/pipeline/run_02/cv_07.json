@@ -1,0 +1,23 @@
+[
+  {
+    "extracted_at": "2026-05-31T15:04:04.503Z",
+    "name": "Olivia Carter",
+    "current_role": "Senior Associate",
+    "total_years_experience": 6,
+    "career_level": "Senior",
+    "employment_history": "Oliver Wyman — Senior Associate (2022-04 → current)\nInsurance strategy projects for tier-1 European carriers, focusing on life and pensions. Co-led a digital transformation engagement at a major German insurer. Mentor for two associates and one summer intern.\n\nOliver Wyman — Associate (2019-09 → 2022-03)\nRisk management projects for retail and corporate banking clients. Quantitative modelling using Python and SQL. Drafted regulatory response documents under EU compliance frameworks.\n\nDeloitte Consulting — Analyst (2017-08 → 2019-08)\nBanking transformation projects for two UK-headquartered banks. Process redesign and operating model assessments.",
+    "education": "Imperial College London — Master of Science in Risk Management and Financial Engineering (2016 → 2017)\nUniversity of Cambridge — Bachelor of Science in Mathematics (2013 → 2016)",
+    "industries": "Insurance, Banking",
+    "functional_expertise": "Strategy, Risk Management, Digital Transformation",
+    "methods": "Lean Six Sigma, Agile, unmapped",
+    "tools": "Microsoft Excel, Python, R, SQL, Tableau, Microsoft PowerPoint",
+    "languages": "English (Native), German (C1), Spanish (B2)",
+    "certifications": "FRM (Financial Risk Manager)",
+    "latency_ms": 4653,
+    "input_tokens": 2092,
+    "output_tokens": 366,
+    "total_tokens": 2458,
+    "cost_usd": "0.008890",
+    "model": "gpt-4o-2024-08-06"
+  }
+]
