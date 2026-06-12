@@ -3,7 +3,7 @@
 ## CV-to-Standardized-Profile (n8n + LLM)
 
 **Status:** Scope finalized
-**Ship target:** ~10–12 May 2026
+**Shipped:** 2026-05-12 (v1)
 
 ---
 
@@ -126,13 +126,13 @@ Scope discipline is part of the build. The following aspects are deliberately ex
 
 A Build 2 v1 is done when all 7 boxes are checked:
 
-1. ☐ A CV file (PDF, DOCX, text, DE or EN) is transformed into a validated sheet row in <2 min.
-2. ☐ Schema is hard-specified (JSON schema committed in the repo).
-3. ☐ Taxonomy exists (industries, functional expertise, methods/tools, languages — committed in YAML).
-4. ☐ Eval set exists: 20 hand-labeled CVs, ground-truth profiles as JSON, committed.
-5. ☐ Eval script runs and produces a number (field-level F1 or exact-match rate per field category).
-6. ☐ **Baseline measured:** zero-shot LLM without schema enforcement, without taxonomy. In the README.
-7. ☐ **Pipeline number measured:** full pipeline. In the README. Beats baseline.
+1. ☐ A CV file (PDF, DOCX, text, DE or EN) is transformed into a validated sheet row in <2 min. *(PDF only in v1; DOCX/TXT deferred to v2)*
+2. ✅ Schema is hard-specified (JSON schema committed in the repo).
+3. ✅ Taxonomy exists (industries, functional expertise, methods/tools, languages — committed in YAML).
+4. ✅ Eval set exists: 20 hand-labeled CVs, ground-truth profiles as JSON, committed.
+5. ✅ Eval script runs and produces a number (field-level F1 or exact-match rate per field category).
+6. ✅ **Baseline measured:** zero-shot LLM without schema enforcement, without taxonomy. In the README.
+7. ✅ **Pipeline number measured:** full pipeline. In the README. Beats baseline.
 
 ---
 
@@ -157,8 +157,8 @@ Concrete math with traceable assumptions — not *"saves time"*, but volume × t
 ## 9. Per-build discipline
 
 1. ✅ **SCOPE** — this document
-2. ☐ **BUILD v1** — hygiene only: input validation, schema enforcement, basic retries. Happy path first.
-3. ☐ **INSTRUMENT** — log every LLM call: input, output, latency, token count, cost.
+2. ✅ **BUILD v1** — hygiene only: input validation, schema enforcement, basic retries. Happy path first.
+3. ✅ **INSTRUMENT** — log every LLM call: input, output, latency, token count, cost.
 4. ☐ **BREAK** — red-team session with adversarial inputs:
    - Ambiguous CVs (missing dates, freelance tangles)
    - Long CVs (context limit)
@@ -166,10 +166,10 @@ Concrete math with traceable assumptions — not *"saves time"*, but volume × t
    - Prompt injection in CV text
    - API failures (timeouts, rate limits)
    - Confidently wrong outputs (invented industries/expertise)
-5. ☐ **EVAL** — score output against ground truth.
+5. ✅ **EVAL** — score output against ground truth.
 6. ☐ **v2 + MITIGATIONS** — per break: fix, mitigate, or accept-and-document.
-7. ☐ **COST & LATENCY** — cost per 1,000 runs, p50/p95 latency.
-8. ☐ **SECURITY/GOVERNANCE NOTE** — what flows where, what is stored, GDPR concerns, mitigations.
+7. ✅ **COST & LATENCY** — cost per 1,000 runs, p50/p95 latency.
+8. ✅ **SECURITY/GOVERNANCE NOTE** — what flows where, what is stored, GDPR concerns, mitigations.
 9. ☐ **SHIP** — README, FAILURE_LOG, CHANGELOG, eval results, Loom demo.
 
 ---
